@@ -18,6 +18,7 @@ func _process(delta):
 	if hp <= 0:
 		game_over()
 	
+	# Movement
 	if Input.is_action_pressed("ui_up"):
 		facing = UP
 		$Sprite.flip_v = false
