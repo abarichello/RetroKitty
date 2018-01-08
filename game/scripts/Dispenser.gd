@@ -8,6 +8,6 @@ func setup(start_position, angle):
 
 func _process(delta):
 	if (randi() % 300 == 0):
-		var ball = preload("res://scenes/ball.tscn").instance()
+		var ball = preload("res://scenes/Ball.tscn").instance()
 		add_child(ball)
 		ball.create(self.global_position, angle)

@@ -18,17 +18,17 @@ func _process(delta):
 	if hp <= 0:
 		game_over()
 	
-	# Movement
-	if Input.is_action_pressed("ui_up"):
+func _input(event):
+	if event.is_action_pressed("ui_up"):
 		facing = UP
 		$Sprite.flip_v = false
-	if Input.is_action_pressed("ui_down"):
+	if event.is_action_pressed("ui_down"):
 		facing = DOWN
 		$Sprite.flip_v = true
-	if Input.is_action_pressed("ui_left"):
+	if event.is_action_pressed("ui_left"):
 		facing = LEFT
 		$Sprite.flip_h = true
-	if Input.is_action_pressed("ui_right"):
+	if event.is_action_pressed("ui_right"):
 		facing = RIGHT
 		$Sprite.flip_h = false
 

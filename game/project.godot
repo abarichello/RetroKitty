@@ -14,14 +14,14 @@ config/name="Bat Hit Ball"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
-[displa]
-
-=false
-
 [display]
 
 window/size/width=1366
 window/size/height=768
+
+[gdnative]
+
+singletons=[  ]
 
 [input]
 
