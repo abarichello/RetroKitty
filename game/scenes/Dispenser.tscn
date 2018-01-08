@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/Dispenser.gd" type="Script" id=1]
 [ext_resource path="res://resources/img/dispenser.png" type="Texture" id=2]
 
-[node name="Dispenser" type="RigidBody2D" index="0"]
+[node name="Dispenser" type="RigidBody2D"]
 
 position = Vector2( 552.312, 244.867 )
 input_pickable = false
