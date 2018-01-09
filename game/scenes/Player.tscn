@@ -10,15 +10,18 @@ extents = Vector2( 10, 10 )
 
 [node name="Player" type="Area2D"]
 
-position = Vector2( 497.207, 296.589 )
+position = Vector2( 716.615, 397.066 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 0
+collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z" ]
 __meta__ = {
 "_edit_group_": true
 }

@@ -3,14 +3,14 @@ extends Area2D
 signal hit
 
 onready var main = self.get_node("/root/Main")
-enum Direction {UP = 1, DOWN = 2, LEFT = 3, RIGHT = 4}
+enum Direction {UP = 90, DOWN = 270, LEFT = 180, RIGHT = 0}
 export (int) var max_hp = 3
 var screensize
 var hp
-var facing
+var angle
 
 func _ready():
-	facing = UP
+	angle = UP
 	hp = max_hp
 	screensize = get_viewport_rect().size
 
@@ -20,16 +20,16 @@ func _process(delta):
 	
 func _input(event):
 	if event.is_action_pressed("ui_up"):
-		facing = UP
+		angle = UP
 		$Sprite.flip_v = false
 	if event.is_action_pressed("ui_down"):
-		facing = DOWN
+		angle = DOWN
 		$Sprite.flip_v = true
 	if event.is_action_pressed("ui_left"):
-		facing = LEFT
+		angle = LEFT
 		$Sprite.flip_h = true
 	if event.is_action_pressed("ui_right"):
-		facing = RIGHT
+		angle = RIGHT
 		$Sprite.flip_h = false
 
 func game_over():
