@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=2]
+
+[node name="HUD" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1.0
+margin_top = 4.0
+margin_right = 39.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
+
+[node name="CorrectPanel" type="PanelContainer" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 341.0
+margin_bottom = 103.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_styles" ]
+
+[node name="Ball1" parent="CorrectPanel" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 45.445, 52.2344 )
+
+[node name="Ball2" parent="CorrectPanel" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 160.255, 50.4029 )
+
+[node name="Ball3" parent="CorrectPanel" index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 263.444, 49.2344 )
+
+

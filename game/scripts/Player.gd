@@ -1,18 +1,15 @@
 extends Area2D
 
-signal hit
-
 onready var main = self.get_node("/root/Main")
 enum Direction {UP = 90, DOWN = 270, LEFT = 180, RIGHT = 0}
+
 export (int) var max_hp = 3
-var screensize
 var hp
 var angle
 
 func _ready():
 	angle = UP
 	hp = max_hp
-	screensize = get_viewport_rect().size
 
 func _process(delta):
 	if hp <= 0:

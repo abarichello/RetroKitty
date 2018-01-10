@@ -32,7 +32,7 @@ angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z" ]
 min_speed = 300
-max_speed = 500
+max_speed = 400
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -46,6 +46,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+visible = false
 position = Vector2( -0.26059, 0.86174 )
 scale = Vector2( 1.39828, 1.34801 )
 shape = SubResource( 1 )
@@ -58,6 +59,8 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
 __meta__ = {
 "_edit_group_": true
 }
+
+[connection signal="hit" from="." to="." method="_on_Ball_hit"]
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 

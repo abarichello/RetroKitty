@@ -7,9 +7,10 @@
 custom_solver_bias = 0.0
 extents = Vector2( 9.87343, 10.5745 )
 
-[node name="Bat" type="Area2D" index="0"]
+[node name="Bat" type="Area2D"]
 
-position = Vector2( 334.123, 187.059 )
+position = Vector2( 322.253, 173.519 )
+scale = Vector2( 0.629049, 0.57688 )
 input_pickable = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -47,7 +48,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
 [node name="Cooldown" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 0.3
 one_shot = true
 autostart = false
 

@@ -3,10 +3,10 @@
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Dispenser.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scripts/StartPosition.gd" type="Script" id=4]
-[ext_resource path="res://scenes/Bat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Bat.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=5]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 dispenser = ExtResource( 2 )
@@ -17,10 +17,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -40.0
-margin_top = -54.0
-margin_right = 1410.0
-margin_bottom = 808.0
+margin_left = -73.0
+margin_top = -43.0
+margin_right = 1377.0
+margin_bottom = 819.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 size_flags_horizontal = 1
@@ -35,11 +35,15 @@ position = Vector2( 543.907, 360.355 )
 [node name="StartPosition" type="Position2D" parent="Player" index="2"]
 
 position = Vector2( -270, -133 )
-script = ExtResource( 4 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
 
-[node name="Bat" parent="." index="2" instance=ExtResource( 5 )]
+[node name="Bat" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 550.717, 364.907 )
+
+[node name="HUD" parent="." index="3" instance=ExtResource( 5 )]
+
+margin_left = 11.0
+margin_right = 51.0
 
 
