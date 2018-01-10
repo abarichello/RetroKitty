@@ -4,9 +4,6 @@ onready var player = get_node("/root/Main/Player")
 onready var hud = get_node("/root/Main/HUD")
 var angle
 
-func _ready():
-	position = player.position
-
 func _process(delta):
 	angle = player.angle
 	if $Cooldown.get_time_left() > 0.1 && $Cooldown.get_time_left() < 0.3:

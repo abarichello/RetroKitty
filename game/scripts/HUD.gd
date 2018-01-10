@@ -27,5 +27,5 @@ func hit_check(ball):
 		player.hp -= 1
 
 func out_check(ball):
-	if ball.color == correct_array[balls_hit].color:
+	if balls_hit < correct_array.size() && ball.color == correct_array[balls_hit].color:
 		player.hp -= 1

@@ -5,6 +5,7 @@ enum Type {BLUE, GREEN, RED}
 
 export (int) var min_speed = 200
 export (int) var max_speed = 500
+var hit = false
 var angle
 var color
 
@@ -24,6 +25,7 @@ func create(start_position, angle):
 	self.angle = angle
 	self.set_collision_layer_bit(angle, true)
 	var direction = (get_node("/root/Main/Player").position - global_position).normalized()
+	hit = true
 	apply_impulse(Vector2(), direction * rand_range(min_speed, max_speed))
 
 func _on_VisibilityNotifier2D_screen_exited():
@@ -31,5 +33,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
 func _on_Ball_out():
-	var hud = get_node("/root/Main/HUD")
-	hud.out_check(self)
+	if hit:
+		var hud = get_node("/root/Main/HUD")
+		hud.out_check(self)

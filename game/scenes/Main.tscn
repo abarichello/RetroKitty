@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Dispenser.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/Bat.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node"]
 
@@ -33,18 +32,9 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 position = Vector2( 543.907, 360.355 )
 
-[node name="StartPosition" type="Position2D" parent="Player"]
-
-position = Vector2( -270, -133 )
-_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
-
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 margin_left = 11.0
 margin_right = 51.0
-
-[node name="Bat" parent="." instance=ExtResource( 5 )]
-
-position = Vector2( 866.16, 533.874 )
 
 

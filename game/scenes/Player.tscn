@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://resources/img/p1.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Bat.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -10,7 +11,7 @@ extents = Vector2( 10, 10 )
 
 [node name="Player" type="Area2D"]
 
-position = Vector2( 716.615, 397.066 )
+position = Vector2( 593.112, 330.352 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -22,9 +23,6 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z" ]
-__meta__ = {
-"_edit_group_": true
-}
 max_hp = 3
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -36,5 +34,11 @@ texture = ExtResource( 2 )
 position = Vector2( 0.0663537, -0.337977 )
 scale = Vector2( 3.19299, 3.14716 )
 shape = SubResource( 1 )
+
+[node name="Bat" parent="." instance=ExtResource( 3 )]
+
+position = Vector2( 0.143738, -1.60526 )
+
+[node name="SpawnPosition" type="Position2D" parent="."]
 
 

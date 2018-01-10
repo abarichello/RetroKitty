@@ -32,7 +32,7 @@ angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z" ]
 min_speed = 300
-max_speed = 400
+max_speed = 300
 
 [node name="Sprite" type="Sprite" parent="."]
 
