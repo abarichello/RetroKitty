@@ -1,14 +1,11 @@
 extends Area2D
 
 onready var player = get_node("/root/Main/Player")
+onready var hud = get_node("/root/Main/HUD")
 var angle
 
 func _ready():
 	position = player.position
-	set_collision_layer_bit(0, true)
-	set_collision_layer_bit(90, true)
-	set_collision_layer_bit(180, true)
-	set_collision_layer_bit(270, true)
 
 func _process(delta):
 	angle = player.angle
@@ -27,3 +24,4 @@ func _on_Bat_body_entered(body):
 		body.set_collision_layer_bit(0, false)
 		var direction = body.global_position - Vector2(1, 1)
 		body.linear_velocity = direction * 5
+		hud.hit_check(body)

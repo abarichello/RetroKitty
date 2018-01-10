@@ -1,7 +1,6 @@
 extends RigidBody2D
 
-signal hit
-
+signal out
 enum Type {BLUE, GREEN, RED}
 
 export (int) var min_speed = 200
@@ -10,14 +9,15 @@ var angle
 var color
 
 func _ready():
+	randomize()
 	contact_monitor = true
 	contacts_reported = 1
 	
-	color = randi() % Type.size()
+	color = Type.keys()[randi() % Type.size()]
 	match [color]:
-		[BLUE]:   $Sprite.modulate = Color(0, 0, 50)
-		[GREEN]:  $Sprite.modulate = Color(0, 50, 0)
-		[RED]:    $Sprite.modulate = Color(50, 0, 0)
+		['BLUE']:   $Sprite.modulate = Color(0, 0, 50)
+		['GREEN']:  $Sprite.modulate = Color(0, 50, 0)
+		['RED']:    $Sprite.modulate = Color(50, 0, 0)
 
 func create(start_position, angle):
 	self.global_position = start_position
@@ -27,8 +27,9 @@ func create(start_position, angle):
 	apply_impulse(Vector2(), direction * rand_range(min_speed, max_speed))
 
 func _on_VisibilityNotifier2D_screen_exited():
-	emit_signal("hit")
+	emit_signal("out")
 	queue_free()
 
-func _on_Ball_hit():
-	pass
+func _on_Ball_out():
+	var hud = get_node("/root/Main/HUD")
+	hud.out_check(self)

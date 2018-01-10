@@ -30,4 +30,4 @@ func _input(event):
 		$Sprite.flip_h = false
 
 func game_over():
-	queue_free()
+	modulate = Color(100, 100, 100)

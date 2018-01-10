@@ -27,11 +27,11 @@ __meta__ = {
 }
 max_hp = 3
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 position = Vector2( 0.0663537, -0.337977 )
 scale = Vector2( 3.19299, 3.14716 )

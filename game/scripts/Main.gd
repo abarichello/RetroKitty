@@ -9,7 +9,6 @@ export (PackedScene) var dispenser
 var screensize
 
 func _ready():
-	randomize()
 	screensize = get_node("/root").get_viewport().get_visible_rect().size
 	$Player/StartPosition.position = screensize / 2
 	$Player.position = $Player/StartPosition.position
