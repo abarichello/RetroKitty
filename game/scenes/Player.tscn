@@ -9,9 +9,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" index="0"]
 
-position = Vector2( 593.112, 330.352 )
+position = Vector2( 580, 330 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -25,20 +25,21 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z" ]
 max_hp = 3
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.0663537, -0.337977 )
 scale = Vector2( 3.19299, 3.14716 )
 shape = SubResource( 1 )
 
-[node name="Bat" parent="." instance=ExtResource( 3 )]
+[node name="Bat" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 0.143738, -1.60526 )
+position = Vector2( -1.51508, -24.8059 )
+rotation = 1.5708
+scale = Vector2( 0.225559, 0.982214 )
 
-[node name="SpawnPosition" type="Position2D" parent="."]
+[node name="SpawnPosition" type="Position2D" parent="." index="3"]
 
 

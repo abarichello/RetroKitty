@@ -23,25 +23,25 @@ func _ready():
 	dispenser1.set_name('Dispenser1')
 	add_child(dispenser1)
 	dispenser1.setup(Vector2(player_x, player_y - player_x / 2), DOWN)
-	dispenser1.get_node("/root/Main/Dispenser1/Sprite").flip_v = false
+	dispenser1.get_node("/root/Game/Main/Dispenser1/Sprite").flip_v = false
 	
 	# Down
 	var dispenser2 = dispenser.instance()
 	dispenser2.set_name('Dispenser2')
 	add_child(dispenser2)
 	dispenser2.setup(Vector2(player_x, player_y + player_x / 2), UP)
-	dispenser2.get_node("/root/Main/Dispenser2/Sprite").flip_v = true
+	dispenser2.get_node("/root/Game/Main/Dispenser2/Sprite").flip_v = true
 	
 	# Left
 	var dispenser3 = dispenser.instance()
 	dispenser3.set_name('Dispenser3')
 	add_child(dispenser3)
 	dispenser3.setup(Vector2(player_x - player_x / 2, player_y), RIGHT)
-	dispenser3.get_node("/root/Main/Dispenser3/Sprite").flip_h = true
+	dispenser3.get_node("/root/Game/Main/Dispenser3/Sprite").flip_h = true
 	
 	# Right
 	var dispenser4 = dispenser.instance()
 	dispenser4.set_name('Dispenser4')
 	add_child(dispenser4)
 	dispenser4.setup(Vector2(player_x + player_x / 2, player_y), LEFT)
-	dispenser4.get_node("/root/Main/Dispenser4/Sprite").flip_h = false
+	dispenser4.get_node("/root/Game/Main/Dispenser4/Sprite").flip_h = false

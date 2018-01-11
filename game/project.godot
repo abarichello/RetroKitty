@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Bat Hit Ball"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
 
 [display]

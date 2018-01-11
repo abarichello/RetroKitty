@@ -1,6 +1,6 @@
 extends Control
 
-onready var player = get_node("/root/Main/Player")
+onready var player = get_node("/root/Game/Main/Player")
 var correct_array = []
 var balls_hit = 0
 

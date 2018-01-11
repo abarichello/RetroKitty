@@ -9,7 +9,7 @@ extents = Vector2( 9.87343, 10.5745 )
 
 [node name="Bat" type="Area2D"]
 
-position = Vector2( 322.253, 173.519 )
+position = Vector2( 320, 190 )
 scale = Vector2( 0.629049, 0.57688 )
 input_pickable = false
 gravity_vec = Vector2( 0, 1 )
@@ -21,37 +21,52 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z", "collision" ]
 
-[node name="Sprite" type="ColorRect" parent="."]
+[node name="Sprite" type="ColorRect" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -31.0
-margin_top = -34.0
-margin_right = 32.0
-margin_bottom = 33.0
+margin_left = -32.0
+margin_top = -35.0
+margin_right = 31.0
+margin_bottom = 32.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.667969, 0.234833, 0.234833, 1 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Offset", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.26239, -1.21097 )
 scale = Vector2( 3.2522, 3.19661 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
 
-[node name="Cooldown" type="Timer" parent="."]
+[node name="Cooldown" type="Timer" parent="." index="2"]
 
 process_mode = 1
 wait_time = 0.3
 one_shot = true
 autostart = false
+
+[node name="Up" type="Position2D" parent="." index="3"]
+
+position = Vector2( 0, -34.6693 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
+
+[node name="Down" type="Position2D" parent="." index="4"]
+
+position = Vector2( 0, 34.6693 )
+
+[node name="Left" type="Position2D" parent="." index="5"]
+
+position = Vector2( -31.794, 0 )
+
+[node name="Right" type="Position2D" parent="." index="6"]
+
+position = Vector2( 31.794, 0 )
 
 [connection signal="body_entered" from="." to="." method="_on_Bat_body_entered"]
 
