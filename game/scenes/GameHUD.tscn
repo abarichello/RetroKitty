@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/GameHUD.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/img/under.png" type="Texture" id=3]
+[ext_resource path="res://resources/img/over.png" type="Texture" id=4]
 
 [node name="GameHUD" type="Control"]
 
@@ -14,13 +16,14 @@ margin_top = 4.0
 margin_right = 39.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 
-[node name="CorrectPanel" type="PanelContainer" parent="." index="0"]
+[node name="CorrectPanel" type="PanelContainer" parent="."]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -29,27 +32,28 @@ anchor_bottom = 0.0
 margin_right = 361.0
 margin_bottom = 103.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_styles" ]
 
-[node name="Ball1" parent="CorrectPanel" index="0" instance=ExtResource( 2 )]
+[node name="Ball1" parent="CorrectPanel" instance=ExtResource( 2 )]
 
 position = Vector2( 41, 66 )
 collision_layer = 0
 
-[node name="Ball2" parent="CorrectPanel" index="1" instance=ExtResource( 2 )]
+[node name="Ball2" parent="CorrectPanel" instance=ExtResource( 2 )]
 
 position = Vector2( 181, 66 )
 collision_layer = 0
 
-[node name="Ball3" parent="CorrectPanel" index="2" instance=ExtResource( 2 )]
+[node name="Ball3" parent="CorrectPanel" instance=ExtResource( 2 )]
 
 position = Vector2( 321, 66 )
 collision_layer = 0
 
-[node name="ProgressBar" type="ProgressBar" parent="CorrectPanel" index="3"]
+[node name="ProgressBar" type="TextureProgress" parent="CorrectPanel"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -58,13 +62,12 @@ anchor_bottom = 0.0
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 354.0
-margin_bottom = 23.0
+margin_bottom = 96.0
 rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 size_flags_horizontal = 1
-size_flags_vertical = 0
-custom_colors/font_color = Color( 0, 0.708013, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+size_flags_vertical = 1
 min_value = 0.0
 max_value = 3.0
 step = 1.0
@@ -72,7 +75,12 @@ page = 0.0
 value = 2.0
 exp_edit = false
 rounded = false
-percent_visible = true
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Percent", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+texture_under = ExtResource( 3 )
+texture_over = null
+texture_progress = ExtResource( 4 )
+radial_fill_degrees = 360.0
+radial_center_offset = Vector2( 0, 0 )
+nine_patch_stretch = true
+_sections_unfolded = [ "Material", "Radial Fill", "Textures", "Visibility" ]
 
 

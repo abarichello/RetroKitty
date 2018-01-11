@@ -14,6 +14,10 @@ config/name="Bat Hit Ball"
 run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [display]
 
 window/size/width=1366
@@ -43,6 +47,10 @@ ui_down=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"
  ]
 ui_fire=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
  ]
+
+[physics]
+
+common/fixed_fps=70
 
 [rendering]
 

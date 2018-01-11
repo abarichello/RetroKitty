@@ -25,21 +25,21 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z" ]
 max_hp = 3
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 scale = Vector2( 3.19299, 3.14716 )
 shape = SubResource( 1 )
 
-[node name="Bat" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Bat" parent="." instance=ExtResource( 3 )]
 
 position = Vector2( -1.51508, -24.8059 )
 rotation = 1.5708
 scale = Vector2( 0.225559, 0.982214 )
 
-[node name="SpawnPosition" type="Position2D" parent="." index="3"]
+[node name="SpawnPosition" type="Position2D" parent="."]
 
 

@@ -14,6 +14,8 @@ func _process(delta):
 		game_over()
 	
 	$CorrectPanel/ProgressBar.value = player.hp
+	$CorrectPanel/ProgressBar.margin_right = 350
+	$CorrectPanel/ProgressBar.margin_bottom = 20
 
 func game_over():
 	print("--GAME ENDED--")
