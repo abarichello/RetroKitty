@@ -42,4 +42,6 @@ scale = Vector2( 0.225559, 0.982214 )
 
 [node name="SpawnPosition" type="Position2D" parent="."]
 
+[connection signal="game_over" from="." to="." method="_on_Player_game_over" flags=6]
+
 

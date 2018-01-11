@@ -9,6 +9,9 @@ func setup(start_position, facing):
 func _input(event):
 	# DEBUG
 	if event.is_action_pressed("ui_page_up") && randi() % 10 == 0:
-		var ball = preload("res://scenes/Ball.tscn").instance()
-		add_child(ball)
-		ball.create(self.global_position, angle)
+		shoot()
+
+func shoot():
+	var ball = preload("res://scenes/Ball.tscn").instance()
+	add_child(ball)
+	ball.create(self.global_position, angle)

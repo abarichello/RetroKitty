@@ -1,5 +1,6 @@
 extends Area2D
 
+signal game_over
 onready var main = self.get_node("/root/Main")
 enum Direction {UP = 90, DOWN = 270, LEFT = 180, RIGHT = 0}
 
@@ -13,12 +14,12 @@ func _ready():
 
 func _process(delta):
 	if hp <= 0:
-		game_over()
+		emit_signal("game_over")
 	
 func _input(event):
 	if event.is_action_pressed("ui_up"):
 		angle = UP
-		$Sprite.flip_v = false
+		$Sprite.flip_v = false 
 	if event.is_action_pressed("ui_down"):
 		angle = DOWN
 		$Sprite.flip_v = true
@@ -29,5 +30,5 @@ func _input(event):
 		angle = RIGHT
 		$Sprite.flip_h = false
 
-func game_over():
-	modulate = Color(100, 100, 100)
+func _on_Player_game_over():
+	main.queue_free()

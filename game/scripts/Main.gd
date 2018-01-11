@@ -45,3 +45,9 @@ func _ready():
 	add_child(dispenser4)
 	dispenser4.setup(Vector2(player_x + player_x / 2, player_y), LEFT)
 	dispenser4.get_node("/root/Game/Main/Dispenser4/Sprite").flip_h = false
+
+func _process(delta):
+	if randi() % 100 == 0:
+		var nodes_before_dispensers = 3
+		var dispenser = get_child(randi() % 4 + nodes_before_dispensers)
+		dispenser.shoot()
