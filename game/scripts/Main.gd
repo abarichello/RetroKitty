@@ -22,30 +22,22 @@ func _ready():
 	# --- Setup dispensers ---
 	var father = get_node("Dispensers")
 	# Up
-	var dispenser1 = dispenser.instance()
-	dispenser1.set_name('Dispenser1')
-	father.add_child(dispenser1)
+	var dispenser1 = father.get_child(0)
 	dispenser1.setup(Vector2(player_x, player_y - player_x / 2), DOWN)
 	dispenser1.get_child(0).flip_v = false
 	
 	# Down
-	var dispenser2 = dispenser.instance()
-	dispenser2.set_name('Dispenser2')
-	father.add_child(dispenser2)
+	var dispenser2 = father.get_child(1)
 	dispenser2.setup(Vector2(player_x, player_y + player_x / 2), UP)
 	dispenser2.get_child(0).flip_v = true
 	
 	# Left
-	var dispenser3 = dispenser.instance()
-	dispenser3.set_name('Dispenser3')
-	father.add_child(dispenser3)
+	var dispenser3 = father.get_child(2)
 	dispenser3.setup(Vector2(player_x - player_x / 2, player_y), RIGHT)
 	dispenser3.get_child(0).flip_h = true
 	
 	# Right
-	var dispenser4 = dispenser.instance()
-	dispenser4.set_name('Dispenser4')
-	father.add_child(dispenser4)
+	var dispenser4 = father.get_child(3)
 	dispenser4.setup(Vector2(player_x + player_x / 2, player_y), LEFT)
 	dispenser4.get_child(0).flip_h = false
 
@@ -74,6 +66,7 @@ func load_level(level_number):
 	return content
 
 func load_dispensers():
-	for arr in level_array:
-		var dispenser_no = arr[1]
-		
+	for array in level_array:
+		var dispenser_no = int(array[1])
+		var disp = get_node("Dispensers").get_child(dispenser_no)
+		disp.instructions.append(array)

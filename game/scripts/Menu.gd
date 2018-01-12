@@ -15,11 +15,14 @@ func _on_StartButton_pressed():
 			arr = []
 		if character != " " && character != "\n":
 			word += character
-		else:
+		else: # todo: prevent appending of newlines
 			arr.append(word)
 			word = ""
 	level_array.append(arr)
+	
+	print(level_array) # DEBUG
 	Game.level_array = level_array
+	Game.load_dispensers()
 	
 	# Add game node as a sister of the Main menu
 	var parent = get_parent()

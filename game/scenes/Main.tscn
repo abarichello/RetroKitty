@@ -39,4 +39,12 @@ margin_right = 51.0
 
 [node name="Dispensers" type="Node" parent="."]
 
+[node name="Dispenser1" parent="Dispensers" instance=ExtResource( 2 )]
+
+[node name="Dispenser2" parent="Dispensers" instance=ExtResource( 2 )]
+
+[node name="Dispenser3" parent="Dispensers" instance=ExtResource( 2 )]
+
+[node name="Dispenser4" parent="Dispensers" instance=ExtResource( 2 )]
+
 

@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+var instructions = []
 var angle
 
 func setup(start_position, facing):
