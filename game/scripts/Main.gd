@@ -6,6 +6,7 @@ const LEFT = 180
 const RIGHT = 0
 
 export (PackedScene) var dispenser
+var gamemode = 0
 var screensize
 
 func _ready():
@@ -16,7 +17,7 @@ func _ready():
 	
 	var player_x = $Player.position.x
 	var player_y = $Player.position.y
-
+	
 	# --- Setup dispensers ---
 	# Up
 	var dispenser1 = dispenser.instance()
@@ -47,7 +48,26 @@ func _ready():
 	dispenser4.get_node("/root/Game/Main/Dispenser4/Sprite").flip_h = false
 
 func _process(delta):
+	match [gamemode]:
+		[0]: random()
+		[1]: level1()
+	
+func random():
 	if randi() % 100 == 0:
 		var nodes_before_dispensers = 3
 		var dispenser = get_child(randi() % 4 + nodes_before_dispensers)
 		dispenser.shoot()
+
+func level1():
+	pass
+
+func load_level(level_number):
+	var level = File.new()
+	level.open("res://levels/level" + str(level_number) + ".lvl", File.READ)
+	var content = ""
+	while not level.eof_reached():
+		var line = level.get_line()
+		if not line.begins_with("#"):
+			content += line + "\n"
+	level.close()
+	return content

@@ -1,11 +1,11 @@
 extends Area2D
 
-onready var player = get_node("/root/Game/Main/Player")
-onready var hud = get_node("/root/Game/Main/GameHUD")
+onready var Player = get_node("/root/Game/Main/Player")
+onready var Hud = get_node("/root/Game/Main/GameHUD")
 var angle
 
 func _process(delta):
-	angle = player.angle
+	angle = Player.angle
 	if $Cooldown.get_time_left() > 0.1 && $Cooldown.get_time_left() < 0.3:
 		$Sprite.color = Color(255, 0, 0)
 	else:
@@ -34,4 +34,4 @@ func _on_Bat_body_entered(body):
 		body.hit = true
 		var direction = body.global_position - Vector2(1, 1)
 		body.linear_velocity = direction * 5
-		hud.hit_check(body)
+		Hud.hit_check(body)
