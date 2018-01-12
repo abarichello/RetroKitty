@@ -31,4 +31,4 @@ func _input(event):
 		$Sprite.flip_h = false
 
 func _on_Player_game_over():
-	main.queue_free()
+	pass

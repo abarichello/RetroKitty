@@ -31,6 +31,7 @@ func _on_Bat_body_entered(body):
 	var able = $Cooldown.get_time_left() > 0.1 && $Cooldown.get_time_left() < 0.3
 	if (body.angle == angle - 180 || body.angle == angle + 180) && able:
 		body.set_collision_layer_bit(0, false)
+		body.hit = true
 		var direction = body.global_position - Vector2(1, 1)
 		body.linear_velocity = direction * 5
 		hud.hit_check(body)

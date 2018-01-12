@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Ball" type="RigidBody2D" index="0"]
+[node name="Ball" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -33,7 +33,7 @@ _sections_unfolded = [ "Angular", "Collision", "Linear", "Material", "Pause", "P
 min_speed = 300
 max_speed = 400
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="."]
 
 scale = Vector2( 0.321693, 0.321693 )
 texture = ExtResource( 2 )
@@ -42,13 +42,13 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 position = Vector2( -0.26059, 0.86174 )
 scale = Vector2( 1.39828, 1.34801 )
 shape = SubResource( 1 )
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
 position = Vector2( 0.556, -0.233994 )
 rect = Rect2( -10, -10, 20, 20 )
