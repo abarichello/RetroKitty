@@ -30,12 +30,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z" ]
 
-[node name="StartPosition" type="Position2D" parent="." index="1"]
+[node name="StartPosition" type="Position2D" parent="."]
 
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
 
