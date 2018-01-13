@@ -5,21 +5,23 @@ enum Type {BLUE, GREEN, RED}
 
 export (int) var min_speed = 200
 export (int) var max_speed = 500
+var speed
 var hit
 var angle
 var color
 
-func _ready():
+func _ready(color, speed):
 	randomize()
 	contact_monitor = true
 	contacts_reported = 1
 	
 	hit = false
-	color = Type.keys()[randi() % Type.size()]
-	match [color]:
-		['BLUE']:   $Sprite.modulate = Color(0, 0, 50)
-		['GREEN']:  $Sprite.modulate = Color(0, 50, 0)
-		['RED']:    $Sprite.modulate = Color(50, 0, 0)
+	self.color = color
+	self.speed = speed
+	match self.color:
+		0: $Sprite.modulate = Color(0, 0, 150) # Blue
+		1: $Sprite.modulate = Color(0, 150, 0) # Green
+		2: $Sprite.modulate = Color(150, 0, 0) # Red
 
 func _process(delta):
 	$Sprite.rotation += max(abs(linear_velocity.x), abs(linear_velocity.y)) * delta / 350
@@ -29,7 +31,7 @@ func create(start_position, angle):
 	self.angle = angle
 	self.set_collision_layer_bit(angle, true)
 	var direction = (get_node("/root/Game/Main/Player").position - global_position).normalized()
-	apply_impulse(Vector2(), direction * rand_range(min_speed, max_speed))
+	apply_impulse(Vector2(), direction * speed)
 
 func _on_VisibilityNotifier2D_screen_exited():
 	if not hit:

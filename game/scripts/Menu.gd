@@ -22,7 +22,7 @@ func _on_StartButton_pressed():
 			word = ""
 	level_array.append(arr)
 	
-	#print(level_array) # DEBUG
+	print(level_array) # DEBUG
 	Game.level_array = level_array
 	Game.load_dispensers()
 	

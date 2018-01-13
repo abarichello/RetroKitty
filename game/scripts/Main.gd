@@ -6,9 +6,9 @@ const LEFT = 180
 const RIGHT = 0
 
 export (PackedScene) var dispenser
+var level_array = []
 var gamemode = 0
 var screensize
-var level_array = []
 
 func _ready():
 	screensize = get_node("/root").get_viewport().get_visible_rect().size
