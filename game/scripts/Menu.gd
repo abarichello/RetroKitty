@@ -2,8 +2,9 @@ extends Control
 
 func _on_StartButton_pressed():
 	var Game = preload("res://scenes/Main.tscn").instance()
-	Game.gamemode = 0
-	var level = Game.load_level(1)
+	var level_number = 1
+	Game.gamemode = level_number
+	var level = Game.load_level(level_number)
 	
 	# Transform file contents in arrays
 	var level_array = []
@@ -13,14 +14,15 @@ func _on_StartButton_pressed():
 		if arr.size() == 4:
 			level_array.append(arr)
 			arr = []
-		if character != " " && character != "\n":
+		if character.is_valid_integer() || character == ".":
 			word += character
-		else: # todo: prevent appending of newlines
-			arr.append(word)
+		elif character == "\n" || character == "" || character == " ":
+			if !word.empty():
+				arr.append(word)
 			word = ""
 	level_array.append(arr)
 	
-	print(level_array) # DEBUG
+	#print(level_array) # DEBUG
 	Game.level_array = level_array
 	Game.load_dispensers()
 	

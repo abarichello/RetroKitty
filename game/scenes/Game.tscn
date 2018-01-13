@@ -4,6 +4,6 @@
 
 [node name="Game" type="Node"]
 
-[node name="Menu" parent="." instance=ExtResource( 1 )]
+[node name="Menu" parent="." index="0" instance=ExtResource( 1 )]
 
 

@@ -22,7 +22,7 @@ func _ready():
 		['RED']:    $Sprite.modulate = Color(50, 0, 0)
 
 func _process(delta):
-	$Sprite.rotation += deg2rad(27) * max(abs(linear_velocity.x), abs(linear_velocity.y)) * delta
+	$Sprite.rotation += max(abs(linear_velocity.x), abs(linear_velocity.y)) * delta / 350
 
 func create(start_position, angle):
 	self.global_position = start_position

@@ -1,7 +1,7 @@
 extends Area2D
 
 signal game_over
-onready var main = self.get_node("/root/Main")
+#onready var main = self.get_node("/root/Main")
 enum Direction {UP = 90, DOWN = 270, LEFT = 180, RIGHT = 0}
 
 export (int) var max_hp = 3

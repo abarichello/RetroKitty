@@ -47,14 +47,20 @@ func _process(delta):
 		[1]: level1()
 
 func random():
+	# Dispensers random mode
 	if randi() % 100 == 0:
 		var dispenser = get_node("Dispensers").get_child(randi() % 4)
 		dispenser.shoot()
 
 func level1():
-	pass
+	var father = get_node("Dispensers")
+	var dispenser_no = father.get_child_count()
+	for i in range(0, dispenser_no):
+		var disp = father.get_child(i)
+		disp.execute_instructions()
 
 func load_level(level_number):
+	# Reads and treats the contents of *.lvl files
 	var level = File.new()
 	level.open("res://levels/level" + "_" + str(level_number) + ".lvl", File.READ)
 	var content = ""
@@ -66,6 +72,7 @@ func load_level(level_number):
 	return content
 
 func load_dispensers():
+	# Loads dispensers with instructions arrays
 	for array in level_array:
 		var dispenser_no = int(array[1])
 		var disp = get_node("Dispensers").get_child(dispenser_no)
