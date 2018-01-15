@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 9.87343, 10.5745 )
 
-[node name="Bat" type="Area2D"]
+[node name="Bat" type="Area2D" index="0"]
 
 position = Vector2( 320, 190 )
 scale = Vector2( 0.629049, 0.57688 )
@@ -33,6 +33,7 @@ margin_right = 31.0
 margin_bottom = 32.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.667969, 0.234833, 0.234833, 1 )
@@ -53,20 +54,20 @@ autostart = false
 
 [node name="Up" type="Position2D" parent="." index="3"]
 
-position = Vector2( 0, -34.6693 )
+position = Vector2( 0, -17.3347 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
 
 [node name="Down" type="Position2D" parent="." index="4"]
 
-position = Vector2( 0, 34.6693 )
+position = Vector2( 0, 17.3346 )
 
 [node name="Left" type="Position2D" parent="." index="5"]
 
-position = Vector2( -31.794, 0 )
+position = Vector2( -15.897, 0 )
 
 [node name="Right" type="Position2D" parent="." index="6"]
 
-position = Vector2( 31.794, 0 )
+position = Vector2( 15.897, 0 )
 
 [connection signal="body_entered" from="." to="." method="_on_Bat_body_entered"]
 

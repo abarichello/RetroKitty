@@ -11,6 +11,7 @@ var angle
 func _ready():
 	angle = UP
 	hp = max_hp
+	$Bat.global_position = $Bat/Up.global_position
 
 func _process(delta):
 	if hp <= 0:

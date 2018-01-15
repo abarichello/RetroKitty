@@ -5,9 +5,10 @@ var correct_array = []
 var balls_hit = 0
 
 func _ready():
-	correct_array.append($CorrectPanel/Ball1)
-	correct_array.append($CorrectPanel/Ball2)
-	correct_array.append($CorrectPanel/Ball3)
+	random_goal()
+	correct_array.append($CorrectPanel/HBox/Ball1)
+	correct_array.append($CorrectPanel/HBox/Ball2)
+	correct_array.append($CorrectPanel/HBox/Ball3)
 
 func _process(delta):
 	if balls_hit == correct_array.size():
@@ -22,7 +23,7 @@ func game_over():
 
 func hit_check(ball):
 	if ball.color == correct_array[balls_hit].color:
-		get_child(0).get_child(balls_hit).modulate = Color(0, 0, 0, 50)
+		get_node('CorrectPanel/HBox').get_child(balls_hit).modulate = Color(0, 0, 0, 50)
 		balls_hit += 1
 		print('NICE')
 	else:
@@ -31,3 +32,11 @@ func hit_check(ball):
 func out_check(ball):
 	if balls_hit < correct_array.size() && ball.color == correct_array[balls_hit].color:
 		player.hp -= 1
+
+func random_goal():
+	var ball = $CorrectPanel/HBox/Ball1
+	for i in range(0, $CorrectPanel/HBox.get_child_count()):
+		randomize()
+		var color = randi() % 2
+		var speed = rand_range(ball.min_speed, ball.max_speed)
+		$CorrectPanel/HBox.get_child(i)._ready(color, speed)
