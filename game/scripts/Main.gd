@@ -7,7 +7,7 @@ const RIGHT = 0
 
 export (PackedScene) var dispenser
 var level_array = []
-var gamemode = 0
+var gamemode = 0 # 0 - Random, Else - Scripted
 var screensize
 
 func _ready():
@@ -44,7 +44,7 @@ func _ready():
 func _process(delta):
 	match [gamemode]:
 		[0]: random()
-		[1]: level1()
+		[_]: level1()
 
 func random():
 	# Dispensers random mode

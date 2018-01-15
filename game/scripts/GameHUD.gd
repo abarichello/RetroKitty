@@ -37,6 +37,6 @@ func random_goal():
 	var ball = $CorrectPanel/HBox/Ball1
 	for i in range(0, $CorrectPanel/HBox.get_child_count()):
 		randomize()
-		var color = randi() % 2
+		var color = randi() % 3
 		var speed = rand_range(ball.min_speed, ball.max_speed)
 		$CorrectPanel/HBox.get_child(i)._ready(color, speed)

@@ -3,8 +3,8 @@ extends RigidBody2D
 signal out
 enum Type {BLUE, GREEN, RED}
 
-export (int) var min_speed = 200
-export (int) var max_speed = 500
+export (int) var min_speed = 300
+export (int) var max_speed = 450
 var speed
 var hit
 var angle
