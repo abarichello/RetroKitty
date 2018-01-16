@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 
-[node name="Menu" type="Control" index="0"]
+[node name="Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -12,11 +12,12 @@ margin_right = 40.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 
-[node name="StartButton" type="Button" parent="." index="0"]
+[node name="Level" type="Button" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -27,7 +28,9 @@ margin_top = 326.0
 margin_right = 854.0
 margin_bottom = 436.0
 rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -38,6 +41,32 @@ text = "Start"
 flat = false
 align = 1
 
-[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[node name="Random" type="Button" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 652.0
+margin_top = 480.0
+margin_right = 801.0
+margin_bottom = 516.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Random"
+flat = false
+align = 1
+
+[connection signal="pressed" from="Level" to="." method="_on_Level_pressed"]
+
+[connection signal="pressed" from="Random" to="." method="_on_Random_pressed"]
 
 

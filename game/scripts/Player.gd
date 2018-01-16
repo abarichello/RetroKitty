@@ -1,7 +1,6 @@
 extends Area2D
 
 signal game_over
-#onready var main = self.get_node("/root/Main")
 enum Direction {UP = 90, DOWN = 270, LEFT = 180, RIGHT = 0}
 
 export (int) var max_hp = 3
@@ -11,7 +10,7 @@ var angle
 func _ready():
 	angle = UP
 	hp = max_hp
-	$Bat.global_position = $Bat/Up.global_position
+	$Bat.position = $Bat/Up.position
 
 func _process(delta):
 	if hp <= 0:

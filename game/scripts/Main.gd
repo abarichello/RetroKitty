@@ -42,17 +42,22 @@ func _ready():
 	dispenser4.get_child(0).flip_h = false
 
 func _process(delta):
-	match [gamemode]:
-		[0]: random()
-		[_]: level1()
+	match gamemode:
+		0: random()
+		_: level()
 
 func random():
 	# Dispensers random mode
 	if randi() % 100 == 0:
 		var dispenser = get_node("Dispensers").get_child(randi() % 4)
-		dispenser.shoot()
+		var ball = preload("res://scenes/Ball.tscn").instance()
+		randomize()
+		var color = randi() % ball.Type.size()
+		var speed = rand_range(ball.min_speed, ball.max_speed)
+		dispenser.shoot(color, speed)
 
-func level1():
+func level():
+	# Check each dispenser instruction for execution
 	var father = get_node("Dispensers")
 	var dispenser_no = father.get_child_count()
 	for i in range(0, dispenser_no):

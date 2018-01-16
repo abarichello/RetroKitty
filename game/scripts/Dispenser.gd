@@ -29,7 +29,7 @@ func shoot(color, speed):
 	var ball = preload("res://scenes/Ball.tscn").instance()
 	ball._ready(color, speed)
 	add_child(ball)
-	ball.create(self.global_position, angle)
+	ball.create(self.global_position, self.angle)
 
 func _on_Timer_timeout():
 	clock += 0.1
