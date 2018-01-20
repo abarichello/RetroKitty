@@ -10,10 +10,9 @@ func setup(start_position, facing):
 	self.global_position = start_position
 	self.angle = facing
 
-func _input(event):
-	# DEBUG
+func _input(event):  # DEBUG
 	if event.is_action_pressed("ui_page_up") && randi() % 10 == 0:
-		shoot()
+		random_ready()
 
 func execute_instructions():
 	if str(clock) == instructions[instruction_no][0] && !empty:

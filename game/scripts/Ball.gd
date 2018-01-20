@@ -11,13 +11,19 @@ var angle
 var color
 
 func _ready(color, speed):
-	randomize()
-	contact_monitor = true
-	contacts_reported = 1
-	
 	hit = false
 	self.color = color
 	self.speed = speed
+	match_color()
+
+func _random_ready():
+	hit = false
+	randomize()
+	self.color = randi() % Type.size()
+	self.speed = rand_range(min_speed, max_speed)
+	match_color()
+	
+func match_color():
 	match self.color:
 		0: $Sprite.modulate = Color(0, 0, 150) # Blue
 		1: $Sprite.modulate = Color(0, 150, 0) # Green
