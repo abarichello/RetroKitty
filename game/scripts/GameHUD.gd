@@ -9,8 +9,9 @@ var goal_number
 
 func _ready(goal_array):
 	self.goal_number = goal_array.size()
-	$CorrectPanel/ProgressBar.margin_right = 350
+	$UpperLeftPanel/VBox/ProgressBar.margin_right = 350
 	
+	print("goal:")
 	print(goal_array)
 	
 	for i in range(0, goal_number):
@@ -18,14 +19,17 @@ func _ready(goal_array):
 		randomize()
 		var color = goal_array[i]
 		ball._ready(color, 0)
-		$CorrectPanel/HBox.add_child(ball)
+		# Containers
+		var center_container = CenterContainer.new()
+		center_container.add_child(ball)
+		$UpperLeftPanel/VBox/HBox/HSplit.add_child(center_container)
 		correct_array.append(ball)
 
 func _process(delta):
 	var _player = get_node("/root/Game/Main/Player")
 	
-	$CorrectPanel/ProgressBar.margin_bottom = 20
-	$CorrectPanel/ProgressBar.value = _player.hp
+	$UpperLeftPanel/VBox/ProgressBar.margin_bottom = 20
+	$UpperLeftPanel/VBox/ProgressBar.value = _player.hp
 	if balls_hit == correct_array.size():
 		game_over()
 
@@ -35,7 +39,7 @@ func game_over():
 
 func hit_check(ball):
 	if ball.color == correct_array[balls_hit].color:
-		get_node('CorrectPanel/HBox').get_child(balls_hit).modulate = Color(0, 0, 0, 50)
+		$UpperLeftPanel/VBox/HBox/HSplit.get_child(balls_hit).modulate = Color(0, 0, 0, 50)
 		balls_hit += 1
 	else:
 		player.hp -= 1
@@ -43,7 +47,3 @@ func hit_check(ball):
 func out_check(ball):
 	if balls_hit < correct_array.size() && ball.color == correct_array[balls_hit].color:
 		player.hp -= 1
-
-func organize():
-	for i in range(0, goal_number):
-		pass

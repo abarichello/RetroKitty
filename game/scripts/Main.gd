@@ -48,7 +48,7 @@ func _process(delta):
 		_: level()
 
 func random():  # Dispensers random mode
-	if randi() % 90 == 0:
+	if randi() % 97 == 0:
 		var dispenser = get_node("Dispensers").get_child(randi() % 4)
 		var ball = preload("res://scenes/Ball.tscn").instance()
 		randomize()
@@ -91,7 +91,7 @@ func extract_goal(line):
 
 func load_random_goal():  # Creates a goal array and sends to HUD
 	goal_array = []
-	for i in range(0, 3):
+	for i in range(0, 5):
 		var ball = preload("res://scenes/Ball.tscn").instance()
 		ball._random_ready()
 		goal_array.append(ball.color)
