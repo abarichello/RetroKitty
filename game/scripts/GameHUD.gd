@@ -9,19 +9,23 @@ var goal_number
 
 func _ready(goal_array):
 	self.goal_number = goal_array.size()
-	$CorrectPanel/ProgressBar.value = player.hp
 	$CorrectPanel/ProgressBar.margin_right = 350
+	
+	print(goal_array)
 	
 	for i in range(0, goal_number):
 		var ball = preload("res://scenes/Ball.tscn").instance()
 		randomize()
-		var color = int(goal_array[i])
+		var color = goal_array[i]
 		ball._ready(color, 0)
 		$CorrectPanel/HBox.add_child(ball)
 		correct_array.append(ball)
 
 func _process(delta):
+	var _player = get_node("/root/Game/Main/Player")
+	
 	$CorrectPanel/ProgressBar.margin_bottom = 20
+	$CorrectPanel/ProgressBar.value = _player.hp
 	if balls_hit == correct_array.size():
 		game_over()
 

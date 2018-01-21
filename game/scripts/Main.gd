@@ -87,10 +87,15 @@ func load_dispensers():  # Loads dispensers with instructions arrays
 func extract_goal(line):
 	for c in line:
 		if c != "$" and c != "\n" and c != " ":
-			goal_array.append(c)
+			goal_array.append(int(c))
 
-func load_random_goal():
-	pass
+func load_random_goal():  # Creates a goal array and sends to HUD
+	goal_array = []
+	for i in range(0, 3):
+		var ball = preload("res://scenes/Ball.tscn").instance()
+		ball._random_ready()
+		goal_array.append(ball.color)
+	$GameHUD._ready(goal_array)
 
-func load_goal():
+func load_goal():  # Sends the extracted goal array to HUD
 	$GameHUD._ready(goal_array)

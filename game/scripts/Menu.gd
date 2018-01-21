@@ -12,7 +12,7 @@ func _on_Random_pressed():
 
 func create_random_game():
 	Game.gamemode = 0
-	Game.randomize_goal()
+	Game.load_random_goal()
 	start_game(Game)
 
 func create_game_from_file(level_number):

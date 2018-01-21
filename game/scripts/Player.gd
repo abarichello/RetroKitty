@@ -36,3 +36,5 @@ func _on_Player_game_over():
 	print("game over")
 	$Bat.alive = false
 	self.alive = false
+	var grey = Color(100, 100, 100)
+	self.modulate = grey

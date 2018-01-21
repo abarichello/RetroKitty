@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/Menu.tscn" type="PackedScene" id=1]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 [node name="Menu" parent="." index="0" instance=ExtResource( 1 )]
 
