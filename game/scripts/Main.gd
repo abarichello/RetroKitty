@@ -25,22 +25,22 @@ func _ready():
 	# Up
 	var dispenser1 = father.get_child(0)
 	dispenser1.setup(Vector2(player_x, player_y - player_x / 2), DOWN)
-	dispenser1.get_child(0).flip_v = false
+	dispenser1.get_child(0).rotation = deg2rad(90)
 	
 	# Down
 	var dispenser2 = father.get_child(1)
 	dispenser2.setup(Vector2(player_x, player_y + player_x / 2), UP)
-	dispenser2.get_child(0).flip_v = true
+	dispenser2.get_child(0).rotation = deg2rad(270)
 	
 	# Left
 	var dispenser3 = father.get_child(2)
 	dispenser3.setup(Vector2(player_x - player_x / 2, player_y), RIGHT)
-	dispenser3.get_child(0).flip_h = true
+	dispenser3.get_child(0).flip_h = false
 	
 	# Right
 	var dispenser4 = father.get_child(3)
 	dispenser4.setup(Vector2(player_x + player_x / 2, player_y), LEFT)
-	dispenser4.get_child(0).flip_h = false
+	dispenser4.get_child(0).flip_h = true
 
 func _process(delta):
 	match gamemode:

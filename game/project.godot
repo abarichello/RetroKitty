@@ -20,8 +20,10 @@ settings/fps/force_fps=60
 
 [display]
 
-window/size/width=1366
-window/size/height=768
+window/size/width=400
+window/size/height=700
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [gdnative]
 
