@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/Dispenser.gd" type="Script" id=1]
 [ext_resource path="res://resources/img/dsp.png" type="Texture" id=2]
 
-[node name="Dispenser" type="RigidBody2D"]
+[node name="Dispenser" type="RigidBody2D" index="0"]
 
 position = Vector2( 166.536, 160.215 )
 input_pickable = false
@@ -46,6 +46,15 @@ wait_time = 0.1
 one_shot = false
 autostart = true
 
+[node name="ColorTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="ColorTimer" to="." method="_on_ColorTimer_timeout"]
 
 

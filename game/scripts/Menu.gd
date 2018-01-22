@@ -1,12 +1,6 @@
 extends Control
 
 var Game = preload("res://scenes/Main.tscn").instance()
-var screensize
-
-func _ready():
-	screensize = get_node("/root").get_viewport().get_visible_rect().size
-	get_child(0).margin_right = screensize.x
-	get_child(0).margin_bottom = screensize.y
 
 func _on_Level_pressed():
 	create_game_from_file(1)

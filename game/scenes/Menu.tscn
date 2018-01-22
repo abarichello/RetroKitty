@@ -2,14 +2,16 @@
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 
-[node name="Menu" type="Control" index="0"]
+[node name="Menu" type="Control"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 404.0
-margin_bottom = 703.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -202.0
+margin_top = -351.5
+margin_right = 202.0
+margin_bottom = 351.5
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -23,12 +25,14 @@ __meta__ = {
 
 [node name="Out" type="HBoxContainer" parent="." index="0"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 404.0
-margin_bottom = 707.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -202.0
+margin_top = -353.5
+margin_right = 202.0
+margin_bottom = 353.5
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -44,8 +48,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = -19.0
 margin_right = 307.0
-margin_bottom = 491.0
+margin_bottom = 707.0
 rect_min_size = Vector2( 307, 69 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0

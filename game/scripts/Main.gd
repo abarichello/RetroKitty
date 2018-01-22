@@ -19,27 +19,28 @@ func _ready():
 	
 	var player_x = $Player.position.x
 	var player_y = $Player.position.y
+	var disp_width = $Dispensers/Dispenser1/Sprite.texture.get_width()
 	
 	# --- Setup dispensers ---
 	var father = get_node("Dispensers")
 	# Up
 	var dispenser1 = father.get_child(0)
-	dispenser1.setup(Vector2(player_x, player_y - player_x / 2), DOWN)
+	dispenser1.setup(Vector2(player_x, player_y - player_x / 1.1), DOWN)
 	dispenser1.get_child(0).rotation = deg2rad(90)
 	
 	# Down
 	var dispenser2 = father.get_child(1)
-	dispenser2.setup(Vector2(player_x, player_y + player_x / 2), UP)
+	dispenser2.setup(Vector2(player_x, player_y + player_x / 1.1), UP)
 	dispenser2.get_child(0).rotation = deg2rad(270)
 	
 	# Left
 	var dispenser3 = father.get_child(2)
-	dispenser3.setup(Vector2(player_x - player_x / 2, player_y), RIGHT)
+	dispenser3.setup(Vector2(disp_width / 2, player_y), RIGHT)
 	dispenser3.get_child(0).flip_h = false
 	
 	# Right
 	var dispenser4 = father.get_child(3)
-	dispenser4.setup(Vector2(player_x + player_x / 2, player_y), LEFT)
+	dispenser4.setup(Vector2(screensize.x - disp_width / 2, player_y), LEFT)
 	dispenser4.get_child(0).flip_h = true
 
 func _process(delta):

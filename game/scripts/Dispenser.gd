@@ -6,13 +6,13 @@ var clock = 0.0
 var empty = false
 var angle
 
-func setup(start_position, facing):
-	self.global_position = start_position
-	self.angle = facing
-
 func _input(event):  # DEBUG
 	if event.is_action_pressed("ui_page_up") && randi() % 10 == 0:
 		random_ready()
+
+func setup(start_position, facing):
+	self.global_position = start_position
+	self.angle = facing
 
 func execute_instructions():
 	if str(clock) == instructions[instruction_no][0] && !empty:
@@ -28,7 +28,12 @@ func shoot(color, speed):
 	var ball = preload("res://scenes/Ball.tscn").instance()
 	ball._ready(color, speed)
 	add_child(ball)
+	$Sprite.self_modulate = ball.match_color()
+	$ColorTimer.start()
 	ball.create(self.global_position, self.angle)
 
 func _on_Timer_timeout():
 	clock += 0.1
+
+func _on_ColorTimer_timeout(): # Return to original color
+	$Sprite.self_modulate = Color(255, 255, 255)

@@ -3,8 +3,8 @@ extends RigidBody2D
 signal out
 enum Type {BLUE, GREEN, RED}
 
-export (int) var min_speed = 300
-export (int) var max_speed = 450
+export (int) var min_speed = 75
+export (int) var max_speed = 200
 var speed
 var hit
 var angle
@@ -24,10 +24,13 @@ func _random_ready():
 	match_color()
 	
 func match_color():
+	var color
 	match self.color:
-		0: $Sprite.modulate = Color(0, 0, 150) # Blue
-		1: $Sprite.modulate = Color(0, 150, 0) # Green
-		2: $Sprite.modulate = Color(150, 0, 0) # Red
+		0: color = Color(0, 0, 150) # Blue
+		1: color = Color(0, 150, 0) # Green
+		2: color = Color(150, 0, 0) # Red
+	$Sprite.modulate = color
+	return color
 
 func _process(delta):
 	$Sprite.rotation += max(abs(linear_velocity.x), abs(linear_velocity.y)) * delta / 350
