@@ -4,7 +4,7 @@
 [ext_resource path="res://resources/img/hud/under.png" type="Texture" id=2]
 [ext_resource path="res://resources/img/hud/progress.png" type="Texture" id=3]
 
-[node name="GameHUD" type="Control" index="0"]
+[node name="GameHUD" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -125,5 +125,12 @@ size_flags_vertical = 1
 custom_constants/separation = 50
 alignment = 0
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_constants", "custom_icons", "custom_styles" ]
+
+[node name="GracePeriod" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
 
 

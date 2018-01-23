@@ -6,4 +6,7 @@
 
 [node name="Menu" parent="." index="0" instance=ExtResource( 1 )]
 
+margin_top = -352.0
+margin_bottom = 351.0
+
 

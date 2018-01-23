@@ -49,20 +49,25 @@ func _process(delta):
 		_: level()
 
 func random():  # Dispensers random mode
-	if randi() % 97 == 0:
-		var dispenser = get_node("Dispensers").get_child(randi() % 4)
-		var ball = preload("res://scenes/Ball.tscn").instance()
+	for i in range(0, $Dispensers.get_child_count()):
+		var dispenser = get_node("Dispensers").get_child(i)
 		randomize()
-		var color = randi() % ball.Type.size()
-		var speed = rand_range(ball.min_speed, ball.max_speed)
-		dispenser.shoot(color, speed)
+		var dispenser_timer = dispenser.get_node("Cooldown")
+		if randi() % 97 == 0 && dispenser_timer.get_time_left() == 0:
+			var ball = preload("res://scenes/Ball.tscn").instance()
+			randomize()
+			var color = randi() % ball.Type.size()
+			var speed = rand_range(ball.min_speed, ball.max_speed)
+			dispenser_timer.start()
+			dispenser.shoot(color, speed)
 
 func level():  # Check each dispenser instruction for execution
 	var father = get_node("Dispensers")
 	var dispenser_no = father.get_child_count()
 	for i in range(0, dispenser_no):
 		var disp = father.get_child(i)
-		disp.execute_instructions()
+		if disp.instructions.size() != 0:
+			disp.execute_instructions()
 
 func extract_level(level_number):
 	# Reads and treats the contents of *.lvl files

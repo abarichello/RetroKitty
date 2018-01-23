@@ -73,6 +73,13 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
+[node name="Cooldown" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 3.5
+one_shot = true
+autostart = false
+
 [connection signal="empty" from="." to="." method="_on_Dispenser_empty" flags=6]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

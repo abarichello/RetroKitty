@@ -17,7 +17,7 @@ func setup(start_position, facing):
 	self.angle = facing
 
 func execute_instructions():
-	if str(clock) == instructions[instruction_no][0] && !empty:
+	if !empty && str(clock) == instructions[instruction_no][0]:
 		var color = int(instructions[instruction_no][2])
 		var speed = int(instructions[instruction_no][3])
 		shoot(color, speed)

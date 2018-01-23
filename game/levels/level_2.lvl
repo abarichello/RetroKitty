@@ -1,0 +1,31 @@
+# Seconds | Dispenser Number | Color Number | Speed
+# Colors: | BLUE = 0 | GREEN = 1 | RED = 2
+# Number: | UP = 0   | DOWN = 1  | LEFT = 2 | RIGHT = 3
+# GOAL: Start line with $
+$ 2 2 2
+
+# LEVEL 2
+
+# First dispenser
+1  0 2 300
+5  0 2 300
+9  0 2 300
+13 0 2 300
+
+# Second dispenser
+3  1 1 300
+7  1 1 300
+11 1 1 300
+15 1 1 300
+
+# Third dispenser
+4  2 0 300
+8  2 0 300
+12 2 0 300
+16 2 0 300
+
+# Fourth dispenser
+2  3 1 200
+6  3 1 200
+10 3 1 200
+14 3 1 200

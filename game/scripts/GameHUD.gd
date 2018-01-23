@@ -30,7 +30,6 @@ func _ready(goal_array):
 
 func _process(delta):
 	var _player = get_node("/root/Game/Main/Player")
-	
 	$UpperLeftPanel/VBox/ProgressBar.value = _player.hp
 	if balls_hit == correct_array.size():
 		game_over()
@@ -40,11 +39,13 @@ func game_over():
 	print("--GAME ENDED--")
 
 func hit_check(ball):
-	if ball.color == correct_array[balls_hit].color:
+	if balls_hit < correct_array.size() && ball.color == correct_array[balls_hit].color:
 		$UpperLeftPanel/VBox/HBox/HSplit.get_child(balls_hit).modulate = Color(0, 0, 0, 50)
 		balls_hit += 1
+		$GracePeriod.start()
 	else:
-		player.hp -= 1
+		if $GracePeriod.time_left == 0:
+			player.hp -= 1
 
 func out_check(ball):
 	if balls_hit < correct_array.size() && ball.color == correct_array[balls_hit].color:
