@@ -10,6 +10,7 @@ radius = 10.0
 
 [node name="Ball" type="RigidBody2D"]
 
+show_behind_parent = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 0
@@ -35,7 +36,7 @@ max_speed = 400
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 0.321693, 0.321693 )
+scale = Vector2( 0.264515, 0.264515 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z" ]
 __meta__ = {
@@ -44,13 +45,14 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.26059, 0.86174 )
-scale = Vector2( 1.39828, 1.34801 )
+position = Vector2( -0.0647211, -0.100649 )
+scale = Vector2( 1.12201, 1.12201 )
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
 
-position = Vector2( 0.556, -0.233994 )
+position = Vector2( -0.0647203, 0.156374 )
+scale = Vector2( 0.79035, 0.867457 )
 rect = Rect2( -10, -10, 20, 20 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
 __meta__ = {

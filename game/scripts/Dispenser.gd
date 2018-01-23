@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal empty
+
 var instructions = []
 var instruction_no = 0
 var clock = 0.0
@@ -20,6 +22,7 @@ func execute_instructions():
 		var speed = int(instructions[instruction_no][3])
 		shoot(color, speed)
 		if instruction_no == instructions.size()-1:
+			emit_signal("empty")
 			empty = true
 		else:
 			instruction_no += 1
@@ -30,10 +33,17 @@ func shoot(color, speed):
 	add_child(ball)
 	$Sprite.self_modulate = ball.match_color()
 	$ColorTimer.start()
+	$Sprite.frame = 0
+	$Sprite.frames.set_animation_speed("default", speed / 2)
+	$Sprite.play("default")
 	ball.create(self.global_position, self.angle)
 
 func _on_Timer_timeout():
 	clock += 0.1
 
-func _on_ColorTimer_timeout(): # Return to original color
-	$Sprite.self_modulate = Color(255, 255, 255)
+func _on_ColorTimer_timeout():  # Return to original color
+	$Sprite.self_modulate = Color(1, 1, 1)
+
+func _on_Dispenser_empty(): # Slide locked back
+	$Sprite.stop()
+	$Sprite.frame = 10

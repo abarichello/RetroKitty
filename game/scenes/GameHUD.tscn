@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/GameHUD.gd" type="Script" id=1]
-[ext_resource path="res://resources/img/under.png" type="Texture" id=2]
-[ext_resource path="res://resources/img/over.png" type="Texture" id=3]
+[ext_resource path="res://resources/img/hud/under.png" type="Texture" id=2]
+[ext_resource path="res://resources/img/hud/progress.png" type="Texture" id=3]
 
-[node name="GameHUD" type="Control"]
+[node name="GameHUD" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

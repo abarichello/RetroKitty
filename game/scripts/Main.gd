@@ -19,7 +19,7 @@ func _ready():
 	
 	var player_x = $Player.position.x
 	var player_y = $Player.position.y
-	var disp_width = $Dispensers/Dispenser1/Sprite.texture.get_width()
+	var disp_width = $Dispensers/Dispenser1/Sprite.frames.get_frame("default", 0).get_width()
 	
 	# --- Setup dispensers ---
 	var father = get_node("Dispensers")
