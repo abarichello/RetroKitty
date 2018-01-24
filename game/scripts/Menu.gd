@@ -52,6 +52,10 @@ func _on_Level1_pressed():
 	create_game_from_file(1)
 	popup.hide()
 
+func _on_Level2_pressed():
+	create_game_from_file(2)
+	popup.hide()
+
 func _on_Random_pressed():
 	create_random_game()
 	Game.load_random_goal()

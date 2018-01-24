@@ -21,7 +21,7 @@ func _input(event):
 	if alive:
 		if event.is_action_pressed("ui_up"):
 			angle = UP
-			$Sprite.flip_v = false 
+			$Sprite.flip_v = false
 		if event.is_action_pressed("ui_down"):
 			angle = DOWN
 			$Sprite.flip_v = true
@@ -36,5 +36,3 @@ func _on_Player_game_over():
 	print("game over")
 	$Bat.alive = false
 	self.alive = false
-	var grey = Color(100, 100, 100)
-	self.modulate = grey

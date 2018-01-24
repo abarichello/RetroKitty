@@ -12,7 +12,6 @@ dispenser = ExtResource( 2 )
 
 [node name="BackgroundRect" type="ColorRect" parent="." index="0"]
 
-self_modulate = Color( 0.187317, 0.204941, 0.257813, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -26,7 +25,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
+color = Color( 0.731406, 1, 0.49948, 1 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]

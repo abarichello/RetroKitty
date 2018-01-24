@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://resources/img/p1.png" type="Texture" id=2]
+[ext_resource path="res://resources/img/player/0.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Bat.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -36,9 +36,10 @@ shape = SubResource( 1 )
 
 [node name="Bat" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( -1.51508, -24.8059 )
-rotation = 1.5708
-scale = Vector2( 0.225559, 0.982214 )
+show_behind_parent = true
+position = Vector2( -0.24707, -25.4457 )
+scale = Vector2( 1.36397, 0.541466 )
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z", "Z Index", "collision" ]
 
 [node name="SpawnPosition" type="Position2D" parent="." index="3"]
 
