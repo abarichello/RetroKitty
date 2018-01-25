@@ -1,14 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Bat.gd" type="Script" id=1]
-[ext_resource path="res://resources/img/player/bat.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.87343, 2.35155 )
 
-[node name="Bat" type="Area2D" index="0"]
+[node name="Bat" type="Area2D"]
 
 scale = Vector2( 0.629049, 0.57688 )
 input_pickable = false
@@ -25,7 +24,6 @@ _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform"
 
 position = Vector2( -0.0167966, 0.00345635 )
 scale = Vector2( 2.30711, 2.08374 )
-texture = ExtResource( 2 )
 _sections_unfolded = [ "Anchor", "Animation", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Offset", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]

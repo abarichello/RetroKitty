@@ -6,7 +6,8 @@ var angle
 var alive = true
 
 func _process(delta):
-	angle = Player.angle
+	if Player:
+		angle = Player.angle
 	if $Cooldown.get_time_left() > 0.1 && $Cooldown.get_time_left() < 0.3:
 		$Sprite.self_modulate = Color(255, 0, 0)
 	else:

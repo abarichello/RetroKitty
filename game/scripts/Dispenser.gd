@@ -3,7 +3,6 @@ extends RigidBody2D
 signal empty
 
 var instructions = []
-var instruction_no = 0
 var clock = 0.0
 var empty = false
 var angle
@@ -12,20 +11,21 @@ func _input(event):  # DEBUG
 	if event.is_action_pressed("ui_page_up") && randi() % 10 == 0:
 		random_ready()
 
+func _process(delta):
+	if instructions.size() == 0:
+		emit_signal("empty")
+		empty = true
+
 func setup(start_position, facing):
 	self.global_position = start_position
 	self.angle = facing
 
 func execute_instructions():
-	if !empty && str(clock) == instructions[instruction_no][0]:
-		var color = int(instructions[instruction_no][2])
-		var speed = int(instructions[instruction_no][3])
+	if !empty && str(clock) == instructions[0][0]:
+		var color = int(instructions[0][2])
+		var speed = int(instructions[0][3])
 		shoot(color, speed)
-		if instruction_no == instructions.size()-1:
-			emit_signal("empty")
-			empty = true
-		else:
-			instruction_no += 1
+		instructions.pop_front()
 
 func shoot(color, speed):
 	var ball = preload("res://scenes/Ball.tscn").instance()
