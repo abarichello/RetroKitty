@@ -3,8 +3,8 @@ extends RigidBody2D
 signal out
 enum Type {RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, PINK, WHITE, BLACK}
 
-export (int) var min_speed = 90
-export (int) var max_speed = 90
+export (int) var min_speed = 1
+export (int) var max_speed = 5
 var speed
 var hit
 var angle
@@ -48,8 +48,8 @@ func create(start_position, angle):
 	self.angle = angle
 	self.set_collision_layer_bit(angle, true)
 	var player = get_node("/root/Game/Main/Player")
-	var direction = (player.position - global_position).normalized()
-	apply_impulse(Vector2(), direction * speed)
+	var direction = (player.global_position - global_position)
+	apply_impulse(Vector2(), direction / self.speed)
 
 func _on_VisibilityNotifier2D_screen_exited():
 	if not hit:

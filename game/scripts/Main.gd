@@ -55,6 +55,7 @@ func random():  # Dispensers random mode
 		var dispenser_timer = dispenser.get_node("Cooldown")
 		if randi() % 97 == 0 && dispenser_timer.get_time_left() == 0:
 			var ball = preload("res://scenes/Ball.tscn").instance()
+
 			randomize()
 			var color = randi() % ball.Type.size()
 			var speed = rand_range(ball.min_speed, ball.max_speed)
