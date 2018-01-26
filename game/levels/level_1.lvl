@@ -1,14 +1,17 @@
 # Seconds | Dispenser Number | Color Number | Speed
 
-# Colors: | BLUE = 0 | GREEN = 1 | RED = 2
+# Colors: RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, PINK, WHITE = 8, BLACK = 9
 # Number: | UP = 0   | DOWN = 1  | LEFT = 2 | RIGHT = 3
 
 # GOAL: Start line with $
-$ 2 2 2
+$ 8 8 8
 
 # LEVEL 1
 
 # First dispenser
-1   0 2 200
-3   0 2 200
-4.5 0 2 200
+1  0 8 200
+3  0 8 200
+5  0 8 200
+7  0 8 200
+9  0 8 200
+11 0 8 200

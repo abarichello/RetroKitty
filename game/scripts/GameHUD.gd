@@ -36,14 +36,19 @@ func _process(delta):
 
 func game_over():
 	emit_signal("game_over")
-	print("--GAME ENDED--")
+	print("--GAME ENDED--") # TODO: Freeze HP
 
 func hit_check(ball):
-	if balls_hit < correct_array.size() && ball.color == correct_array[balls_hit].color:
+	# 8 = WHITE, 9 = BLACK
+	print(ball.color)
+	if ball.color == 9:
+		if $GracePeriod.time_left == 0:
+			player.hp -= 1
+	elif balls_hit < correct_array.size() && (ball.color == correct_array[balls_hit].color || ball.color == 8):
 		$UpperLeftPanel/VBox/HBox/HSplit.get_child(balls_hit).modulate = Color(0, 0, 0, 50)
 		balls_hit += 1
 		$GracePeriod.start()
-	else:
+	elif balls_hit < correct_array.size() && ball.color != correct_array[balls_hit].color:
 		if $GracePeriod.time_left == 0:
 			player.hp -= 1
 

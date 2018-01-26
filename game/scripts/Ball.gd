@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 signal out
-enum Type {BLUE, GREEN, RED}
+enum Type {RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, PINK, WHITE, BLACK}
 
 export (int) var min_speed = 90
 export (int) var max_speed = 90
@@ -19,16 +19,24 @@ func _ready(color, speed):
 func _random_ready():
 	hit = false
 	randomize()
-	self.color = randi() % Type.size()
+	self.color = randi() % (Type.size() - 2) # Don't generate white and black
 	self.speed = rand_range(min_speed, max_speed)
 	match_color()
-	
+
 func match_color():
 	var color
 	match self.color:
-		0: color = Color(0, 0, 150) # Blue
-		1: color = Color(0, 150, 0) # Green
-		2: color = Color(150, 0, 0) # Red
+		0: color = Color(150,   0, 0)   # RED
+		1: color = Color(204, 102, 0)   # ORANGE
+		2: color = Color(204, 204, 0)   # YELLOW
+		3: color = Color(  0, 150, 0)   # GREEN
+		4: color = Color(153, 153, 0)   # CYAN
+		5: color = Color(  0,   0, 150) # BLUE
+		6: color = Color(102,   0, 102) # PURPLE
+		7: color = Color(255,  51, 153) # PINK
+		8: color = Color(150, 150, 150) # WHITE
+		9: color = Color(  0,   0,   0) # BLACK
+		_: color = Color( 30,  30, 100) # MUD
 	$Sprite.modulate = color
 	return color
 
