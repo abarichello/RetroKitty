@@ -4,7 +4,7 @@
 [ext_resource path="res://resources/img/player/bat0000.png" type="Texture" id=2]
 [ext_resource path="res://resources/img/player/bat0001.png" type="Texture" id=3]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
@@ -14,10 +14,10 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9.87343, 2.49739 )
+extents = Vector2( 10, 10 )
 
 [node name="Bat" type="Area2D"]
 
@@ -30,45 +30,77 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z", "collision" ]
+_sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z", "Z Index", "collision" ]
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "Idle"
 playing = true
 _sections_unfolded = [ "Anchor", "Animation", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Offset", "Pause", "Rect", "Size Flags", "Theme", "Transform", "Visibility" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="Hitzone" type="Area2D" parent="Sprite" index="0"]
 
-position = Vector2( 9.53674e-07, 0.866725 )
-scale = Vector2( 0.740922, 10.8787 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
+position = Vector2( 0.351399, -4.9386 )
+scale = Vector2( 0.628502, 0.707519 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform" ]
 
-[node name="Cooldown" type="Timer" parent="." index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Hitzone" index="0"]
+
+position = Vector2( 1.29293, 0.406528 )
+scale = Vector2( 2.44496, 3.11287 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+[node name="DebugRect" type="ColorRect" parent="Sprite" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -19.0
+margin_top = -27.0
+margin_right = 21.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.794605, 0.300738, 0.300738, 1 )
+
+[node name="Cooldown" type="Timer" parent="." index="1"]
 
 process_mode = 1
 wait_time = 0.3
 one_shot = true
 autostart = false
 
-[node name="Up" type="Position2D" parent="." index="3"]
+[node name="Up" type="Position2D" parent="." index="2"]
 
 position = Vector2( 0, -10 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
 
-[node name="Down" type="Position2D" parent="." index="4"]
+[node name="Down" type="Position2D" parent="." index="3"]
 
 position = Vector2( 0, 10 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
-[node name="Left" type="Position2D" parent="." index="5"]
+[node name="Left" type="Position2D" parent="." index="4"]
 
 position = Vector2( -10, 0 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
-[node name="Right" type="Position2D" parent="." index="6"]
+[node name="Right" type="Position2D" parent="." index="5"]
 
 position = Vector2( 10, 0 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]

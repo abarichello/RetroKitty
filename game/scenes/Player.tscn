@@ -61,8 +61,6 @@ scale = Vector2( 0.949085, 1 )
 scale = Vector2( 0.1, 0.1 )
 _sections_unfolded = [ "Transform" ]
 
-[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
-
 [connection signal="game_over" from="." to="." method="_on_Player_game_over" flags=6]
 
 
