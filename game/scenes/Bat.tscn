@@ -1,11 +1,23 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Bat.gd" type="Script" id=1]
+[ext_resource path="res://resources/img/player/bat0000.png" type="Texture" id=2]
+[ext_resource path="res://resources/img/player/bat0001.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 1.5
+} ]
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9.87343, 2.35155 )
+extents = Vector2( 9.87343, 2.49739 )
 
 [node name="Bat" type="Area2D"]
 
@@ -20,16 +32,17 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z", "collision" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( -0.0167966, 0.00345635 )
-scale = Vector2( 2.30711, 2.08374 )
-_sections_unfolded = [ "Anchor", "Animation", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Offset", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
+frames = SubResource( 2 )
+animation = "Idle"
+playing = true
+_sections_unfolded = [ "Anchor", "Animation", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Offset", "Pause", "Rect", "Size Flags", "Theme", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.116599, 17.6255 )
-scale = Vector2( 1.60809, 1.63776 )
+position = Vector2( 9.53674e-07, 0.866725 )
+scale = Vector2( 0.740922, 10.8787 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
 
@@ -42,21 +55,22 @@ autostart = false
 
 [node name="Up" type="Position2D" parent="." index="3"]
 
-position = Vector2( 0, -17.3347 )
+position = Vector2( 0, -10 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
 
 [node name="Down" type="Position2D" parent="." index="4"]
 
-position = Vector2( 0, 17.3346 )
+position = Vector2( 0, 10 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="Left" type="Position2D" parent="." index="5"]
 
-position = Vector2( -15.897, 0 )
+position = Vector2( -10, 0 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="Right" type="Position2D" parent="." index="6"]
 
-position = Vector2( 15.897, 0 )
-
-[connection signal="body_entered" from="." to="." method="_on_Bat_body_entered"]
+position = Vector2( 10, 0 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 

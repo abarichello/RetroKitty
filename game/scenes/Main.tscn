@@ -18,19 +18,20 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -73.0
 margin_top = -43.0
-margin_right = 1377.0
-margin_bottom = 819.0
+margin_right = 427.0
+margin_bottom = 727.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.731406, 1, 0.49948, 1 )
+color = Color( 0.813437, 1, 0.652344, 1 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 199.415, 376.759 )
+scale = Vector2( 2, 2 )
 
 [node name="GameHUD" parent="." index="2" instance=ExtResource( 4 )]
 

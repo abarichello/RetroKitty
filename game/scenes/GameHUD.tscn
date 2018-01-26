@@ -20,7 +20,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="UpperLeftPanel" type="PanelContainer" parent="." index="0"]
 
-self_modulate = Color( 0.347656, 0.984711, 1, 1 )
+self_modulate = Color( 0.21875, 1, 0, 1 )
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5

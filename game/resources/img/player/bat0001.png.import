@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/social-telegram.png-0c3fc8c64fa8ecc7d676007bafea88fd.stex"
+path="res://.import/bat0001.png-bedfbd51a6917aa5754a11c1d1263511.stex"
 
 [deps]
 
-source_file="res://resources/img/buttons/social/social-telegram.png"
-source_md5="cb05ea543ff93c402398a3f0ed115a29"
+source_file="res://resources/img/player/bat0001.png"
+source_md5="1bcc4cf5ec9e2fa812915e2abb05427e"
 
-dest_files=[ "res://.import/social-telegram.png-0c3fc8c64fa8ecc7d676007bafea88fd.stex" ]
-dest_md5="f3e8c25bc435ab3576c848aee537be92"
+dest_files=[ "res://.import/bat0001.png-bedfbd51a6917aa5754a11c1d1263511.stex" ]
+dest_md5="3b4df248db7a930c0452c21b9e46479e"
 
 [params]
 
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/social-telegram.png-0c3fc8c64fa8ecc7d676007bafea88fd.stex"
+path="res://.import/social-twitter.png-019542a77a4a87f5146d3f3f7a36ccc6.stex"
 
 [deps]
 
-source_file="res://resources/img/buttons/social/social-telegram.png"
-source_md5="cb05ea543ff93c402398a3f0ed115a29"
+source_file="res://resources/img/buttons/social/social-twitter.png"
+source_md5="fd90042636b91e4fbe057d1d03d1dfb8"
 
-dest_files=[ "res://.import/social-telegram.png-0c3fc8c64fa8ecc7d676007bafea88fd.stex" ]
-dest_md5="f3e8c25bc435ab3576c848aee537be92"
+dest_files=[ "res://.import/social-twitter.png-019542a77a4a87f5146d3f3f7a36ccc6.stex" ]
+dest_md5="783f7baa5b61636df2854bcb028d7252"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

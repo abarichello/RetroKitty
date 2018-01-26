@@ -23,45 +23,45 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 0
-collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z" ]
 max_hp = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+[node name="CollisionBox" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0.143127, 1.35498 )
-scale = Vector2( 2.08754, 2.23925 )
+position = Vector2( 2.25829, -0.857639 )
+scale = Vector2( 3.34427, 3.22604 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="1"]
 
-scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 7
+frame = 1
 playing = true
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 
 [node name="Bat" parent="." index="2" instance=ExtResource( 7 )]
 
-show_behind_parent = true
-position = Vector2( -0.24707, -25.4457 )
-scale = Vector2( 1.36397, 0.541466 )
-_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z", "Z Index", "collision" ]
+position = Vector2( 1.62927, 0 )
+scale = Vector2( 0.949085, 1 )
 
 [node name="SpawnPosition" type="Position2D" parent="." index="3"]
+
+scale = Vector2( 0.1, 0.1 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 
 [connection signal="game_over" from="." to="." method="_on_Player_game_over" flags=6]
 
