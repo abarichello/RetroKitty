@@ -3,8 +3,8 @@ extends RigidBody2D
 signal out
 enum Type {RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, PINK, WHITE, BLACK}
 
-export (int) var min_speed = 1
-export (int) var max_speed = 5
+export (float) var min_speed
+export (float) var max_speed
 var speed
 var hit
 var angle
@@ -19,7 +19,7 @@ func _ready(color, speed):
 func _random_ready():
 	hit = false
 	randomize()
-	self.color = randi() % (Type.size() - 2) # Don't generate white and black
+	self.color = randi() % Type.size()
 	self.speed = rand_range(min_speed, max_speed)
 	match_color()
 
@@ -33,7 +33,7 @@ func match_color():
 		4: color = Color(153, 153, 0)   # CYAN
 		5: color = Color(  0,   0, 150) # BLUE
 		6: color = Color(102,   0, 102) # PURPLE
-		7: color = Color(255,  51, 153) # PINK
+		7: color = Color(255,   0, 255) # PINK
 		8: color = Color(150, 150, 150) # WHITE
 		9: color = Color(  0,   0,   0) # BLACK
 		_: color = Color( 30,  30, 100) # MUD

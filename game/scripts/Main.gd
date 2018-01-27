@@ -51,11 +51,11 @@ func _process(delta):
 func random():  # Dispensers random mode
 	for i in range(0, $Dispensers.get_child_count()):
 		var dispenser = get_node("Dispensers").get_child(i)
-		randomize()
 		var dispenser_timer = dispenser.get_node("Cooldown")
+		randomize()
 		if randi() % 97 == 0 && dispenser_timer.get_time_left() == 0:
 			var ball = preload("res://scenes/Ball.tscn").instance()
-
+			
 			randomize()
 			var color = randi() % ball.Type.size()
 			var speed = rand_range(ball.min_speed, ball.max_speed)

@@ -34,7 +34,7 @@ func shoot(color, speed):
 	$Sprite.self_modulate = ball.match_color()
 	$ColorTimer.start()
 	$Sprite.frame = 0
-	$Sprite.frames.set_animation_speed("default", speed)
+	$Sprite.frames.set_animation_speed("default", 20 * speed)
 	$Sprite.play("default")
 	
 	add_child(ball)

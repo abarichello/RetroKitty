@@ -47,7 +47,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 7
+frame = 4
 playing = true
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 
@@ -62,5 +62,7 @@ scale = Vector2( 0.1, 0.1 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="game_over" from="." to="." method="_on_Player_game_over" flags=6]
+
+[connection signal="round_ended" from="." to="." method="_on_Player_round_ended" flags=6]
 
 

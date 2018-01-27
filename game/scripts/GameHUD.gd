@@ -1,6 +1,7 @@
 extends Control
 
 signal game_over
+signal round_ended
 
 onready var player = get_node("/root/Game/Main/Player")
 var correct_array = []
@@ -32,20 +33,16 @@ func _process(delta):
 	var _player = get_node("/root/Game/Main/Player")
 	$UpperLeftPanel/VBox/ProgressBar.value = _player.hp
 	if balls_hit == correct_array.size():
-		game_over()
-
-func game_over():
-	emit_signal("game_over")
-	print("--GAME ENDED--") # TODO: Freeze HP
+		emit_signal("round_ended")
 
 func hit_check(ball):
 	# 8 = WHITE, 9 = BLACK
-	if ball.color == 9:
-		if $GracePeriod.time_left == 0:
-			player.hp -= 1
-	elif ball.color == correct_array[balls_hit].color:
+	print(ball.color)
+	if ball.color == correct_array[balls_hit].color:
 		$UpperLeftPanel/VBox/HBox/HSplit.get_child(balls_hit).modulate = Color(0, 0, 0, 50)
 		balls_hit += 1
+		print("balls hit")
+		print(balls_hit)
 		$GracePeriod.start()
 	elif ball.color != correct_array[balls_hit].color && ball.color != 8:
 		if $GracePeriod.time_left == 0:
@@ -55,3 +52,12 @@ func out_check(ball):
 	var valid = balls_hit < correct_array.size()
 	if valid && (ball.color == correct_array[balls_hit].color || ball.color == 8):
 		player.hp -= 1
+
+func _on_GameHUD_game_over():  # Restart level when all dispensers empty and no goal met
+	var _player = get_node("/root/Game/Main/Player")
+	_player.game_over()
+
+func _on_GameHUD_round_ended():  # Next level
+	print("--ROUND OVER--")
+	var _player = get_node("/root/Game/Main/Player")
+	_player.round_ended()
