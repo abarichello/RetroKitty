@@ -5,10 +5,12 @@ onready var popup = get_node("Out/AboutMenu")
 
 func create_random_game():
 	Game.gamemode = 0
+	Game.set_dispensers_gamemode(0)
 	start_game(Game)
 
 func create_game_from_file(level_number):
-	Game.gamemode = level_number
+	Game.gamemode = 1
+	Game.set_dispensers_gamemode(1)
 	var level = Game.extract_level(level_number)
 	Game.level_array = interpret_file(level)
 	Game.load_dispensers()
@@ -60,6 +62,10 @@ func _on_Level2_pressed():
 
 func _on_Level3_pressed():
 	create_game_from_file(3)
+	button_pressed()
+
+func _on_Level4_pressed():
+	create_game_from_file("DEBUG")
 	button_pressed()
 
 func _on_Random_pressed():

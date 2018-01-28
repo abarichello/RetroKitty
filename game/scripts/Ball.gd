@@ -26,17 +26,17 @@ func _random_ready():
 func match_color():
 	var color
 	match self.color:
-		0: color = Color(150,   0, 0)   # RED
-		1: color = Color(204, 102, 0)   # ORANGE
-		2: color = Color(204, 204, 0)   # YELLOW
-		3: color = Color(  0, 150, 0)   # GREEN
-		4: color = Color(153, 153, 0)   # CYAN
-		5: color = Color(  0,   0, 150) # BLUE
-		6: color = Color(102,   0, 102) # PURPLE
-		7: color = Color(255,   0, 255) # PINK
-		8: color = Color(150, 150, 150) # WHITE
-		9: color = Color(  0,   0,   0) # BLACK
-		_: color = Color( 30,  30, 100) # MUD
+		0: color = Color(   1,   0,   0) # RED
+		1: color = Color(   1, 0.6,   0) # ORANGE
+		2: color = Color( .97,   1,  .2) # YELLOW
+		3: color = Color(  .2,   1,   0) # GREEN
+		4: color = Color(   0, .93,   1) # CYAN
+		5: color = Color(   0,   0,   1) # BLUE
+		6: color = Color( .25,   0, .55) # PURPLE
+		7: color = Color(   1,   0, .91) # PINK
+		8: color = Color(   1,   1,   1) # WHITE
+		9: color = Color( .08, .08, .08) # BLACK
+		_: color = Color( .57, 102, .63) # MUD
 	$Sprite.modulate = color
 	return color
 

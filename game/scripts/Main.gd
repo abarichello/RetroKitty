@@ -44,9 +44,20 @@ func _ready():
 	dispenser4.get_child(0).flip_h = true
 
 func _process(delta):
+	var empty_dispensers = 0
+	for i in range(0, $Dispensers.get_child_count()):
+		if $Dispensers.get_child(i).empty:
+			empty_dispensers += 1
+	if empty_dispensers == 4:
+		print("rip")
+	
 	match gamemode:
 		0: random()
 		_: level()
+
+func set_dispensers_gamemode(gamemode):
+	for i in range(0, $Dispensers.get_child_count()):
+		$Dispensers.get_child(i).gamemode = gamemode
 
 func random():  # Dispensers random mode
 	for i in range(0, $Dispensers.get_child_count()):

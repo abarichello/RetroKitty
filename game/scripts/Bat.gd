@@ -47,6 +47,8 @@ func hit_bodies_in_hitzone():
 	for body in bodies:
 		var able = $Cooldown.get_time_left() == 0
 		if (body.angle == angle - 180 || body.angle == angle + 180) && able: # Bat and ball facing eachother
+			print("ball hit:")  # DEBUG
+			print(body.color)
 			body.set_collision_layer_bit(0, false)
 			body.hit = true
 			var direction = body.global_position - Vector2(1, 1)

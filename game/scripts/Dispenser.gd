@@ -3,6 +3,7 @@ extends RigidBody2D
 signal empty
 
 var instructions = []
+var gamemode = 0
 var clock = 0.0
 var empty = false
 var angle
@@ -12,7 +13,7 @@ func _input(event):  # DEBUG
 		random_ready()
 
 func _process(delta):
-	if instructions.size() == 0:
+	if instructions.size() == 0 && gamemode != 0:
 		emit_signal("empty")
 		empty = true
 

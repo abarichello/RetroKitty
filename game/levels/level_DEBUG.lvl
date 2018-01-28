@@ -1,0 +1,20 @@
+# Seconds | Dispenser Number | Color Number | Speed(seconds to reach center)
+
+# Colors: RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, PINK, WHITE = 8, BLACK = 9
+# Number: | UP = 0   | DOWN = 1  | LEFT = 2 | RIGHT = 3
+
+# GOAL: Start line with $
+$ 0 1 2 3 4 5 6 7 8 9
+
+# LEVEL DEBUG
+
+1    0 0 5
+1.5  0 1 5
+2    0 2 5
+2.5  0 3 5
+3    0 4 5
+3.5  0 5 5
+4    0 6 5
+4.5  0 7 5
+5    0 8 5
+5.5  0 9 5

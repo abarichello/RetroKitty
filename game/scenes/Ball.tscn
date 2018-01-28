@@ -45,6 +45,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+visible = false
 position = Vector2( -0.0647211, -0.100649 )
 scale = Vector2( 1.12201, 1.12201 )
 shape = SubResource( 1 )
@@ -52,6 +53,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
 
+visible = false
 position = Vector2( -0.0647203, 0.156374 )
 scale = Vector2( 0.79035, 0.867457 )
 rect = Rect2( -10, -10, 20, 20 )

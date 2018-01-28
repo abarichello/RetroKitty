@@ -37,12 +37,9 @@ func _process(delta):
 
 func hit_check(ball):
 	# 8 = WHITE, 9 = BLACK
-	print(ball.color)
 	if ball.color == correct_array[balls_hit].color:
 		$UpperLeftPanel/VBox/HBox/HSplit.get_child(balls_hit).modulate = Color(0, 0, 0, 50)
 		balls_hit += 1
-		print("balls hit")
-		print(balls_hit)
 		$GracePeriod.start()
 	elif ball.color != correct_array[balls_hit].color && ball.color != 8:
 		if $GracePeriod.time_left == 0:
