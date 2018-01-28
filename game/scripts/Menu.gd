@@ -12,11 +12,20 @@ func create_game_from_file(level_number):
 	Game = preload("res://scenes/Game.tscn").instance()
 	Game.gamemode = level_number
 	Game.set_dispensers_gamemode(level_number)
+	
 	var level = Game.extract_level(level_number)
 	Game.level_array = interpret_file(level)
 	Game.load_dispensers()
 	start_game(Game)
 	Game.load_goal()
+	
+	# Unlock level
+	get_node("Out/AboutMenu/VBox/LevelGrid").get_child(level_number - 1).disabled = false
+
+func start_game(Game):  # Add game node as a sister of the Main menu
+	var parent = get_parent()
+	parent.add_child(Game)
+	hide()
 
 func interpret_file(level):  # Transform file contents in arrays
 	var level_array = []
@@ -38,17 +47,23 @@ func interpret_file(level):  # Transform file contents in arrays
 	print(level_array) # DEBUG
 	return level_array
 
-func start_game(Game):  # Add game node as a sister of the Main menu
-	var parent = get_parent()
-	parent.add_child(Game)
-	
-	var last_child = parent.get_child_count() - 1
-	#parent.get_child(last_child).set_name("Main")
-	hide()
+func save_game():  # Serialize Menu node
+	var savegame = File.new()
+	savegame.open("user://savefile.sv", File.WRITE)
+	var save_dict = {
+		# TODO
+	}
+
+func show_up():
+	var player = preload("res://scenes/Player.tscn").instance()
+	player.position = Vector2(149, 537)
+	player.scale = Vector2(4.7, 4.7)
+	$Out/Fluff.add_child(player)
+	show()
 
 # --- Menu Buttons ---
 
-func _on_Level_pressed():
+func _on_Start_pressed():
 	popup.visible = true
 	popup.rect_position = Vector2(53, 37)
 	popup.rect_size = Vector2(189, 375)
@@ -80,7 +95,7 @@ func _on_Random_pressed():
 func button_pressed():  # Function to be called after a relevant bt press
 	popup.hide()
 	get_node("Out/Fluff/Player").queue_free()
-	
+
 # --- Social media buttons ---
 
 func _on_Twitter_pressed():

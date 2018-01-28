@@ -40,10 +40,6 @@ func shoot(color, speed):
 	$Children.add_child(ball)
 	ball.create(self.global_position, self.angle)
 
-func destroy_children():
-	for i in range(0, $Children.get_child_count()):
-		$Children.get_child(i).queue_free()
-
 func _on_Timer_timeout():
 	clock += 0.1
 

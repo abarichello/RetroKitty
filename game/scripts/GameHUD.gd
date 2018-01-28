@@ -10,6 +10,7 @@ var screensize
 var goal_number
 
 func _ready(goal_array):
+	$PauseMenu.hide()
 	screensize = get_node("/root").get_viewport().get_visible_rect().size
 	self.goal_number = goal_array.size()
 	
@@ -35,13 +36,18 @@ func _process(delta):
 	if balls_hit == correct_array.size():
 		emit_signal("round_ended")
 
+func _input(event):
+	if event.is_action_pressed("ui_escape"):
+		$PauseMenu.show()
+		get_tree().set_pause(true)
+
 func hit_check(ball):
 	# 8 = WHITE, 9 = BLACK
-	if ball.color == correct_array[balls_hit].color:
+	if balls_hit < correct_array.size() && ball.color == correct_array[balls_hit].color:
 		$UpperLeftPanel/VBox/HBox/HSplit.get_child(balls_hit).modulate = Color(0, 0, 0, 50)
 		balls_hit += 1
 		$GracePeriod.start()
-	elif ball.color != correct_array[balls_hit].color && ball.color != 8:
+	elif balls_hit < correct_array.size() && ball.color != correct_array[balls_hit].color && ball.color != 8:
 		if $GracePeriod.time_left == 0:
 			player.hp -= 1
 
@@ -65,3 +71,16 @@ func _on_Intermission_timeout():  # Change to next level
 	Game.set_dispensers_gamemode(0)  # Dispenser deactivated mode
 	var Main = get_node("/root/Main")
 	Main.delete_game()
+	Main.start_loading_timer()
+
+# --- Buttons ---
+
+func _on_Resume_pressed():
+	$PauseMenu.hide()
+	get_tree().set_pause(false)
+
+func _on_Quit_pressed():
+	var Main = get_node("/root/Main")
+	Main.delete_game()
+	get_tree().set_pause(false)
+	get_node("/root/Main/Menu").show_up()
