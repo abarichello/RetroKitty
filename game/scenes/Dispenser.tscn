@@ -22,7 +22,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Dispenser" type="RigidBody2D" index="0"]
+[node name="Dispenser" type="RigidBody2D"]
 
 position = Vector2( 166.536, 160.215 )
 input_pickable = false
@@ -81,10 +81,21 @@ wait_time = 5.0
 one_shot = true
 autostart = false
 
+[node name="EmptyTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = true
+autostart = false
+
+[node name="Children" type="Node" parent="." index="6"]
+
 [connection signal="empty" from="." to="." method="_on_Dispenser_empty" flags=6]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [connection signal="timeout" from="ColorTimer" to="." method="_on_ColorTimer_timeout"]
+
+[connection signal="timeout" from="EmptyTimer" to="." method="_on_EmptyTimer_timeout"]
 
 

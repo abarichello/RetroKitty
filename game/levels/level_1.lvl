@@ -4,7 +4,7 @@
 # Number: | UP = 0   | DOWN = 1  | LEFT = 2 | RIGHT = 3
 
 # GOAL: Start line with $
-$ 8 8 8
+$ 8
 
 # LEVEL 1 - White balls tutorial
 
@@ -12,6 +12,3 @@ $ 8 8 8
 1  0 8 4
 3  0 8 4
 5  0 8 4
-7  0 8 4
-9  0 8 4
-11 0 8 4

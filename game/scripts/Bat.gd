@@ -1,17 +1,11 @@
 extends Area2D
 
 enum Direction {UP = 90, DOWN = 270, LEFT = 180, RIGHT = 0}
-onready var Player = get_node("/root/Game/Main/Player")
-onready var Hud = get_node("/root/Game/Main/GameHUD")
 var angle = 0
 var alive = true
 
 func _ready():
 	$Sprite/Hitzone.monitoring = true
-
-func _process(delta):
-	if Player:
-		angle = Player.angle
 
 func _input(event):
 	if event.is_action_pressed("ui_fire"):
@@ -47,11 +41,10 @@ func hit_bodies_in_hitzone():
 	for body in bodies:
 		var able = $Cooldown.get_time_left() == 0
 		if (body.angle == angle - 180 || body.angle == angle + 180) && able: # Bat and ball facing eachother
-			print("ball hit:")  # DEBUG
-			print(body.color)
 			body.set_collision_layer_bit(0, false)
 			body.hit = true
 			var direction = body.global_position - Vector2(1, 1)
 			body.linear_velocity = direction * 5
 			if alive:
+				var Hud = get_node("/root/Main/Game/GameHUD")
 				Hud.hit_check(body)

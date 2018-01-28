@@ -4,16 +4,19 @@
 # Number: | UP = 0   | DOWN = 1  | LEFT = 2 | RIGHT = 3
 
 # GOAL: Start line with $
-$ 8 8 8
+$ 2 2 2
 
-# LEVEL 3 - Black ball tutorial
+# LEVEL 4 - Color introduction (yellow only)
 
-# First dispenser
-1  0 8 4
-3  0 9 4
-5  0 8 4
-7  0 9 4
-9  0 8 4
-11 0 9 4
-13 0 8 4
-15 0 9 4
+1    0 8 3
+3    2 2 4
+4    0 8 4
+5    2 2 3
+6    0 9 5
+7.5  2 8 2
+9    0 2 4
+10   2 2 3
+11   0 9 2
+12   2 2 3
+13   2 2 2
+15   0 8 2

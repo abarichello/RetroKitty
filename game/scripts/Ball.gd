@@ -47,7 +47,7 @@ func create(start_position, angle):
 	self.global_position = start_position
 	self.angle = angle
 	self.set_collision_layer_bit(angle, true)
-	var player = get_node("/root/Game/Main/Player")
+	var player = get_node("/root/Main/Game/Player")
 	var direction = (player.global_position - global_position)
 	apply_impulse(Vector2(), direction / self.speed)
 
@@ -57,5 +57,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
 func _on_Ball_out():
-	var hud = get_node("/root/Game/Main/GameHUD")
+	var hud = get_node("/root/Main/Game/GameHUD")
 	hud.out_check(self)

@@ -3,7 +3,7 @@ extends Control
 signal game_over
 signal round_ended
 
-onready var player = get_node("/root/Game/Main/Player")
+onready var player = get_node("/root/Main/Game/Player")
 var correct_array = []
 var balls_hit = 0
 var screensize
@@ -30,7 +30,7 @@ func _ready(goal_array):
 	$UpperLeftPanel.rect_global_position.x = screensize.x / 2 - $UpperLeftPanel.get_rect().size.x / 2
 
 func _process(delta):
-	var _player = get_node("/root/Game/Main/Player")
+	var _player = get_node("/root/Main/Game/Player")
 	$UpperLeftPanel/VBox/ProgressBar.value = _player.hp
 	if balls_hit == correct_array.size():
 		emit_signal("round_ended")
@@ -51,10 +51,17 @@ func out_check(ball):
 		player.hp -= 1
 
 func _on_GameHUD_game_over():  # Restart level when all dispensers empty and no goal met
-	var _player = get_node("/root/Game/Main/Player")
+	var _player = get_node("/root/Main/Game/Player")
 	_player.game_over()
 
-func _on_GameHUD_round_ended():  # Next level
+func _on_GameHUD_round_ended():  # On Screen stuff for next round
 	print("--ROUND OVER--")
-	var _player = get_node("/root/Game/Main/Player")
+	var _player = get_node("/root/Main/Game/Player")
 	_player.round_ended()
+	$Intermission.start()
+
+func _on_Intermission_timeout():  # Change to next level
+	var Game = get_node("/root/Main/Game")
+	Game.set_dispensers_gamemode(0)  # Dispenser deactivated mode
+	var Main = get_node("/root/Main")
+	Main.delete_game()

@@ -1,6 +1,6 @@
 extends Control
 
-var Game = preload("res://scenes/Main.tscn").instance()
+var Game = preload("res://scenes/Game.tscn").instance()
 onready var popup = get_node("Out/AboutMenu")
 
 func create_random_game():
@@ -9,8 +9,9 @@ func create_random_game():
 	start_game(Game)
 
 func create_game_from_file(level_number):
-	Game.gamemode = 1
-	Game.set_dispensers_gamemode(1)
+	Game = preload("res://scenes/Game.tscn").instance()
+	Game.gamemode = level_number
+	Game.set_dispensers_gamemode(level_number)
 	var level = Game.extract_level(level_number)
 	Game.level_array = interpret_file(level)
 	Game.load_dispensers()
@@ -40,6 +41,9 @@ func interpret_file(level):  # Transform file contents in arrays
 func start_game(Game):  # Add game node as a sister of the Main menu
 	var parent = get_parent()
 	parent.add_child(Game)
+	
+	var last_child = parent.get_child_count() - 1
+	#parent.get_child(last_child).set_name("Main")
 	hide()
 
 # --- Menu Buttons ---
@@ -65,7 +69,7 @@ func _on_Level3_pressed():
 	button_pressed()
 
 func _on_Level4_pressed():
-	create_game_from_file("DEBUG")
+	create_game_from_file(4)
 	button_pressed()
 
 func _on_Random_pressed():
@@ -76,7 +80,7 @@ func _on_Random_pressed():
 func button_pressed():  # Function to be called after a relevant bt press
 	popup.hide()
 	get_node("Out/Fluff/Player").queue_free()
-
+	
 # --- Social media buttons ---
 
 func _on_Twitter_pressed():

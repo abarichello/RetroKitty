@@ -3,7 +3,7 @@ extends RigidBody2D
 signal empty
 
 var instructions = []
-var gamemode = 0
+var gamemode = 0 # 0 - Random / Deactivated, Else - Scripted
 var clock = 0.0
 var empty = false
 var angle
@@ -15,7 +15,6 @@ func _input(event):  # DEBUG
 func _process(delta):
 	if instructions.size() == 0 && gamemode != 0:
 		emit_signal("empty")
-		empty = true
 
 func setup(start_position, facing):
 	self.global_position = start_position
@@ -38,8 +37,12 @@ func shoot(color, speed):
 	$Sprite.frames.set_animation_speed("default", 20 * speed)
 	$Sprite.play("default")
 	
-	add_child(ball)
+	$Children.add_child(ball)
 	ball.create(self.global_position, self.angle)
+
+func destroy_children():
+	for i in range(0, $Children.get_child_count()):
+		$Children.get_child(i).queue_free()
 
 func _on_Timer_timeout():
 	clock += 0.1
@@ -48,5 +51,9 @@ func _on_ColorTimer_timeout():  # Return to original color
 	$Sprite.self_modulate = Color(1, 1, 1)
 
 func _on_Dispenser_empty():  # Slide locked back
+	$EmptyTimer.start()
 	$Sprite.stop()
 	$Sprite.frame = 10
+
+func _on_EmptyTimer_timeout():  # Delay before declaring dispenser empty
+	empty = true

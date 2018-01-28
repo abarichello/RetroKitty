@@ -22,6 +22,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
@@ -64,7 +65,7 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Rect",
 
 [node name="Player" parent="Out/Fluff" index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 149.815, 537.987 )
+position = Vector2( 149, 537 )
 scale = Vector2( 4.7, 4.7 )
 
 [node name="MenuColumn" type="Container" parent="Out" index="1"]

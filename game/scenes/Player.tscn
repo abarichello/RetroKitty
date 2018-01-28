@@ -47,7 +47,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 4
+frame = 7
 playing = true
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 
