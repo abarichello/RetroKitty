@@ -7,34 +7,37 @@ var alive = true
 func _ready():
 	$Sprite/Hitzone.monitoring = true
 
-func _input(event):
-	if event.is_action_pressed("ui_fire"):
-		hit_bodies_in_hitzone()
-		$Cooldown.start()
-	if event.is_action_pressed("ui_up"):
-		$Sprite.rotation = 0
-		$Sprite.flip_v = false
-		$Sprite.position = $Up.position
-		angle = UP
-		self.set_collision_layer_bit(angle, true)
-	if event.is_action_pressed("ui_down"):
-		$Sprite.rotation = 0
-		$Sprite.flip_v = true
-		$Sprite.position = $Down.position
-		angle = DOWN
-		self.set_collision_layer_bit(angle, true)
-	if event.is_action_pressed("ui_left"):
-		$Sprite.rotation = deg2rad(135)
-		$Sprite.flip_v = true
-		$Sprite.position = $Left.position
-		angle = LEFT
-		self.set_collision_layer_bit(angle, true)
-	if event.is_action_pressed("ui_right"):
-		$Sprite.rotation = deg2rad(45)
-		$Sprite.flip_v = false
-		$Sprite.position = $Right.position
-		angle = RIGHT
-		self.set_collision_layer_bit(angle, true)
+func fire():
+	hit_bodies_in_hitzone()
+	$Cooldown.start()
+
+func up():
+	$Sprite.rotation = 0
+	$Sprite.flip_v = false
+	$Sprite.position = $Up.position
+	angle = UP
+	self.set_collision_layer_bit(angle, true)
+
+func down():
+	$Sprite.rotation = 0
+	$Sprite.flip_v = true
+	$Sprite.position = $Down.position
+	angle = DOWN
+	self.set_collision_layer_bit(angle, true)
+
+func left():
+	$Sprite.rotation = deg2rad(135)
+	$Sprite.flip_v = true
+	$Sprite.position = $Left.position
+	angle = LEFT
+	self.set_collision_layer_bit(angle, true)
+
+func right():
+	$Sprite.rotation = deg2rad(45)
+	$Sprite.flip_v = false
+	$Sprite.position = $Right.position
+	angle = RIGHT
+	self.set_collision_layer_bit(angle, true)
 
 func hit_bodies_in_hitzone():
 	var bodies = $Sprite/Hitzone.get_overlapping_bodies()

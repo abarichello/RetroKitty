@@ -76,7 +76,7 @@ func _on_Intermission_timeout():  # Change to next level
 	Main.delete_game()
 	Main.start_loading_timer()
 
-# --- Buttons ---
+# --- Pause Menu ---
 
 func _on_Resume_pressed():
 	$PauseMenu.hide()
@@ -87,3 +87,20 @@ func _on_Quit_pressed():
 	Main.delete_game()
 	get_tree().set_pause(false)
 	get_node("/root/Main/Menu").show_up()
+
+# --- On Screen Buttons ---
+
+func _on_Up_pressed():
+	player.up()
+
+func _on_Down_pressed():
+	player.down()
+
+func _on_Left_pressed():
+	player.left()
+
+func _on_Right_pressed():
+	player.right()
+
+func _on_Button_pressed():
+	player.fire()

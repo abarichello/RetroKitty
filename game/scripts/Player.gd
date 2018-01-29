@@ -18,21 +18,43 @@ func _process(delta):
 		emit_signal("game_over")
 	
 func _input(event):
+	if event.is_action_pressed("ui_fire"):
+		fire()
 	if event.is_action_pressed("ui_up"):
-		angle = UP
+		up()
 	if event.is_action_pressed("ui_down"):
-		angle = DOWN
+		down()
 	if event.is_action_pressed("ui_left"):
-		angle = LEFT
-		$Sprite.flip_h = true
+		left()
 	if event.is_action_pressed("ui_right"):
-		angle = RIGHT
-		$Sprite.flip_h = false
+		right()
+
+func up():
+	angle = UP
+	$Bat.up()
+
+func down():
+	angle = DOWN
+	$Bat.down()
+
+func left():
+	angle = LEFT
+	$Sprite.flip_h = true
+	$Bat.left()
+
+func right():
+	angle = RIGHT
+	$Sprite.flip_h = false
+	$Bat.right()
+
+func fire():
+	$Bat.fire()
 
 func game_over():
 	print("game over")
 	$Bat.alive = false
 	# lose animation
+	get_node("/root/Main").start_quit_timer()
 
 func round_ended():
 	print("round ended!")

@@ -126,6 +126,10 @@ func _on_Level4_pressed():
 	create_game_from_file(4)
 	button_pressed()
 
+func _on_Level5_pressed():
+	create_game_from_file(5)
+	button_pressed()
+
 func _on_Random_pressed():
 	create_random_game()
 	Game.load_random_goal()

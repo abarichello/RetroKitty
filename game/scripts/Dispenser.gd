@@ -4,6 +4,7 @@ signal empty
 
 var instructions = []
 var gamemode = 0 # 0 - Random / Deactivated, Else - Scripted
+var children = 0
 var clock = 0.0
 var empty = false
 var angle
@@ -13,6 +14,7 @@ func _input(event):  # DEBUG
 		random_ready()
 
 func _process(delta):
+	children = $Children.get_child_count()
 	if instructions.size() == 0 && gamemode != 0:
 		emit_signal("empty")
 

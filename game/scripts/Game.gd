@@ -46,10 +46,11 @@ func _ready():
 func _process(delta):
 	var empty_dispensers = 0
 	for i in range(0, $Dispensers.get_child_count()):
-		if $Dispensers.get_child(i).empty:
+		var no_children = $Dispensers.get_child(i).children == 0
+		if $Dispensers.get_child(i).empty && no_children:
 			empty_dispensers += 1
 	if empty_dispensers == 4:
-		print("rip")
+		$Player.emit_signal("game_over")
 	
 	match gamemode:
 		0: random()

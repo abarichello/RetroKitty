@@ -20,6 +20,15 @@ wait_time = 1.0
 one_shot = true
 autostart = false
 
+[node name="QuitTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
 [connection signal="timeout" from="LoadingTimer" to="." method="_on_LoadingTimer_timeout"]
+
+[connection signal="timeout" from="QuitTimer" to="." method="_on_QuitTimer_timeout"]
 
 
