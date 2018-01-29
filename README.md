@@ -1,50 +1,52 @@
-# bat-hit-ball
-A prototype 2D game where you need to hit the balls back in the order provided by the game.
+# cat-hit-ball
+A cute and relaxing mobile game where you hit color-coded balls.
+
+<img src="https://i.imgur.com/ByZJpLu.png">
+
+## Rules
+Your goal is to hit the colour coded balls represented in your Game HUD with the following simple exceptions:
+1. White balls must always be hit
+2. Black balls shouldn't be hit unless represented in the goal (random gamemode)
 
 ## Script your own level
-The game levels are located in the [`levels`](game/levels) folder, you can script your own levels by editing the existing ones or editing the `lvl_custom.lvl`. Scripting the level is done by following these simple rules:  
-Follow the columns data, input only numbers (other characters like letters and lines that start with # are ignored)
+The game levels are located in the [`levels`](game/levels) folder, you can script your own levels by editing the existing ones or editing the `lvl_custom.lvl`. Scripting the level is done by following these [simple rules](#contents).
 
-<b>Example level:</b> Shoots balls in a clockwise order every second for 3 series.
+<b>Example level:</b> Shoots all available colours through the UP dispenser every half second, the goal is to hit all of them.
 ```
-# Seconds | Dispenser Number | Color Number | Speed
+# Seconds | Dispenser Number | Color Number | Speed(seconds to reach center)
 
-# First dispenser
-1  0 1 300
-5  0 2 700
-9  0 2 700
-13 0 2 700
+# Colors: RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, PINK, WHITE = 8, BLACK = 9
+# Number: | UP = 0   | DOWN = 1  | LEFT = 2 | RIGHT = 3
 
-# Second dispenser
-3  1 2 300
-7  1 2 300
-11 1 2 300
-14 0 2 700
+# GOAL: Start line with $
+$ 0 1 2 3 4 5 6 7
 
-# Third dispenser
-4  2 0 500
-8  2 2 300
-12 2 2 300
-15 2 2 300
+# LEVEL 5 - All colours showcase
 
-# Fourth dispenser
-2  3 3 300
-6  3 2 300
-10 3 2 300
-16 0 2 700
+1    0 0 5
+1.5  0 1 5
+2    0 2 5
+2.5  0 3 5
+3    0 4 5
+3.5  0 5 5
+4    0 6 5
+4.5  0 7 5
 ```
 
-- Seconds: 0 to infinite
+### Contents
+- Seconds: 0 to infinite.
 - Dispenser number:
   - 0 - UP
   - 1 - DOWN
   - 2 - LEFT
   - 3 - RIGHT
 - Ball color:
-  - 0 - BLUE
-  - 1 - GREEN
-  - 2 - RED
-- Speed: no limit, go crazy (please maintain low due to the nature of human reflexes)
+  - Color coding is included in the example level.
+- Speed: Seconds for the ball to reach the screen center no limit, go crazy (please maintain low due to the nature of human reflexes).
+- Use # for comments and $ for the line representing the goal.
+- Whitespace is ignored, use it for formatting.
+- Don't include a newline at the end of the file.
+- Input only numbers.
  
 ### Opening the project
 - Download any Godot 3.0 version and open the `project.godot` file with the editor.
