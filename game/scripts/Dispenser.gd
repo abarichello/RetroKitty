@@ -40,6 +40,8 @@ func shoot(color, speed):
 	$Children.add_child(ball)
 	ball.create(self.global_position, self.angle)
 
+# --- Signals ---
+
 func _on_Timer_timeout():
 	clock += 0.1
 

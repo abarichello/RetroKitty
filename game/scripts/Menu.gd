@@ -2,6 +2,12 @@ extends Control
 
 var Game = preload("res://scenes/Game.tscn").instance()
 onready var popup = get_node("Out/AboutMenu")
+var unlocked_levels = [1]
+var saved_game = File.new()
+var save_path = "user://savefile.sv"
+
+func _ready():
+	load_game()
 
 func create_random_game():
 	Game.gamemode = 0
@@ -19,8 +25,8 @@ func create_game_from_file(level_number):
 	start_game(Game)
 	Game.load_goal()
 	
-	# Unlock level
-	get_node("Out/AboutMenu/VBox/LevelGrid").get_child(level_number - 1).disabled = false
+	unlock_level(level_number)
+	save_game()
 
 func start_game(Game):  # Add game node as a sister of the Main menu
 	var parent = get_parent()
@@ -47,12 +53,45 @@ func interpret_file(level):  # Transform file contents in arrays
 	print(level_array) # DEBUG
 	return level_array
 
+# --- Save System ---
+
 func save_game():  # Serialize Menu node
-	var savegame = File.new()
-	savegame.open("user://savefile.sv", File.WRITE)
-	var save_dict = {
-		# TODO
-	}
+	saved_game = File.new()
+	saved_game.open(save_path, File.WRITE)
+	
+	var save_data = ""
+	for i in unlocked_levels.size():
+		save_data += str(unlocked_levels[i])
+		
+	saved_game.store_var({"unlockedlevels": unlocked_levels})
+	saved_game.close()
+
+func read_saved_game():
+	var saved_data = ""
+	if saved_game.file_exists(save_path):
+		var saved_game = File.new()
+		saved_game.open(save_path, File.READ)
+		saved_data = saved_game.get_var()
+		print("Loaded save:")
+		print(saved_data)
+		saved_game.close()
+	else:
+		save_game()
+	return saved_data
+
+func load_game():
+	var saved_data = read_saved_game()
+	if !saved_data.empty():
+		var arr = saved_data["unlockedlevels"]
+		for i in range(0, arr.size()):
+			unlock_level(arr[i])
+
+func unlock_level(level_number):
+	get_node("Out/AboutMenu/VBox/LevelGrid").get_child(level_number - 1).disabled = false
+	if !unlocked_levels.has(level_number):
+		unlocked_levels.append(level_number)
+
+# --- Visibility ---
 
 func show_up():
 	var player = preload("res://scenes/Player.tscn").instance()

@@ -13,14 +13,14 @@ dispenser = ExtResource( 2 )
 
 [node name="BackgroundRect" type="ColorRect" parent="." index="0"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -3.0
-margin_top = -10.0
-margin_right = 410.0
-margin_bottom = 712.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -206.5
+margin_top = -360.0
+margin_right = 206.5
+margin_bottom = 360.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -34,11 +34,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 position = Vector2( 199.415, 376.759 )
 scale = Vector2( 2, 2 )
 
-[node name="GameHUD" parent="." index="2" instance=ExtResource( 4 )]
-
-margin_right = 40.0
-
-[node name="Dispensers" type="Node" parent="." index="3"]
+[node name="Dispensers" type="Node" parent="." index="2"]
 
 [node name="Dispenser1" parent="Dispensers" index="0" instance=ExtResource( 2 )]
 
@@ -47,5 +43,7 @@ margin_right = 40.0
 [node name="Dispenser3" parent="Dispensers" index="2" instance=ExtResource( 2 )]
 
 [node name="Dispenser4" parent="Dispensers" index="3" instance=ExtResource( 2 )]
+
+[node name="GameHUD" parent="." index="3" instance=ExtResource( 4 )]
 
 

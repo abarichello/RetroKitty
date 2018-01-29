@@ -22,6 +22,7 @@ func _ready(goal_array):
 		randomize()
 		var color = goal_array[i]
 		ball._ready(color, 0)
+		
 		# Containers
 		var center_container = CenterContainer.new()
 		center_container.add_child(ball)
@@ -55,6 +56,8 @@ func out_check(ball):
 	var valid = balls_hit < correct_array.size()
 	if valid && (ball.color == correct_array[balls_hit].color || ball.color == 8):
 		player.hp -= 1
+
+# --- Signals ---
 
 func _on_GameHUD_game_over():  # Restart level when all dispensers empty and no goal met
 	var _player = get_node("/root/Main/Game/Player")

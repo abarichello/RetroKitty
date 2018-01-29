@@ -51,6 +51,8 @@ func create(start_position, angle):
 	var direction = (player.global_position - global_position)
 	apply_impulse(Vector2(), direction / self.speed)
 
+# --- Signals ---
+
 func _on_VisibilityNotifier2D_screen_exited():
 	if not hit:
 		emit_signal("out")

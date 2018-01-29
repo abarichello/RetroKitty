@@ -55,13 +55,11 @@ func _process(delta):
 		0: random()
 		_: level()
 
+# --- Dispenser Management ---
+
 func set_dispensers_gamemode(gamemode):
 	for i in range(0, $Dispensers.get_child_count()):
 		$Dispensers.get_child(i).gamemode = gamemode
-
-func delete_balls():
-	for i in range(0, $Dispensers.get_child_count()):
-		$Dispensers.get_child(i).destroy_children()
 
 func random():  # Dispensers random mode
 	for i in range(0, $Dispensers.get_child_count()):
@@ -85,6 +83,8 @@ func level():  # Check each dispenser instruction for execution
 		if disp.instructions.size() != 0:
 			disp.execute_instructions()
 
+# --- Level and Goal Management ---
+
 func extract_level(level_number):
 	# Reads and treats the contents of *.lvl files
 	var level = File.new()
@@ -100,16 +100,16 @@ func extract_level(level_number):
 	level.close()
 	return content
 
+func extract_goal(line):
+	for c in line:
+		if c != "$" and c != "\n" and c != " ":
+			goal_array.append(int(c))
+
 func load_dispensers():  # Loads dispensers with instructions arrays
 	for array in level_array:
 		var dispenser_no = int(array[1])
 		var disp = get_node("Dispensers").get_child(dispenser_no)
 		disp.instructions.append(array)
-
-func extract_goal(line):
-	for c in line:
-		if c != "$" and c != "\n" and c != " ":
-			goal_array.append(int(c))
 
 func load_random_goal():  # Creates a goal array and sends to HUD
 	goal_array = []

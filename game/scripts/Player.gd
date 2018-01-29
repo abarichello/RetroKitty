@@ -39,6 +39,8 @@ func round_ended():
 	$Bat.alive = false
 	# win animation
 
+# --- Signals ---
+
 func _on_Player_game_over():
 	game_over()
 
