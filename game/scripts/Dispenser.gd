@@ -44,7 +44,7 @@ func shoot(color, speed):
 
 # --- Signals ---
 
-func _on_Timer_timeout():
+func _on_Timer_timeout():  # Dispenser internal clock
 	clock += 0.1
 
 func _on_ColorTimer_timeout():  # Return to original color
