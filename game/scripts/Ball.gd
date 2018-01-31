@@ -3,6 +3,17 @@ extends RigidBody2D
 signal out
 enum Type {RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, PINK, WHITE, BLACK}
 
+var texture_path = "res://resources/img/ball/"
+var red_texture = load(texture_path + "red.png")
+var orange_texture = load(texture_path + "orange.png")
+var yellow_texture = load(texture_path + "yellow.png")
+var green_texture = load(texture_path + "green.png")
+var cyan_texture = load(texture_path + "cyan.png")
+var blue_texture = load(texture_path + "blue.png")
+var purple_texture = load(texture_path + "purple.png")
+var pink_texture = load(texture_path + "pink.png")
+var black_texture = load(texture_path + "black.png")
+
 export (float) var min_speed
 export (float) var max_speed
 var speed
@@ -26,22 +37,39 @@ func _random_ready():
 func match_color():
 	var color
 	match self.color:
-		0: color = Color(   1,   0,   0) # RED
-		1: color = Color(   1, 0.6,   0) # ORANGE
-		2: color = Color( .97,   1,  .2) # YELLOW
-		3: color = Color(  .2,   1,   0) # GREEN
-		4: color = Color(   0, .93,   1) # CYAN
-		5: color = Color(   0,   0,   1) # BLUE
-		6: color = Color( .25,   0, .55) # PURPLE
-		7: color = Color(   1,   0, .91) # PINK
-		8: color = Color(   1,   1,   1) # WHITE
-		9: color = Color( .08, .08, .08) # BLACK
-		_: color = Color( .57, 102, .63) # MUD
+		0:
+			color = Color(   1,   0,   0) # RED
+			#$Sprite.set_texture(red_texture)
+		1:
+			color = Color( .84, .55, .17) # ORANGE
+			$Sprite.set_texture(orange_texture)
+		2:
+			color = Color( .97,   1,  .2) # YELLOW
+			#$Sprite.set_texture(yellow_texture)
+		3:
+			color = Color(   0,   1,   0) # GREEN
+			$Sprite.set_texture(green_texture)
+		4:
+			color = Color(  .5,  .8,   1) # CYAN
+			$Sprite.set_texture(cyan_texture)
+		5:
+			color = Color(   0,   0,   1) # BLUE
+			$Sprite.set_texture(blue_texture)
+		6:
+			color = Color(   0,  .5,   1) # PURPLE
+			$Sprite.set_texture(purple_texture)
+		7:
+			color = Color(   1,   0, .91) # PINK
+			$Sprite.set_texture(pink_texture)
+		8:
+			color = Color(   1,   1,   1) # WHITE
+		9:
+			color = Color( .08, .08, .08) # BLACK
+			$Sprite.set_texture(black_texture)
+		_:
+			color = Color( .57, 102, .63) # MUD
 	$Sprite.modulate = color
 	return color
-
-func _process(delta):
-	$Sprite.rotation += max(abs(linear_velocity.x), abs(linear_velocity.y)) * delta / 350
 
 func create(start_position, angle):
 	self.global_position = start_position

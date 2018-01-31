@@ -2,11 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stripe.png-77279b3b196bbc89adac543f163755ff.stex"
+path="res://.import/orange.png-9e81e16115197f1146194687c2f29192.stex"
 
 [deps]
 
-source_md5="ce68c4703071f4fb9a4f31f74cf362c3"
+source_file="res://resources/img/ball/orange.png"
+source_md5="bbd9d32ab72978712a76ea9817dcc6ac"
+
+dest_files=[ "res://.import/orange.png-9e81e16115197f1146194687c2f29192.stex" ]
+dest_md5="59eb9097cf9eb3d08330f3deb7415642"
 
 [params]
 
@@ -15,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -24,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
