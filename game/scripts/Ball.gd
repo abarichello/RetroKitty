@@ -4,15 +4,6 @@ signal out
 enum Type {RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, PINK, WHITE, BLACK}
 
 var texture_path = "res://resources/img/ball/"
-var red_texture = load(texture_path + "red.png")
-var orange_texture = load(texture_path + "orange.png")
-var yellow_texture = load(texture_path + "yellow.png")
-var green_texture = load(texture_path + "green.png")
-var cyan_texture = load(texture_path + "cyan.png")
-var blue_texture = load(texture_path + "blue.png")
-var purple_texture = load(texture_path + "purple.png")
-var pink_texture = load(texture_path + "pink.png")
-var black_texture = load(texture_path + "black.png")
 
 export (float) var min_speed
 export (float) var max_speed
@@ -39,35 +30,45 @@ func match_color():
 	match self.color:
 		0:
 			color = Color(   1,   0,   0) # RED
-			#$Sprite.set_texture(red_texture)
+			var red_texture = load(texture_path + "red.png")
+			$Sprite.set_texture(red_texture)
 		1:
 			color = Color( .84, .55, .17) # ORANGE
+			var orange_texture = load(texture_path + "orange.png")
 			$Sprite.set_texture(orange_texture)
 		2:
 			color = Color( .97,   1,  .2) # YELLOW
-			#$Sprite.set_texture(yellow_texture)
+			var yellow_texture = load(texture_path + "yellow.png")
+			$Sprite.set_texture(yellow_texture)
 		3:
 			color = Color(   0,   1,   0) # GREEN
+			var green_texture = load(texture_path + "green.png")
 			$Sprite.set_texture(green_texture)
 		4:
 			color = Color(  .5,  .8,   1) # CYAN
+			var cyan_texture = load(texture_path + "cyan.png")
 			$Sprite.set_texture(cyan_texture)
 		5:
 			color = Color(   0,   0,   1) # BLUE
+			var blue_texture = load(texture_path + "blue.png")
 			$Sprite.set_texture(blue_texture)
 		6:
-			color = Color(   0,  .5,   1) # PURPLE
+			color = Color( .55,   0,   1) # PURPLE
+			var purple_texture = load(texture_path + "purple.png")
 			$Sprite.set_texture(purple_texture)
 		7:
 			color = Color(   1,   0, .91) # PINK
+			var pink_texture = load(texture_path + "pink.png")
 			$Sprite.set_texture(pink_texture)
 		8:
 			color = Color(   1,   1,   1) # WHITE
 		9:
 			color = Color( .08, .08, .08) # BLACK
+			var black_texture = load(texture_path + "black.png")
 			$Sprite.set_texture(black_texture)
 		_:
 			color = Color( .57, 102, .63) # MUD
+	
 	$Sprite.modulate = color
 	return color
 

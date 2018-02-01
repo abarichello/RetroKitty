@@ -7,14 +7,13 @@ path="res://.import/social-telegram.png-0c3fc8c64fa8ecc7d676007bafea88fd.stex"
 [deps]
 
 source_file="res://resources/img/buttons/social/social-telegram.png"
-source_md5="cb05ea543ff93c402398a3f0ed115a29"
-
+source_md5="4a563c6507efd76f957ca54c9c06e7d1"
 dest_files=[ "res://.import/social-telegram.png-0c3fc8c64fa8ecc7d676007bafea88fd.stex" ]
-dest_md5="f3e8c25bc435ab3576c848aee537be92"
+dest_md5="e187c9ec6af2ce6c53e9af08ce875c2f"
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
@@ -28,5 +27,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
-svg/scale=1.0
+detect_3d=false
+svg/scale=0.1

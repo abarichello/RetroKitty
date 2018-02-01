@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pink.png-7991b227b09c887d51abd543388c6f40.stex"
+path="res://.import/red.png-35e67e535d6fbb392a9716c276ce608a.stex"
 
 [deps]
 
-source_file="res://resources/img/ball/pink.png"
-source_md5="3fbf97a2e1fa8835aa5b5313943f89e9"
+source_file="res://resources/img/ball/red.png"
+source_md5="e442291a48e1b91b869a04c313286191"
 
-dest_files=[ "res://.import/pink.png-7991b227b09c887d51abd543388c6f40.stex" ]
-dest_md5="bd92b161f10785b8d3b69ee943896f51"
+dest_files=[ "res://.import/red.png-35e67e535d6fbb392a9716c276ce608a.stex" ]
+dest_md5="6eef00a8e1a7013741332c73cd898df1"
 
 [params]
 

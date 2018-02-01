@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pink.png-7991b227b09c887d51abd543388c6f40.stex"
+path="res://.import/social-twitter.svg-dc26ce4bc88dbfb32f894a11bb85a44b.stex"
 
 [deps]
 
-source_file="res://resources/img/ball/pink.png"
-source_md5="3fbf97a2e1fa8835aa5b5313943f89e9"
+source_file="res://resources/img/buttons/social/social-twitter.svg"
+source_md5="64c341fa98a5b20598ee33d2a7f3d8c4"
 
-dest_files=[ "res://.import/pink.png-7991b227b09c887d51abd543388c6f40.stex" ]
-dest_md5="bd92b161f10785b8d3b69ee943896f51"
+dest_files=[ "res://.import/social-twitter.svg-dc26ce4bc88dbfb32f894a11bb85a44b.stex" ]
+dest_md5="27d377c89563a6a686b0cb61ffea8bb3"
 
 [params]
 
@@ -29,4 +29,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=1.0
+svg/scale=2.0

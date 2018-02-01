@@ -10,11 +10,11 @@ source_file="res://resources/img/ball/cyan.png"
 source_md5="849c88e587781becaaf2d7737bbe217c"
 
 dest_files=[ "res://.import/cyan.png-009afdc83c1695b766b79c60090c8891.stex" ]
-dest_md5="98f31583bb84ad6249cc747db60ed75e"
+dest_md5="c9c8e1574c6d15a64050dfa2bca1321c"
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0

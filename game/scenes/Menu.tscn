@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://resources/img/buttons/social/social-twitter.png" type="Texture" id=3]
-[ext_resource path="res://resources/img/buttons/social/social-github.png" type="Texture" id=4]
-[ext_resource path="res://resources/img/buttons/social/social-telegram.png" type="Texture" id=5]
+[ext_resource path="res://resources/img/text/title.png" type="Texture" id=3]
+[ext_resource path="res://resources/img/buttons/social/social-twitter.svg" type="Texture" id=4]
+[ext_resource path="res://resources/img/buttons/social/social-github.svg" type="Texture" id=5]
+[ext_resource path="res://resources/img/buttons/social/social-telegram.svg" type="Texture" id=6]
 
-[node name="Menu" type="Control" groups=[
+[node name="Menu" type="Control" index="0" groups=[
 "Persist",
 ]]
 
@@ -38,7 +39,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -202.0
 margin_top = -353.5
-margin_right = 202.0
+margin_right = 436.0
 margin_bottom = 353.5
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
@@ -70,6 +71,27 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Rect",
 position = Vector2( 149, 537 )
 scale = Vector2( 4.7, 4.7 )
 
+[node name="Title" type="TextureRect" parent="Out/Fluff" index="1"]
+
+modulate = Color( 0.446167, 0.664063, 0.454679, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -11.0
+margin_top = -29.0
+margin_right = 989.0
+margin_bottom = 971.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+stretch_mode = 0
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
+
 [node name="MenuColumn" type="Container" parent="Out" index="1"]
 
 anchor_left = 0.0
@@ -94,7 +116,6 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -32.0
-margin_top = 4.0
 margin_right = 95.0
 margin_bottom = 708.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -203,19 +224,20 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="SocialMediaBox" type="HBoxContainer" parent="Out/MenuColumn/Spacer" index="1"]
 
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -52.0
-margin_top = -690.0
-margin_right = 52.0
-margin_bottom = -672.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 15.0
+margin_right = 323.0
+margin_bottom = 113.0
+rect_scale = Vector2( 0.35, 0.35 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 0
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_constants" ]
 
@@ -225,30 +247,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 32.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 3 )
-_sections_unfolded = [ "Textures" ]
-
-[node name="GitHub" type="TextureButton" parent="Out/MenuColumn/Spacer/SocialMediaBox" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 36.0
-margin_right = 68.0
-margin_bottom = 32.0
+margin_right = 113.0
+margin_bottom = 113.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -262,15 +262,37 @@ group = null
 texture_normal = ExtResource( 4 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility" ]
 
+[node name="GitHub" type="TextureButton" parent="Out/MenuColumn/Spacer/SocialMediaBox" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 117.0
+margin_right = 219.0
+margin_bottom = 113.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility" ]
+
 [node name="Telegram" type="TextureButton" parent="Out/MenuColumn/Spacer/SocialMediaBox" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 72.0
-margin_right = 104.0
-margin_bottom = 32.0
+margin_left = 223.0
+margin_right = 323.0
+margin_bottom = 113.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 2
@@ -280,8 +302,8 @@ toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Anchor", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+texture_normal = ExtResource( 6 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="AboutMenu" type="PopupMenu" parent="Out" index="2"]
 
@@ -436,11 +458,11 @@ anchor_bottom = 0.0
 margin_right = 12.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

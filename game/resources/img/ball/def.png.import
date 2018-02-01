@@ -10,11 +10,11 @@ source_file="res://resources/img/ball/def.png"
 source_md5="17ef6f674b86f11c074a40240d42299f"
 
 dest_files=[ "res://.import/def.png-e851f590b0e75c8201a99906fba07bca.stex" ]
-dest_md5="e6d4f2ca9882ee25910a766605d67c40"
+dest_md5="9ae864e320cf0d0866132f2ab43641ea"
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0

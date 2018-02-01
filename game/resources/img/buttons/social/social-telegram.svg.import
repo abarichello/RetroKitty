@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pink.png-7991b227b09c887d51abd543388c6f40.stex"
+path="res://.import/social-telegram.svg-02614f70c49fdab769ba7bb02ff0b62b.stex"
 
 [deps]
 
-source_file="res://resources/img/ball/pink.png"
-source_md5="3fbf97a2e1fa8835aa5b5313943f89e9"
+source_file="res://resources/img/buttons/social/social-telegram.svg"
+source_md5="b51aa793003853c796ea8d3be261c962"
 
-dest_files=[ "res://.import/pink.png-7991b227b09c887d51abd543388c6f40.stex" ]
-dest_md5="bd92b161f10785b8d3b69ee943896f51"
+dest_files=[ "res://.import/social-telegram.svg-02614f70c49fdab769ba7bb02ff0b62b.stex" ]
+dest_md5="67b0a1f8735af05d5ef9356b256a1775"
 
 [params]
 

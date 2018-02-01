@@ -10,11 +10,11 @@ source_file="res://resources/img/ball/purple.png"
 source_md5="eb9e7e1ad7ce588761719361936a4dd2"
 
 dest_files=[ "res://.import/purple.png-297b0d2b7fb5bb4ba84a659162c0a9e0.stex" ]
-dest_md5="22e719615a998f742f0e436a6ca8ca8c"
+dest_md5="e20dc83313b32e9a41e3d1fc53ed88ee"
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0

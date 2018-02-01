@@ -10,11 +10,11 @@ source_file="res://resources/img/ball/orange.png"
 source_md5="bbd9d32ab72978712a76ea9817dcc6ac"
 
 dest_files=[ "res://.import/orange.png-9e81e16115197f1146194687c2f29192.stex" ]
-dest_md5="59eb9097cf9eb3d08330f3deb7415642"
+dest_md5="3669bf205634102066036023414beb25"
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0

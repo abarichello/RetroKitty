@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pink.png-7991b227b09c887d51abd543388c6f40.stex"
+path="res://.import/social-github.svg-a48b9a85453e58e5505325a299898603.stex"
 
 [deps]
 
-source_file="res://resources/img/ball/pink.png"
-source_md5="3fbf97a2e1fa8835aa5b5313943f89e9"
+source_file="res://resources/img/buttons/social/social-github.svg"
+source_md5="0a3a0978834655eadc804efda1d3a443"
 
-dest_files=[ "res://.import/pink.png-7991b227b09c887d51abd543388c6f40.stex" ]
-dest_md5="bd92b161f10785b8d3b69ee943896f51"
+dest_files=[ "res://.import/social-github.svg-a48b9a85453e58e5505325a299898603.stex" ]
+dest_md5="b1cbed5440ba025cdcb18fc2bb0b30d5"
 
 [params]
 
@@ -29,4 +29,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=1.0
+svg/scale=0.1

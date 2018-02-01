@@ -3,14 +3,13 @@
 [ext_resource path="res://scripts/Ball.gd" type="Script" id=1]
 [ext_resource path="res://resources/img/ball/def.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Ball" type="RigidBody2D" index="0"]
+[node name="Ball" type="RigidBody2D"]
 
-show_behind_parent = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 0
@@ -48,7 +47,7 @@ __meta__ = {
 visible = false
 position = Vector2( -0.0647211, -0.100649 )
 scale = Vector2( 1.12201, 1.12201 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]

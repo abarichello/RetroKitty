@@ -7,14 +7,14 @@ path="res://.import/green.png-9b7409ee18c82206bd6afeb2b7568e31.stex"
 [deps]
 
 source_file="res://resources/img/ball/green.png"
-source_md5="12c36013a2c2797309e02e4354c80456"
+source_md5="e30738988be7b84c6bd84d6507760862"
 
 dest_files=[ "res://.import/green.png-9b7409ee18c82206bd6afeb2b7568e31.stex" ]
-dest_md5="34d40d76785baf21407100c728e041d4"
+dest_md5="e48b264c34903ef1df96744580937345"
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
