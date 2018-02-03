@@ -42,6 +42,12 @@ func shoot(color, speed):
 	$Children.add_child(ball)
 	ball.create(self.global_position, self.angle)
 
+func delete_children():
+	for i in range(0, children):
+		var child = $Children.get_child(i)
+		child.hit = true
+		child.queue_free()
+
 # --- Signals ---
 
 func _on_Timer_timeout():  # Dispenser internal clock

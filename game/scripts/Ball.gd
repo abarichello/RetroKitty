@@ -63,7 +63,7 @@ func match_color():
 		8:
 			color = Color(   1,   1,   1) # WHITE
 		9:
-			color = Color( .08, .08, .08) # BLACK
+			color = Color( .45, .45, .45) # BLACK
 			var black_texture = load(texture_path + "black.png")
 			$Sprite.set_texture(black_texture)
 		_:

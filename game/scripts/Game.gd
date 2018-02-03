@@ -62,6 +62,10 @@ func set_dispensers_gamemode(gamemode):
 	for i in range(0, $Dispensers.get_child_count()):
 		$Dispensers.get_child(i).gamemode = gamemode
 
+func delete_balls():
+	for i in range(0, $Dispensers.get_child_count()):
+		$Dispensers.get_child(i).delete_children()
+
 func random():  # Dispensers random mode
 	for i in range(0, $Dispensers.get_child_count()):
 		var dispenser = get_node("Dispensers").get_child(i)

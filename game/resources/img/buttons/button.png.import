@@ -7,10 +7,10 @@ path="res://.import/button.png-4f89a67fb477fb2d4f005ad6815ec294.stex"
 [deps]
 
 source_file="res://resources/img/buttons/button.png"
-source_md5="837d41f65d7155878eff4dd4c9796f80"
+source_md5="bd38d0572f321f951569f73e944a9962"
 
 dest_files=[ "res://.import/button.png-4f89a67fb477fb2d4f005ad6815ec294.stex" ]
-dest_md5="b46d8f9c2c0d035a3910a0280346a88f"
+dest_md5="52fa02984c6c087a72e56b86fdd1cfaf"
 
 [params]
 

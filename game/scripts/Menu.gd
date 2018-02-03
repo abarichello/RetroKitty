@@ -10,6 +10,7 @@ func _ready():
 	load_game()
 
 func create_random_game():
+	Game = preload("res://scenes/Game.tscn").instance()
 	Game.gamemode = 0
 	Game.set_dispensers_gamemode(0)
 	start_game(Game)
@@ -128,6 +129,10 @@ func _on_Level4_pressed():
 
 func _on_Level5_pressed():
 	create_game_from_file(5)
+	button_pressed()
+
+func _on_Level6_pressed():
+	create_game_from_file(6)
 	button_pressed()
 
 func _on_Random_pressed():

@@ -1,0 +1,21 @@
+# Seconds | Dispenser Number | Color Number | Speed(seconds to reach center)
+
+# Colors: RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, PINK, WHITE = 8, BLACK = 9
+# Number: | UP = 0   | DOWN = 1  | LEFT = 2 | RIGHT = 3
+
+# GOAL: Start line with $
+$ 5 5 5 5
+
+# LEVEL 6 - Only blue
+
+1  0 5 5
+3  1 0 4
+5  3 5 3
+7  2 0 2
+9  1 5 4
+11 2 0 3
+13 3 5 3
+15 0 0 3
+17 2 5 2
+19 3 0 3
+20 2 5 3.5
