@@ -48,6 +48,8 @@ func hit_check(ball):
 		$UpperLeftPanel/VBox/HBox/HSplit.get_child(balls_hit).modulate = Color(0, 0, 0, 50)
 		balls_hit += 1
 		$GracePeriod.start()
+		correct_array.pop_front()
+		
 		var Game = get_node("/root/Main/Game")
 		if Game.gamemode == 0:  # Random game mode
 			Game.delete_balls()

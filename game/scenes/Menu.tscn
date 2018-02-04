@@ -1,23 +1,34 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://resources/img/text/title.png" type="Texture" id=3]
-[ext_resource path="res://resources/img/buttons/button.png" type="Texture" id=4]
-[ext_resource path="res://resources/img/text/HANGTHEDJ.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://resources/img/buttons/social/social-twitter.svg" type="Texture" id=6]
-[ext_resource path="res://resources/img/buttons/social/social-github.svg" type="Texture" id=7]
-[ext_resource path="res://resources/img/buttons/social/social-telegram.svg" type="Texture" id=8]
+[ext_resource path="res://resources/themes/retro.tres" type="Theme" id=4]
+[ext_resource path="res://resources/img/buttons/social/social-twitter.svg" type="Texture" id=5]
+[ext_resource path="res://resources/img/buttons/social/social-github.svg" type="Texture" id=6]
+[ext_resource path="res://resources/img/buttons/social/social-telegram.svg" type="Texture" id=7]
+[ext_resource path="res://resources/themes/level_select.tres" type="Theme" id=8]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="InputEventKey" id=2]
 
-size = 60
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 5 )
-_sections_unfolded = [ "Font", "Resource", "Settings" ]
+device = 0
+alt = false
+shift = false
+control = false
+meta = false
+command = false
+pressed = true
+scancode = 0
+unicode = 0
+echo = false
+_sections_unfolded = [ "Resource" ]
 
-[node name="Menu" type="Control" groups=[
+[sub_resource type="ShortCut" id=3]
+
+shortcut = SubResource( 2 )
+_sections_unfolded = [ "Resource" ]
+
+[node name="Menu" type="Control" index="0" groups=[
 "Persist",
 ]]
 
@@ -155,73 +166,48 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_constants" ]
 
-[node name="Start" type="TextureButton" parent="Out/MenuColumn/Spacer/ButtonsColumn" index="0"]
+[node name="Start" type="Button" parent="Out/MenuColumn/Spacer/ButtonsColumn" index="0"]
 
-self_modulate = Color( 0.320903, 0.806308, 0.357279, 1 )
+self_modulate = Color( 0.28089, 1, 0.28089, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 300.0
-margin_bottom = 100.0
+margin_bottom = 80.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
-shortcut = null
+shortcut = SubResource( 3 )
 group = null
-texture_normal = ExtResource( 4 )
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility" ]
-
-[node name="Text" type="RichTextLabel" parent="Out/MenuColumn/Spacer/ButtonsColumn/Start" index="0"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -110.5
-margin_top = -28.5
-margin_right = 110.5
-margin_bottom = 28.5
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = false
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
 text = "START"
-scroll_active = false
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "Anchor", "BBCode", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility" ]
 
 [node name="About" type="Button" parent="Out/MenuColumn/Spacer/ButtonsColumn" index="1"]
 
+self_modulate = Color( 0.45, 0.8, 0.45, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 104.0
+margin_top = 84.0
 margin_right = 300.0
-margin_bottom = 138.0
+margin_bottom = 164.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
+theme = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -268,7 +254,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 5 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility" ]
 
 [node name="GitHub" type="TextureButton" parent="Out/MenuColumn/Spacer/SocialMediaBox" index="1"]
@@ -290,7 +276,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 7 )
+texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility" ]
 
 [node name="Telegram" type="TextureButton" parent="Out/MenuColumn/Spacer/SocialMediaBox" index="2"]
@@ -311,19 +297,17 @@ toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 7 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="AboutMenu" type="PopupMenu" parent="Out" index="2"]
 
-visible = false
-self_modulate = Color( 0.697418, 1, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 315.0
-margin_right = 335.0
+margin_right = 331.0
 margin_bottom = 707.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
@@ -331,6 +315,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 8 )
 popup_exclusive = false
 items = [  ]
 hide_on_state_item_selection = false
@@ -342,13 +327,13 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 190.0
-margin_bottom = 520.0
+margin_right = 108.0
+margin_bottom = 93.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 alignment = 0
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_constants" ]
 
@@ -358,12 +343,12 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 190.0
-margin_bottom = 68.0
+margin_right = 108.0
+margin_bottom = 58.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
+size_flags_horizontal = 3
 size_flags_vertical = 1
 columns = 3
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_constants" ]
@@ -374,8 +359,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 64.0
-margin_bottom = 20.0
+margin_right = 26.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -386,7 +371,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Level 1"
+text = "1"
 flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
@@ -397,9 +382,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 68.0
-margin_right = 126.0
-margin_bottom = 20.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -410,7 +395,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Level 2"
+text = "2"
 flat = false
 align = 1
 
@@ -420,9 +405,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 130.0
-margin_right = 188.0
-margin_bottom = 20.0
+margin_left = 60.0
+margin_right = 86.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -433,7 +418,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Level 3"
+text = "3"
 flat = false
 align = 1
 
@@ -443,9 +428,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 24.0
-margin_right = 64.0
-margin_bottom = 44.0
+margin_top = 31.0
+margin_right = 26.0
+margin_bottom = 58.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -456,7 +441,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Level 4"
+text = "4"
 flat = false
 align = 1
 
@@ -466,10 +451,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 68.0
-margin_top = 24.0
-margin_right = 126.0
-margin_bottom = 44.0
+margin_left = 30.0
+margin_top = 31.0
+margin_right = 56.0
+margin_bottom = 58.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -480,7 +465,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Level 5"
+text = "5"
 flat = false
 align = 1
 
@@ -490,10 +475,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 130.0
-margin_top = 24.0
-margin_right = 188.0
-margin_bottom = 44.0
+margin_left = 60.0
+margin_top = 31.0
+margin_right = 86.0
+margin_bottom = 58.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -504,19 +489,34 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Level 6"
+text = "6"
 flat = false
 align = 1
 
-[node name="Random" type="Button" parent="Out/AboutMenu/VBox/LevelGrid" index="6"]
+[node name="AltGamemodes" type="HBoxContainer" parent="Out/AboutMenu/VBox" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 48.0
-margin_right = 64.0
-margin_bottom = 68.0
+margin_top = 62.0
+margin_right = 108.0
+margin_bottom = 89.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Random" type="Button" parent="Out/AboutMenu/VBox/AltGamemodes" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 101.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -553,6 +553,6 @@ align = 1
 
 [connection signal="pressed" from="Out/AboutMenu/VBox/LevelGrid/Level6" to="." method="_on_Level6_pressed"]
 
-[connection signal="pressed" from="Out/AboutMenu/VBox/LevelGrid/Random" to="." method="_on_Random_pressed"]
+[connection signal="pressed" from="Out/AboutMenu/VBox/AltGamemodes/Random" to="." method="_on_Random_pressed"]
 
 
