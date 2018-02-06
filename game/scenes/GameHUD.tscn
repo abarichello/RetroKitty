@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/GameHUD.gd" type="Script" id=1]
 [ext_resource path="res://resources/fonts/HANGTHEDJ.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://resources/themes/pause_menu_buttons.tres" type="Theme" id=3]
 [ext_resource path="res://resources/img/hud/under.png" type="Texture" id=4]
 [ext_resource path="res://resources/img/hud/progress.png" type="Texture" id=5]
+[ext_resource path="res://resources/img/player/bat0001.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -14,7 +15,7 @@ use_filter = true
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="GameHUD" type="Control"]
+[node name="GameHUD" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -291,7 +292,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 40.0
-margin_right = 88.0
+margin_top = -22.0
+margin_right = 82.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
@@ -306,6 +308,7 @@ group = null
 text = "Up"
 flat = false
 align = 1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="UpperRight" type="Control" parent="ButtonGrid" index="2"]
 
@@ -424,14 +427,18 @@ text = "Down"
 flat = false
 align = 1
 
-[node name="Fire" type="Button" parent="." index="3"]
+[node name="Fire" type="TextureButton" parent="." index="3"]
 
+self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -36.0
-margin_top = -20.0
+margin_left = -3.0
+margin_top = -44.0
+margin_right = 61.0
+margin_bottom = 20.0
+rect_rotation = 90.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -442,10 +449,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Fire"
-flat = false
-align = 1
-_sections_unfolded = [ "Size Flags" ]
+texture_normal = ExtResource( 6 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="GracePeriod" type="Timer" parent="." index="4"]
 

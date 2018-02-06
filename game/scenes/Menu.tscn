@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -9,26 +9,7 @@
 [ext_resource path="res://resources/img/buttons/social/social-telegram.svg" type="Texture" id=7]
 [ext_resource path="res://resources/themes/level_select.tres" type="Theme" id=8]
 
-[sub_resource type="InputEventKey" id=2]
-
-device = 0
-alt = false
-shift = false
-control = false
-meta = false
-command = false
-pressed = true
-scancode = 0
-unicode = 0
-echo = false
-_sections_unfolded = [ "Resource" ]
-
-[sub_resource type="ShortCut" id=3]
-
-shortcut = SubResource( 2 )
-_sections_unfolded = [ "Resource" ]
-
-[node name="Menu" type="Control" index="0" groups=[
+[node name="Menu" type="Control" groups=[
 "Persist",
 ]]
 
@@ -144,7 +125,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_styles" ]
 
 [node name="ButtonsColumn" type="VBoxContainer" parent="Out/MenuColumn/Spacer" index="0"]
 
@@ -184,7 +165,7 @@ size_flags_vertical = 1
 theme = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
-shortcut = SubResource( 3 )
+shortcut = null
 group = null
 text = "START"
 flat = false
@@ -343,14 +324,14 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 108.0
-margin_bottom = 58.0
+margin_right = 172.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-columns = 3
+columns = 6
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_constants" ]
 
 [node name="Level1" type="Button" parent="Out/AboutMenu/VBox/LevelGrid" index="0"]
@@ -359,14 +340,14 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 26.0
+margin_right = 22.0
 margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -374,7 +355,7 @@ group = null
 text = "1"
 flat = false
 align = 1
-_sections_unfolded = [ "Size Flags" ]
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="Level2" type="Button" parent="Out/AboutMenu/VBox/LevelGrid" index="1"]
 
@@ -382,14 +363,14 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 30.0
-margin_right = 56.0
+margin_left = 26.0
+margin_right = 52.0
 margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
@@ -398,6 +379,7 @@ group = null
 text = "2"
 flat = false
 align = 1
+_sections_unfolded = [ "Size Flags" ]
 
 [node name="Level3" type="Button" parent="Out/AboutMenu/VBox/LevelGrid" index="2"]
 
@@ -405,14 +387,14 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 60.0
-margin_right = 86.0
+margin_left = 56.0
+margin_right = 82.0
 margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
@@ -421,6 +403,7 @@ group = null
 text = "3"
 flat = false
 align = 1
+_sections_unfolded = [ "Size Flags" ]
 
 [node name="Level4" type="Button" parent="Out/AboutMenu/VBox/LevelGrid" index="3"]
 
@@ -428,9 +411,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 31.0
-margin_right = 26.0
-margin_bottom = 58.0
+margin_left = 86.0
+margin_right = 112.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -451,10 +434,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 30.0
-margin_top = 31.0
-margin_right = 56.0
-margin_bottom = 58.0
+margin_left = 116.0
+margin_right = 142.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -475,10 +457,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 60.0
-margin_top = 31.0
-margin_right = 86.0
-margin_bottom = 58.0
+margin_left = 146.0
+margin_right = 172.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -493,15 +474,15 @@ text = "6"
 flat = false
 align = 1
 
-[node name="AltGamemodes" type="HBoxContainer" parent="Out/AboutMenu/VBox" index="1"]
+[node name="Alt" type="HBoxContainer" parent="Out/AboutMenu/VBox" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 62.0
-margin_right = 108.0
-margin_bottom = 89.0
+margin_top = 31.0
+margin_right = 172.0
+margin_bottom = 58.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -509,7 +490,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Random" type="Button" parent="Out/AboutMenu/VBox/AltGamemodes" index="0"]
+[node name="Random" type="Button" parent="Out/AboutMenu/VBox/Alt" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -553,6 +534,6 @@ align = 1
 
 [connection signal="pressed" from="Out/AboutMenu/VBox/LevelGrid/Level6" to="." method="_on_Level6_pressed"]
 
-[connection signal="pressed" from="Out/AboutMenu/VBox/AltGamemodes/Random" to="." method="_on_Random_pressed"]
+[connection signal="pressed" from="Out/AboutMenu/VBox/Alt/Random" to="." method="_on_Random_pressed"]
 
 
