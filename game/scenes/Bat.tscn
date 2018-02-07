@@ -19,7 +19,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Bat" type="Area2D"]
+[node name="Bat" type="Area2D" index="0"]
 
 scale = Vector2( 0.629049, 0.57688 )
 input_pickable = false
@@ -36,6 +36,7 @@ _sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pause", "Pickable"
 
 frames = SubResource( 1 )
 animation = "Idle"
+frame = 1
 playing = true
 _sections_unfolded = [ "Anchor", "Animation", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Offset", "Pause", "Rect", "Size Flags", "Theme", "Transform", "Visibility" ]
 
@@ -104,5 +105,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 
 position = Vector2( 10, 0 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]
 
 

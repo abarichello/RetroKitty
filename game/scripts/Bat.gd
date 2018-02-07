@@ -10,6 +10,10 @@ func _ready():
 
 func fire():
 	hit_bodies_in_hitzone()
+	if angle == DOWN || angle == LEFT:
+		self.rotation = -45
+	else:
+		self.rotation = 45
 	$Cooldown.start()
 
 func up():
@@ -52,3 +56,6 @@ func hit_bodies_in_hitzone():
 			if alive:
 				var Hud = get_node("/root/Main/Game/GameHUD")
 				Hud.hit_check(body)
+
+func _on_Cooldown_timeout():
+	self.rotation = 0
