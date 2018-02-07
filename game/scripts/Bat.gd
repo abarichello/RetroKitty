@@ -6,6 +6,7 @@ var alive = true
 
 func _ready():
 	$Sprite/Hitzone.monitoring = true
+	right()
 
 func fire():
 	hit_bodies_in_hitzone()

@@ -29,6 +29,13 @@ window/stretch/aspect="expand"
 
 singletons=[  ]
 
+[importer_defaults]
+
+bitmap={
+"create_from": 0,
+"threshold": 0.5
+}
+
 [input]
 
 ui_left=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)

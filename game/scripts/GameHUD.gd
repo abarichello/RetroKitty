@@ -14,7 +14,7 @@ func _ready(goal_array):
 	screensize = get_node("/root").get_viewport().get_visible_rect().size
 	self.goal_number = goal_array.size()
 	
-	print("goal:")
+	print("goal:")  # DEBUG
 	print(goal_array)
 	
 	for i in range(0, goal_number):
@@ -28,10 +28,12 @@ func _ready(goal_array):
 		center_container.add_child(ball)
 		$UpperLeftPanel/VBox/HBox/HSplit.add_child(center_container)
 		correct_array.append(ball)
-	# Centering
-	$UpperLeftPanel.rect_global_position.x = screensize.x / 2 - $UpperLeftPanel.get_rect().size.x / 2
 
 func _process(delta):
+	$ButtonGrid/Left.rect_rotation = 270
+	$ButtonGrid/Right.rect_rotation = 90
+	$ButtonGrid/Down.rect_rotation = 180
+	
 	var _player = get_node("/root/Main/Game/Player")
 	$UpperLeftPanel/VBox/ProgressBar.value = _player.hp
 	if balls_hit == correct_array.size():
