@@ -10,61 +10,61 @@ var hp
 var angle
 
 func _ready():
-	angle = UP
-	hp = max_hp
+    angle = UP
+    hp = max_hp
 
 func _process(delta):
-	if hp <= 0:
-		emit_signal("game_over")
+    if hp <= 0:
+        emit_signal("game_over")
 
 func _input(event):
-	if event.is_action_pressed("ui_fire"):
-		fire()
-	if event.is_action_pressed("ui_up"):
-		up()
-	if event.is_action_pressed("ui_down"):
-		down()
-	if event.is_action_pressed("ui_left"):
-		left()
-	if event.is_action_pressed("ui_right"):
-		right()
+    if event.is_action_pressed("ui_fire"):
+        fire()
+    if event.is_action_pressed("ui_up"):
+        up()
+    if event.is_action_pressed("ui_down"):
+        down()
+    if event.is_action_pressed("ui_left"):
+        left()
+    if event.is_action_pressed("ui_right"):
+        right()
 
 func up():
-	angle = UP
-	$Bat.up()
+    angle = UP
+    $Bat.up()
 
 func down():
-	angle = DOWN
-	$Bat.down()
+    angle = DOWN
+    $Bat.down()
 
 func left():
-	angle = LEFT
-	$Sprite.flip_h = true
-	$Bat.left()
+    angle = LEFT
+    $Sprite.flip_h = true
+    $Bat.left()
 
 func right():
-	angle = RIGHT
-	$Sprite.flip_h = false
-	$Bat.right()
+    angle = RIGHT
+    $Sprite.flip_h = false
+    $Bat.right()
 
 func fire():
-	$Bat.fire()
+    $Bat.fire()
 
 func game_over():
-	print("game over")
-	$Bat.alive = false
-	# lose animation
-	get_node("/root/Main").start_quit_timer()
+    print("game over")
+    $Bat.alive = false
+    # lose animation
+    get_node("/root/Main").start_quit_timer()
 
 func round_ended():
-	print("round ended!")
-	$Bat.alive = false
-	# win animation
+    print("round ended!")
+    $Bat.alive = false
+    # win animation
 
 # --- Signals ---
 
 func _on_Player_game_over():
-	game_over()
+    game_over()
 
 func _on_Player_round_ended():
-	round_ended()
+    round_ended()

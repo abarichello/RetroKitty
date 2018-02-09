@@ -10,112 +10,112 @@ var screensize
 var goal_number
 
 func _ready(goal_array):
-	$PauseMenu.hide()
-	screensize = get_node("/root").get_viewport().get_visible_rect().size
-	self.goal_number = goal_array.size()
+    $PauseMenu.hide()
+    screensize = get_node("/root").get_viewport().get_visible_rect().size
+    self.goal_number = goal_array.size()
 
-	print("goal:")  # DEBUG
-	print(goal_array)
+    print("goal:")  # DEBUG
+    print(goal_array)
 
-	for i in range(0, goal_number):
-		var ball = preload("res://scenes/Ball.tscn").instance()
-		randomize()
-		var color = goal_array[i]
-		ball._ready(color, 0)
+    for i in range(0, goal_number):
+        var ball = preload("res://scenes/Ball.tscn").instance()
+        randomize()
+        var color = goal_array[i]
+        ball._ready(color, 0)
 
-		# Containers
-		var center_container = CenterContainer.new()
-		center_container.add_child(ball)
-		$UpperLeftPanel/VBox/HBox/HSplit.add_child(center_container)
-		correct_array.append(ball)
+        # Containers
+        var center_container = CenterContainer.new()
+        center_container.add_child(ball)
+        $UpperLeftPanel/VBox/HBox/HSplit.add_child(center_container)
+        correct_array.append(ball)
 
 func _process(delta):
-	var countdown_seconds = get_node("/root/Main/Game/StartCountdown").time_left
-	if countdown_seconds != 0 && self.get_parent().gamemode != 0:
-		$Countdown.text = str(countdown_seconds)
-	else:
-		$Countdown.hide()
+    var countdown_seconds = get_node("/root/Main/Game/StartCountdown").time_left
+    if countdown_seconds != 0 && self.get_parent().gamemode != 0:
+        $Countdown.text = str(countdown_seconds)
+    else:
+        $Countdown.hide()
 
-	$ButtonGrid/Left.rect_rotation = 270
-	$ButtonGrid/Right.rect_rotation = 90
-	$ButtonGrid/Down.rect_rotation = 180
+    $ButtonGrid/Left.rect_rotation = 270
+    $ButtonGrid/Right.rect_rotation = 90
+    $ButtonGrid/Down.rect_rotation = 180
 
-	var _player = get_node("/root/Main/Game/Player")
-	$UpperLeftPanel/VBox/ProgressBar.value = _player.hp
-	if balls_hit == correct_array.size():
-		emit_signal("round_ended")
+    var _player = get_node("/root/Main/Game/Player")
+    $UpperLeftPanel/VBox/ProgressBar.value = _player.hp
+    if balls_hit == correct_array.size():
+        emit_signal("round_ended")
 
 func _input(event):
-	if event.is_action_pressed("ui_escape"):
-		$PauseMenu.show()
-		get_tree().set_pause(true)
+    if event.is_action_pressed("ui_escape"):
+        $PauseMenu.show()
+        get_tree().set_pause(true)
 
 func hit_check(ball):  # Checks the ball hit against the goal
-	# 8 = WHITE, 9 = BLACK
-	if balls_hit < correct_array.size() && ball.color == correct_array[balls_hit].color:
-		$UpperLeftPanel/VBox/HBox/HSplit.get_child(balls_hit).modulate = Color(0, 0, 0, 50)
-		balls_hit += 1
-		$GracePeriod.start()
+    # 8 = WHITE, 9 = BLACK
+    if balls_hit < correct_array.size() && ball.color == correct_array[balls_hit].color:
+        $UpperLeftPanel/VBox/HBox/HSplit.get_child(balls_hit).modulate = Color(0, 0, 0, 50)
+        balls_hit += 1
+        $GracePeriod.start()
 
-		var Game = get_node("/root/Main/Game")
-		if Game.gamemode == 0:  # Delete onscreen balls if Random gamemode
-			Game.delete_balls()
-	elif balls_hit < correct_array.size() && ball.color != correct_array[balls_hit].color && ball.color != 8:
-		if $GracePeriod.time_left == 0:
-			player.hp -= 1
+        var Game = get_node("/root/Main/Game")
+        if Game.gamemode == 0:  # Delete onscreen balls if Random gamemode
+            Game.delete_balls()
+    elif balls_hit < correct_array.size() && ball.color != correct_array[balls_hit].color && ball.color != 8:
+        if $GracePeriod.time_left == 0:
+            player.hp -= 1
 
 func out_check(ball):  # Check if it is a missed goal ball
-	var valid = balls_hit < correct_array.size()
-	if valid && (ball.color == correct_array[balls_hit].color || ball.color == 8):
-		player.hp -= 1
+    var valid = balls_hit < correct_array.size()
+    if valid && (ball.color == correct_array[balls_hit].color || ball.color == 8):
+        player.hp -= 1
 
 # --- Signals ---
 
 func _on_GameHUD_game_over():  # Restart level when all dispensers empty and no goal met
-	var _player = get_node("/root/Main/Game/Player")
-	_player.game_over()
+    var _player = get_node("/root/Main/Game/Player")
+    _player.game_over()
 
 func _on_GameHUD_round_ended():  # On Screen stuff for next round
-	print("--ROUND OVER--")
-	var _player = get_node("/root/Main/Game/Player")
-	_player.round_ended()
-	$Intermission.start()
+    print("--ROUND OVER--")
+    var _player = get_node("/root/Main/Game/Player")
+    _player.round_ended()
+    $Intermission.start()
 
 func _on_Intermission_timeout():  # Change to next level
-	var Game = get_node("/root/Main/Game")
-	Game.set_dispensers_gamemode(0)  # Dispenser deactivated mode
-	var Main = get_node("/root/Main")
-	Main.delete_game()
-	if get_parent().gamemode != 0:
-		Main.start_loading_timer()
-	else:
-		_on_Quit_pressed()
+    var Game = get_node("/root/Main/Game")
+    Game.set_dispensers_gamemode(0)  # Dispenser deactivated mode
+    var Main = get_node("/root/Main")
+    Main.delete_game()
+    if get_parent().gamemode != 0:
+        Main.start_loading_timer()
+    else:
+        _on_Quit_pressed()
 
 # --- Pause Menu ---
 
 func _on_Resume_pressed():
-	$PauseMenu.hide()
-	get_tree().set_pause(false)
+    $PauseMenu.hide()
+    get_tree().set_pause(false)
 
 func _on_Quit_pressed():
-	var Main = get_node("/root/Main")
-	Main.delete_game()
-	get_tree().set_pause(false)
-	get_node("/root/Main/Menu").show_up()
+    var Main = get_node("/root/Main")
+    Main.delete_game()
+    get_tree().set_pause(false)
+    get_node("/root/Main/Menu").show_up()
 
 # --- On Screen Buttons ---
 
 func _on_Up_pressed():
-	player.up()
+    player.up()
 
 func _on_Down_pressed():
-	player.down()
+    player.down()
 
 func _on_Left_pressed():
-	player.left()
+    player.left()
 
 func _on_Right_pressed():
-	player.right()
+    player.right()
 
 func _on_Button_pressed():
-	player.fire()
+    player.fire()

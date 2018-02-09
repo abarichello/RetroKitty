@@ -1,12 +1,12 @@
-# cat-hit-ball
+# RetroKitty
 A cute and relaxing mobile game where you hit color-coded balls.
 
-<img src="https://i.imgur.com/ByZJpLu.png">
+<img src="https://i.imgur.com/2KxgLOp.png" width="300">
+<br>
 
 ## Rules
-Your goal is to hit the colour coded balls represented in your Game HUD with the following simple exceptions:
-1. White balls must always be hit
-2. Black balls shouldn't be hit unless represented in the goal (random gamemode)
+Your goal is to hit the colour coded balls represented in your Game HUD with the one exception:
+1. White balls must always be hit regardless of goal
 
 ## Script your own level
 The game levels are located in the [`levels`](game/levels) folder, you can script your own levels by editing the existing ones or editing the `lvl_custom.lvl`. Scripting the level is done by following these [simple rules](#contents).
