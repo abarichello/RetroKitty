@@ -32,13 +32,13 @@ func execute_instructions():
 func shoot(color, speed):
 	var ball = preload("res://scenes/Ball.tscn").instance()
 	ball._ready(color, speed)
-	
+
 	$Sprite.self_modulate = ball.match_color()
 	$ColorTimer.start()
 	$Sprite.frame = 0
 	$Sprite.frames.set_animation_speed("default", 20 * speed)
 	$Sprite.play("default")
-	
+
 	$Children.add_child(ball)
 	ball.create(self.global_position, self.angle)
 

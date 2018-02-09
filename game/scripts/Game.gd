@@ -13,31 +13,31 @@ var screensize
 
 func _ready():
 	screensize = get_node("/root").get_viewport().get_visible_rect().size
-	
+
 	$Player/SpawnPosition.position = screensize / 2
 	$Player.position = $Player/SpawnPosition.position
-	
+
 	var player_x = $Player.position.x
 	var player_y = $Player.position.y
 	var disp_width = $Dispensers/Dispenser1/Sprite.frames.get_frame("default", 0).get_width()
-	
+
 	# --- Setup dispensers ---
 	var father = get_node("Dispensers")
 	# Up
 	var dispenser1 = father.get_child(0)
 	dispenser1.setup(Vector2(player_x, player_y - player_x / 1.1), DOWN)
 	dispenser1.get_child(0).rotation = deg2rad(90)
-	
+
 	# Down
 	var dispenser2 = father.get_child(1)
 	dispenser2.setup(Vector2(player_x, player_y + player_x / 1.1), UP)
 	dispenser2.get_child(0).rotation = deg2rad(270)
-	
+
 	# Left
 	var dispenser3 = father.get_child(2)
 	dispenser3.setup(Vector2(disp_width / 2, player_y), RIGHT)
 	dispenser3.get_child(0).flip_h = false
-	
+
 	# Right
 	var dispenser4 = father.get_child(3)
 	dispenser4.setup(Vector2(screensize.x - disp_width / 2, player_y), LEFT)
@@ -51,7 +51,7 @@ func _process(delta):
 			empty_dispensers += 1
 	if empty_dispensers == 4:
 		$Player.emit_signal("game_over")
-	
+
 	match gamemode:
 		0: random()
 		_: level()
@@ -73,7 +73,7 @@ func random():  # Dispensers random mode
 		randomize()
 		if randi() % 97 == 0 && dispenser_timer.get_time_left() == 0:
 			var ball = preload("res://scenes/Ball.tscn").instance()
-			
+
 			randomize()
 			var color = randi() % ball.Type.size()
 			var speed = rand_range(ball.min_speed, ball.max_speed)

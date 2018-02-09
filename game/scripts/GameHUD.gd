@@ -13,16 +13,16 @@ func _ready(goal_array):
 	$PauseMenu.hide()
 	screensize = get_node("/root").get_viewport().get_visible_rect().size
 	self.goal_number = goal_array.size()
-	
+
 	print("goal:")  # DEBUG
 	print(goal_array)
-	
+
 	for i in range(0, goal_number):
 		var ball = preload("res://scenes/Ball.tscn").instance()
 		randomize()
 		var color = goal_array[i]
 		ball._ready(color, 0)
-		
+
 		# Containers
 		var center_container = CenterContainer.new()
 		center_container.add_child(ball)
@@ -33,7 +33,7 @@ func _process(delta):
 	$ButtonGrid/Left.rect_rotation = 270
 	$ButtonGrid/Right.rect_rotation = 90
 	$ButtonGrid/Down.rect_rotation = 180
-	
+
 	var _player = get_node("/root/Main/Game/Player")
 	$UpperLeftPanel/VBox/ProgressBar.value = _player.hp
 	if balls_hit == correct_array.size():
@@ -50,7 +50,7 @@ func hit_check(ball):
 		$UpperLeftPanel/VBox/HBox/HSplit.get_child(balls_hit).modulate = Color(0, 0, 0, 50)
 		balls_hit += 1
 		$GracePeriod.start()
-		
+
 		var Game = get_node("/root/Main/Game")
 		if Game.gamemode == 0:  # Random game mode
 			Game.delete_balls()

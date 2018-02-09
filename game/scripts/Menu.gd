@@ -20,13 +20,13 @@ func create_game_from_file(level_number):
 	Game = preload("res://scenes/Game.tscn").instance()
 	Game.gamemode = level_number
 	Game.set_dispensers_gamemode(level_number)
-	
+
 	var level = Game.extract_level(level_number)
 	Game.level_array = interpret_file(level)
 	Game.load_dispensers()
 	start_game(Game)
 	Game.load_goal()
-	
+
 	unlock_level(level_number)
 	save_game()
 
@@ -60,11 +60,11 @@ func interpret_file(level):  # Transform file contents in arrays
 func save_game():  # Serialize Menu node
 	saved_game = File.new()
 	saved_game.open(save_path, File.WRITE)
-	
+
 	var save_data = ""
 	for i in unlocked_levels.size():
 		save_data += str(unlocked_levels[i])
-		
+
 	saved_game.store_var({"unlockedlevels": unlocked_levels})
 	saved_game.close()
 
@@ -93,6 +93,18 @@ func unlock_level(level_number):
 	if !unlocked_levels.has(level_number):
 		unlocked_levels.append(level_number)
 
+func lock_levels():
+	var level_grid = get_node("Out/LevelMenu/VBox/LevelGrid")
+	var total_levels = level_grid.get_child_count()
+	for i in range(1, total_levels):
+		level_grid.get_child(i).disabled = true
+
+func delete_save():
+	saved_game.open(save_path, File.WRITE)
+	saved_game.store_var("")
+	saved_game.close()
+	lock_levels()
+
 # --- Visibility ---
 
 func show_up():
@@ -102,15 +114,13 @@ func show_up():
 	$Out/Fluff.add_child(player)
 	show()
 
-# --- Menu Buttons ---
+# --- Menu Sinals ---
+# Start submenu
 
 func _on_Start_pressed():
 	popup.visible = true
 	popup.rect_position = Vector2(53, 37)
 	popup.rect_size = Vector2(189, 375)
-
-func _on_About_pressed():
-	about_menu.visible = true
 
 func _on_X_pressed():
 	popup.hide()
@@ -147,6 +157,17 @@ func _on_Random_pressed():
 func button_pressed():  # Function to be called after a relevant bt press
 	popup.hide()
 	get_node("Out/Fluff/Player").queue_free()
+
+# About sub-menu
+
+func _on_About_pressed():
+	about_menu.show()
+
+func _on_X2_pressed():
+	about_menu.hide()
+
+func _on_Delete_Save_pressed():
+	delete_save()
 
 # --- Social media buttons ---
 

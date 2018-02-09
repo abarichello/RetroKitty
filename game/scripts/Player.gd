@@ -16,7 +16,7 @@ func _ready():
 func _process(delta):
 	if hp <= 0:
 		emit_signal("game_over")
-	
+
 func _input(event):
 	if event.is_action_pressed("ui_fire"):
 		fire()

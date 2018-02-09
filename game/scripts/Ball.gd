@@ -68,7 +68,7 @@ func match_color():
 			$Sprite.set_texture(black_texture)
 		_:
 			color = Color( .57, 102, .63) # MUD
-	
+
 	$Sprite.modulate = color
 	return color
 
