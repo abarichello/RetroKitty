@@ -86,7 +86,10 @@ func _on_Intermission_timeout():  # Change to next level
 	Game.set_dispensers_gamemode(0)  # Dispenser deactivated mode
 	var Main = get_node("/root/Main")
 	Main.delete_game()
-	Main.start_loading_timer()
+	if get_parent().gamemode != 0:
+		Main.start_loading_timer()
+	else:
+		_on_Quit_pressed()
 
 # --- Pause Menu ---
 
