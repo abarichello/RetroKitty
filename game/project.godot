@@ -23,7 +23,7 @@ settings/fps/force_fps=60
 window/size/width=400
 window/size/height=700
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep"
 
 [gdnative]
 
@@ -67,3 +67,7 @@ common/fixed_fps=70
 [rendering]
 
 environment/default_environment="res://default_env.tres"
+
+[stretch]
+
+=false

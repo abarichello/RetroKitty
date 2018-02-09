@@ -112,6 +112,9 @@ func _on_Start_pressed():
 func _on_About_pressed():
 	about_menu.visible = true
 
+func _on_X_pressed():
+	popup.hide()
+
 func _on_Level1_pressed():
 	create_game_from_file(1)
 	button_pressed()

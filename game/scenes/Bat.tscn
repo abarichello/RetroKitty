@@ -42,7 +42,7 @@ _sections_unfolded = [ "Anchor", "Animation", "Focus", "Grow Direction", "Hint",
 
 [node name="Hitzone" type="Area2D" parent="Sprite" index="0"]
 
-position = Vector2( 0.351399, -4.9386 )
+position = Vector2( 0, -5 )
 scale = Vector2( 0.628502, 0.707519 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -56,7 +56,6 @@ _sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Hitzone" index="0"]
 
-position = Vector2( 1.29293, 0.406528 )
 scale = Vector2( 2.44496, 3.11287 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
@@ -68,9 +67,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -19.0
+margin_left = -14.0
 margin_top = -27.0
-margin_right = 21.0
+margin_right = 17.0
 margin_bottom = 17.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
@@ -78,6 +77,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.794605, 0.300738, 0.300738, 1 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 
 [node name="Cooldown" type="Timer" parent="." index="1"]
 
