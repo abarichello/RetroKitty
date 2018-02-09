@@ -19,7 +19,7 @@ use_filter = false
 font_data = ExtResource( 9 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Resource", "Settings" ]
 
-[node name="Menu" type="Control" index="0" groups=[
+[node name="Menu" type="Control" groups=[
 "Persist",
 ]]
 
@@ -680,7 +680,7 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "Anchor", "BBCode", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="Delete Save" type="Button" parent="AboutMenu/VBox" index="2"]
+[node name="DeleteSave" type="Button" parent="AboutMenu/VBox" index="2"]
 
 self_modulate = Color( 1, 0.53125, 0.53125, 1 )
 anchor_left = 0.0
@@ -734,6 +734,6 @@ _sections_unfolded = [ "Focus", "Mouse", "Size Flags", "Theme", "Visibility", "c
 
 [connection signal="pressed" from="AboutMenu/VBox/HBox/X2" to="." method="_on_X2_pressed"]
 
-[connection signal="pressed" from="AboutMenu/VBox/Delete Save" to="." method="_on_Delete_Save_pressed"]
+[connection signal="pressed" from="AboutMenu/VBox/DeleteSave" to="." method="_on_Delete_Save_pressed"]
 
 

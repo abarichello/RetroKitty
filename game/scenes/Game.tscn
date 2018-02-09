@@ -26,7 +26,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.813437, 1, 0.652344, 1 )
+color = Color( 0.514861, 0.726562, 0.332062, 1 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
@@ -45,5 +45,14 @@ scale = Vector2( 2, 2 )
 [node name="Dispenser4" parent="Dispensers" index="3" instance=ExtResource( 2 )]
 
 [node name="GameHUD" parent="." index="3" instance=ExtResource( 4 )]
+
+[node name="StartCountdown" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 3.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="StartCountdown" to="." method="_on_StartCountdown_timeout"]
 
 

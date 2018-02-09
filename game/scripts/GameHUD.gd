@@ -30,6 +30,12 @@ func _ready(goal_array):
 		correct_array.append(ball)
 
 func _process(delta):
+	var countdown_seconds = get_node("/root/Main/Game/StartCountdown").time_left
+	if countdown_seconds != 0 && self.get_parent().gamemode != 0:
+		$Countdown.text = str(countdown_seconds)
+	else:
+		$Countdown.hide()
+
 	$ButtonGrid/Left.rect_rotation = 270
 	$ButtonGrid/Right.rect_rotation = 90
 	$ButtonGrid/Down.rect_rotation = 180
@@ -44,7 +50,7 @@ func _input(event):
 		$PauseMenu.show()
 		get_tree().set_pause(true)
 
-func hit_check(ball):
+func hit_check(ball):  # Checks the ball hit against the goal
 	# 8 = WHITE, 9 = BLACK
 	if balls_hit < correct_array.size() && ball.color == correct_array[balls_hit].color:
 		$UpperLeftPanel/VBox/HBox/HSplit.get_child(balls_hit).modulate = Color(0, 0, 0, 50)
@@ -52,13 +58,13 @@ func hit_check(ball):
 		$GracePeriod.start()
 
 		var Game = get_node("/root/Main/Game")
-		if Game.gamemode == 0:  # Random game mode
+		if Game.gamemode == 0:  # Delete onscreen balls if Random gamemode
 			Game.delete_balls()
 	elif balls_hit < correct_array.size() && ball.color != correct_array[balls_hit].color && ball.color != 8:
 		if $GracePeriod.time_left == 0:
 			player.hp -= 1
 
-func out_check(ball):
+func out_check(ball):  # Check if it is a missed goal ball
 	var valid = balls_hit < correct_array.size()
 	if valid && (ball.color == correct_array[balls_hit].color || ball.color == 8):
 		player.hp -= 1

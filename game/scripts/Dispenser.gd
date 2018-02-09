@@ -18,6 +18,9 @@ func _process(delta):
 	if instructions.size() == 0 && gamemode != 0:
 		emit_signal("empty")
 
+func power_on():
+	$Timer.start()
+
 func setup(start_position, facing):
 	self.global_position = start_position
 	self.angle = facing

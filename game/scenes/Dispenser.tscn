@@ -65,7 +65,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z" ]
 process_mode = 1
 wait_time = 0.1
 one_shot = false
-autostart = true
+autostart = false
 
 [node name="ColorTimer" type="Timer" parent="." index="3"]
 

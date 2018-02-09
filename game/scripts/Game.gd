@@ -17,12 +17,33 @@ func _ready():
 	$Player/SpawnPosition.position = screensize / 2
 	$Player.position = $Player/SpawnPosition.position
 
+	setup_dispensers()
+
+func _process(delta):
+	var empty_dispensers = 0
+	for i in range(0, $Dispensers.get_child_count()):
+		var no_children = $Dispensers.get_child(i).children == 0
+		if $Dispensers.get_child(i).empty && no_children:
+			empty_dispensers += 1
+	if empty_dispensers == 4:
+		$Player.emit_signal("game_over")
+
+	match gamemode:
+		0: random()
+		_: level()
+
+func _on_StartCountdown_timeout():
+	for i in range(0, $Dispensers.get_child_count()):
+		$Dispensers.get_child(i).power_on()
+
+# --- Dispenser Management ---
+
+func setup_dispensers():
+	var father = get_node("Dispensers")
+	var disp_width = $Dispensers/Dispenser1/Sprite.frames.get_frame("default", 0).get_width()
 	var player_x = $Player.position.x
 	var player_y = $Player.position.y
-	var disp_width = $Dispensers/Dispenser1/Sprite.frames.get_frame("default", 0).get_width()
 
-	# --- Setup dispensers ---
-	var father = get_node("Dispensers")
 	# Up
 	var dispenser1 = father.get_child(0)
 	dispenser1.setup(Vector2(player_x, player_y - player_x / 1.1), DOWN)
@@ -42,21 +63,6 @@ func _ready():
 	var dispenser4 = father.get_child(3)
 	dispenser4.setup(Vector2(screensize.x - disp_width / 2, player_y), LEFT)
 	dispenser4.get_child(0).flip_h = true
-
-func _process(delta):
-	var empty_dispensers = 0
-	for i in range(0, $Dispensers.get_child_count()):
-		var no_children = $Dispensers.get_child(i).children == 0
-		if $Dispensers.get_child(i).empty && no_children:
-			empty_dispensers += 1
-	if empty_dispensers == 4:
-		$Player.emit_signal("game_over")
-
-	match gamemode:
-		0: random()
-		_: level()
-
-# --- Dispenser Management ---
 
 func set_dispensers_gamemode(gamemode):
 	for i in range(0, $Dispensers.get_child_count()):
