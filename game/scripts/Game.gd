@@ -16,7 +16,6 @@ func _ready():
 
     $Player/SpawnPosition.position = screensize / 2
     $Player.position = $Player/SpawnPosition.position
-
     setup_dispensers()
 
 func _process(delta):
