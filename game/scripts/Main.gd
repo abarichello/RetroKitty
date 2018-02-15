@@ -4,7 +4,7 @@ var current_level = 0
 var available_levels
 
 func _ready():
-    available_levels = $Menu/Out/LevelMenu/VBox/LevelGrid.get_child_count()
+    available_levels = $Menu/LevelMenu/VBox/LevelGrid.get_child_count()
 
 func delete_game():
     var Game = get_node("/root/Main/Game")

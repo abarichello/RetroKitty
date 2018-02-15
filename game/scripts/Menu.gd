@@ -1,7 +1,7 @@
 extends Control
 
 var Game = preload("res://scenes/Game.tscn").instance()
-onready var popup = get_node("Out/LevelMenu")
+onready var popup = get_node("LevelMenu")
 onready var about_menu = get_node("AboutMenu")
 var unlocked_levels = [1]
 var saved_game = File.new()
@@ -89,12 +89,12 @@ func load_game():
             unlock_level(arr[i])
 
 func unlock_level(level_number):
-    get_node("Out/LevelMenu/VBox/LevelGrid").get_child(level_number - 1).disabled = false
+    get_node("LevelMenu/VBox/LevelGrid").get_child(level_number - 1).disabled = false
     if !unlocked_levels.has(level_number):
         unlocked_levels.append(level_number)
 
 func lock_levels():
-    var level_grid = get_node("Out/LevelMenu/VBox/LevelGrid")
+    var level_grid = get_node("LevelMenu/VBox/LevelGrid")
     var total_levels = level_grid.get_child_count()
     for i in range(1, total_levels):
         level_grid.get_child(i).disabled = true

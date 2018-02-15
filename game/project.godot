@@ -20,8 +20,12 @@ settings/fps/force_fps=60
 
 [display]
 
-window/size/width=400
-window/size/height=700
+window/size/width=1080
+window/size/height=1920
+window/size/fullscreen=true
+window/size/test_width=400
+window/size/test_height=700
+window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
@@ -67,7 +71,3 @@ common/fixed_fps=70
 [rendering]
 
 environment/default_environment="res://default_env.tres"
-
-[stretch]
-
-=false
