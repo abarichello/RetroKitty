@@ -8,7 +8,8 @@ var saved_game = File.new()
 var save_path = "user://savefile.sv"
 
 func _ready():
-    load_game()
+    pass
+    #load_save()
 
 func create_random_game():
     Game = preload("res://scenes/Game.tscn").instance()
@@ -81,7 +82,7 @@ func read_saved_game():
         save_game()
     return saved_data
 
-func load_game():
+func load_save():
     var saved_data = read_saved_game()
     if !saved_data.empty():
         var arr = saved_data["unlockedlevels"]

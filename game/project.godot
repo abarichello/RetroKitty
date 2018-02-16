@@ -22,10 +22,14 @@ settings/fps/force_fps=60
 
 window/size/width=1080
 window/size/height=1920
+window/size/resizable=false
+window/size/borderless=true
 window/size/fullscreen=true
-window/size/test_width=400
-window/size/test_height=700
+window/size/test_width=1080
+window/size/test_height=1920
+window/dpi/allow_hidpi=true
 window/handheld/orientation="portrait"
+window/handheld/emulate_touchscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
