@@ -38,19 +38,19 @@ scale = Vector2( 6, 6 )
 
 [node name="Dispenser1" parent="Dispensers" index="0" instance=ExtResource( 2 )]
 
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 
 [node name="Dispenser2" parent="Dispensers" index="1" instance=ExtResource( 2 )]
 
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 
 [node name="Dispenser3" parent="Dispensers" index="2" instance=ExtResource( 2 )]
 
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 
 [node name="Dispenser4" parent="Dispensers" index="3" instance=ExtResource( 2 )]
 
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 
 [node name="GameHUD" parent="." index="3" instance=ExtResource( 4 )]
 

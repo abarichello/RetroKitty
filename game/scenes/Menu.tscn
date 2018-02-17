@@ -53,7 +53,6 @@ __meta__ = {
 
 [node name="Out" type="HBoxContainer" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -89,7 +88,7 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Rect",
 
 [node name="Player" parent="Out/Fluff" index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 339.244, 1529.61 )
+position = Vector2( 339, 1529 )
 scale = Vector2( 11, 11 )
 
 [node name="Title" type="TextureRect" parent="Out/Fluff" index="1"]
@@ -301,6 +300,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="LevelMenu" type="PopupMenu" parent="." index="1"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

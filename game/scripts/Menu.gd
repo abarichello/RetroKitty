@@ -8,8 +8,7 @@ var saved_game = File.new()
 var save_path = "user://savefile.sv"
 
 func _ready():
-    pass
-    #load_save()
+    load_save()
 
 func create_random_game():
     Game = preload("res://scenes/Game.tscn").instance()
@@ -110,8 +109,8 @@ func delete_save():
 
 func show_up():
     var player = preload("res://scenes/Player.tscn").instance()
-    player.position = Vector2(149, 537)
-    player.scale = Vector2(4.7, 4.7)
+    player.position = Vector2(339, 1529)
+    player.scale = Vector2(11, 11)
     $Out/Fluff.add_child(player)
     show()
 
