@@ -17,10 +17,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -206.5
-margin_top = -360.0
-margin_right = 206.5
-margin_bottom = 360.0
+margin_left = -540.0
+margin_top = -960.0
+margin_right = 540.0
+margin_bottom = 960.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -32,17 +32,25 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 199.415, 376.759 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 6, 6 )
 
 [node name="Dispensers" type="Node" parent="." index="2"]
 
 [node name="Dispenser1" parent="Dispensers" index="0" instance=ExtResource( 2 )]
 
+scale = Vector2( 1.5, 1.5 )
+
 [node name="Dispenser2" parent="Dispensers" index="1" instance=ExtResource( 2 )]
+
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Dispenser3" parent="Dispensers" index="2" instance=ExtResource( 2 )]
 
+scale = Vector2( 1.5, 1.5 )
+
 [node name="Dispenser4" parent="Dispensers" index="3" instance=ExtResource( 2 )]
+
+scale = Vector2( 1.5, 1.5 )
 
 [node name="GameHUD" parent="." index="3" instance=ExtResource( 4 )]
 

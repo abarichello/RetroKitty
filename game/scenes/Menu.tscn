@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -13,13 +13,21 @@
 
 [sub_resource type="DynamicFont" id=1]
 
+size = 90
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 9 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
 size = 35
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 9 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Resource", "Settings" ]
 
-[node name="Menu" type="Control" index="0" groups=[
+[node name="Menu" type="Control" groups=[
 "Persist",
 ]]
 
@@ -45,6 +53,7 @@ __meta__ = {
 
 [node name="Out" type="HBoxContainer" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -292,15 +301,14 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="LevelMenu" type="PopupMenu" parent="." index="1"]
 
-editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 315.0
-margin_right = 331.0
-margin_bottom = 1920.0
+margin_left = 62.0
+margin_top = 132.0
+margin_right = 823.0
+margin_bottom = 1500.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -319,8 +327,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 108.0
-margin_bottom = 93.0
+margin_right = 172.0
+margin_bottom = 106.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -335,9 +343,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 2.0
-margin_right = 172.0
-margin_bottom = 29.0
+margin_right = 448.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -352,8 +359,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 26.0
-margin_bottom = 27.0
+margin_right = 88.0
+margin_bottom = 110.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -377,9 +384,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 33.0
-margin_right = 172.0
-margin_bottom = 60.0
+margin_top = 114.0
+margin_right = 528.0
+margin_bottom = 224.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -394,8 +401,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 22.0
-margin_bottom = 27.0
+margin_right = 68.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -417,9 +424,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 26.0
-margin_right = 52.0
-margin_bottom = 27.0
+margin_left = 72.0
+margin_right = 160.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -441,9 +448,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 56.0
-margin_right = 82.0
-margin_bottom = 27.0
+margin_left = 164.0
+margin_right = 252.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -465,9 +472,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 86.0
-margin_right = 112.0
-margin_bottom = 27.0
+margin_left = 256.0
+margin_right = 344.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -488,9 +495,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 116.0
-margin_right = 142.0
-margin_bottom = 27.0
+margin_left = 348.0
+margin_right = 436.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -511,9 +518,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 146.0
-margin_right = 172.0
-margin_bottom = 27.0
+margin_left = 440.0
+margin_right = 528.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -534,9 +541,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 64.0
-margin_right = 172.0
-margin_bottom = 91.0
+margin_top = 228.0
+margin_right = 448.0
+margin_bottom = 320.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -546,18 +553,20 @@ alignment = 0
 
 [node name="Random" type="Button" parent="LevelMenu/VBox/Alt" index="0"]
 
+self_modulate = Color( 0.0234375, 1, 0.49646, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 101.0
-margin_bottom = 27.0
+margin_right = 408.0
+margin_bottom = 92.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -668,7 +677,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
