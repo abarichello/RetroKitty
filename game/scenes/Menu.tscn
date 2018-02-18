@@ -1,15 +1,15 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://resources/img/text/title.png" type="Texture" id=3]
 [ext_resource path="res://resources/themes/retro.tres" type="Theme" id=4]
-[ext_resource path="res://resources/img/buttons/social/social-twitter.svg" type="Texture" id=5]
-[ext_resource path="res://resources/img/buttons/social/social-github.svg" type="Texture" id=6]
-[ext_resource path="res://resources/img/buttons/social/social-telegram.svg" type="Texture" id=7]
+[ext_resource path="res://resources/img/buttons/social/social-twitter.png" type="Texture" id=5]
+[ext_resource path="res://resources/img/buttons/social/social-github.png" type="Texture" id=6]
+[ext_resource path="res://resources/img/buttons/social/social-telegram.png" type="Texture" id=7]
 [ext_resource path="res://resources/themes/level_select.tres" type="Theme" id=8]
 [ext_resource path="res://resources/fonts/HANGTHEDJ.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://resources/themes/pause_menu_buttons.tres" type="Theme" id=10]
+[ext_resource path="res://resources/fonts/TickingTimebombBB.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -21,13 +21,29 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
 
-size = 35
+size = 100
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 9 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Resource", "Settings" ]
 
-[node name="Menu" type="Control" groups=[
+[sub_resource type="DynamicFont" id=3]
+
+size = 60
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 10 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Resource", "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 100
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 10 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[node name="Menu" type="Control" index="0" groups=[
 "Persist",
 ]]
 
@@ -221,16 +237,15 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 6.0
-margin_top = 15.0
-margin_right = 323.0
-margin_bottom = 113.0
-rect_scale = Vector2( 1.1, 1.1 )
+margin_top = 20.0
+margin_right = 355.0
+margin_bottom = 133.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+custom_constants/separation = 1
 alignment = 0
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_constants" ]
 
@@ -240,8 +255,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 113.0
-margin_bottom = 113.0
+margin_right = 128.0
+margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -261,9 +276,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 117.0
-margin_right = 219.0
-margin_bottom = 113.0
+margin_left = 129.0
+margin_right = 257.0
+margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -283,9 +298,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 223.0
-margin_right = 323.0
-margin_bottom = 113.0
+margin_left = 258.0
+margin_right = 386.0
+margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 2
@@ -300,6 +315,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="LevelMenu" type="PopupMenu" parent="." index="1"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -584,11 +600,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -150.0
-margin_top = -302.5
-margin_right = 160.0
-margin_bottom = 307.5
-rect_min_size = Vector2( 310, 610 )
+margin_left = -465.0
+margin_top = -582.0
+margin_right = 244.0
+margin_bottom = 524.0
+rect_min_size = Vector2( 598, 808 )
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -597,33 +613,19 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 popup_exclusive = false
 items = [  ]
+hide_on_item_selection = false
 hide_on_state_item_selection = false
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Popup", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
 
-[node name="VBox" type="VBoxContainer" parent="AboutMenu" index="1"]
+[node name="HBox" type="HBoxContainer" parent="AboutMenu" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 307.0
-margin_bottom = 96.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_constants" ]
-
-[node name="HBox" type="HBoxContainer" parent="AboutMenu/VBox" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 307.0
-margin_bottom = 27.0
+margin_right = 592.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -631,15 +633,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="X2" type="Button" parent="AboutMenu/VBox/HBox" index="0"]
+[node name="X2" type="Button" parent="AboutMenu/HBox" index="0"]
 
 self_modulate = Color( 1, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 26.0
-margin_bottom = 27.0
+margin_right = 88.0
+margin_bottom = 110.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -658,24 +660,22 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags", "Theme", "Visibility" ]
 
-[node name="ABOUT" type="RichTextLabel" parent="AboutMenu/VBox" index="1"]
+[node name="ABOUT" type="RichTextLabel" parent="AboutMenu" index="2"]
 
-anchor_left = 0.0
+anchor_left = 1.0
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 1.0
 anchor_bottom = 0.0
-margin_left = 84.0
-margin_top = 31.0
-margin_right = 223.0
-margin_bottom = 65.0
+margin_left = -591.0
+margin_bottom = 102.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 139, 34 )
+rect_min_size = Vector2( 139, 72 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 4
+size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = false
@@ -684,30 +684,56 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "ABOUT:"
+text = "    ABOUT:"
 scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "Anchor", "BBCode", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="DeleteSave" type="Button" parent="AboutMenu/VBox" index="2"]
+[node name="UnlockDelete" type="CheckButton" parent="AboutMenu" index="3"]
 
-self_modulate = Color( 1, 0.53125, 0.53125, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 69.0
-margin_right = 307.0
-margin_bottom = 96.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -65.5
+margin_top = -166.0
+margin_right = 341.5
+margin_bottom = -98.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
+size_flags_horizontal = 8
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Unlock delete"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
+
+[node name="DeleteSave" type="Button" parent="AboutMenu" index="4"]
+
+modulate = Color( 1, 1, 1, 0.7 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -282.5
+margin_top = -106.0
+margin_right = 282.5
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 10 )
+custom_fonts/font = SubResource( 4 )
+disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -715,7 +741,7 @@ group = null
 text = "Delete save"
 flat = false
 align = 1
-_sections_unfolded = [ "Focus", "Mouse", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_styles" ]
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [connection signal="pressed" from="Out/MenuColumn/Spacer/ButtonsColumn/Start" to="." method="_on_Start_pressed"]
 
@@ -743,8 +769,10 @@ _sections_unfolded = [ "Focus", "Mouse", "Size Flags", "Theme", "Visibility", "c
 
 [connection signal="pressed" from="LevelMenu/VBox/Alt/Random" to="." method="_on_Random_pressed"]
 
-[connection signal="pressed" from="AboutMenu/VBox/HBox/X2" to="." method="_on_X2_pressed"]
+[connection signal="pressed" from="AboutMenu/HBox/X2" to="." method="_on_X2_pressed"]
 
-[connection signal="pressed" from="AboutMenu/VBox/DeleteSave" to="." method="_on_Delete_Save_pressed"]
+[connection signal="pressed" from="AboutMenu/UnlockDelete" to="." method="_on_UnlockDelete_pressed"]
+
+[connection signal="pressed" from="AboutMenu/DeleteSave" to="." method="_on_Delete_Save_pressed"]
 
 

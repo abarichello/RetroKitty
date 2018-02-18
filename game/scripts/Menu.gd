@@ -166,6 +166,15 @@ func _on_About_pressed():
 func _on_X2_pressed():
     about_menu.hide()
 
+func _on_UnlockDelete_pressed():
+    var button = $AboutMenu/DeleteSave
+    if $AboutMenu/UnlockDelete.pressed:
+        button.modulate = Color(1, 0.34, 0.34, 1)
+        button.disabled = false
+    else:
+        button.modulate = Color(1, 0.34, 0.34, 0.7)
+        button.disabled = true
+
 func _on_Delete_Save_pressed():
     delete_save()
 

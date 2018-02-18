@@ -7,9 +7,10 @@ path="res://.import/social-github.png-00d65515624633d96f75ab190ed13c9b.stex"
 [deps]
 
 source_file="res://resources/img/buttons/social/social-github.png"
-source_md5="dd391e302e04696b95a260062606f814"
+source_md5="ce8325bd3c1b1ac3feeee8ac89c034bc"
+
 dest_files=[ "res://.import/social-github.png-00d65515624633d96f75ab190ed13c9b.stex" ]
-dest_md5="e2f45fa2ce096a53ff228e24c9cefbde"
+dest_md5="a55988a10f5e6edac622bb410db02dcb"
 
 [params]
 
