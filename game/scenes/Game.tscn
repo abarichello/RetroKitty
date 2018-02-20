@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/GameHUD.tscn" type="PackedScene" id=4]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -26,7 +26,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.514861, 0.726562, 0.332062, 1 )
+color = Color( 0.65, 0.753906, 0.35, 1 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
@@ -38,19 +38,19 @@ scale = Vector2( 6, 6 )
 
 [node name="Dispenser1" parent="Dispensers" index="0" instance=ExtResource( 2 )]
 
-scale = Vector2( 2, 2 )
+scale = Vector2( 2.5, 2.5 )
 
 [node name="Dispenser2" parent="Dispensers" index="1" instance=ExtResource( 2 )]
 
-scale = Vector2( 2, 2 )
+scale = Vector2( 2.5, 2.5 )
 
 [node name="Dispenser3" parent="Dispensers" index="2" instance=ExtResource( 2 )]
 
-scale = Vector2( 2, 2 )
+scale = Vector2( 2.5, 2.5 )
 
 [node name="Dispenser4" parent="Dispensers" index="3" instance=ExtResource( 2 )]
 
-scale = Vector2( 2, 2 )
+scale = Vector2( 2.5, 2.5 )
 
 [node name="GameHUD" parent="." index="3" instance=ExtResource( 4 )]
 

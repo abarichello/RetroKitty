@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0004.png-40133191d3229de20f886b5c0b0061cd.stex"
+path="res://.import/loading0.png-7defc340d64d90dc4a0eab6a5e206dad.stex"
 
 [deps]
 
-source_file="res://resources/img/player/0004.png"
-source_md5="93514d95376e4c81fae2b82e30b15da5"
+source_file="res://resources/img/player/loading/loading0.png"
+source_md5="66ce0bb5f4c6362d30a8d09502632e3b"
 
-dest_files=[ "res://.import/0004.png-40133191d3229de20f886b5c0b0061cd.stex" ]
-dest_md5="1b9651de4a0044152461efc645958e43"
+dest_files=[ "res://.import/loading0.png-7defc340d64d90dc4a0eab6a5e206dad.stex" ]
+dest_md5="bd6bc8dbd942af38b84e061d09ca237f"
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0

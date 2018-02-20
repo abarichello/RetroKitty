@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://resources/img/player/0000.png" type="Texture" id=2]
-[ext_resource path="res://resources/img/player/0001.png" type="Texture" id=3]
-[ext_resource path="res://resources/img/player/0002.png" type="Texture" id=4]
-[ext_resource path="res://resources/img/player/0003.png" type="Texture" id=5]
-[ext_resource path="res://resources/img/player/0004.png" type="Texture" id=6]
+[ext_resource path="res://resources/img/player/idle/0000.png" type="Texture" id=2]
+[ext_resource path="res://resources/img/player/idle/0001.png" type="Texture" id=3]
+[ext_resource path="res://resources/img/player/idle/0002.png" type="Texture" id=4]
+[ext_resource path="res://resources/img/player/idle/0003.png" type="Texture" id=5]
+[ext_resource path="res://resources/img/player/idle/0004.png" type="Texture" id=6]
 [ext_resource path="res://scenes/Bat.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -38,7 +38,6 @@ max_hp = 3
 
 [node name="CollisionBox" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 2.25829, -0.857639 )
 scale = Vector2( 3.34427, 3.22604 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -47,7 +46,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 2
+frame = 6
 playing = true
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 

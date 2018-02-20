@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bat0000.png-c550a9c2729ba7203e9caf860a66ceb2.stex"
+path="res://.import/0001.png-b3f1192fb7785a64600f495b7352186a.stex"
 
 [deps]
 
-source_file="res://resources/img/player/bat0000.png"
-source_md5="851d9afdb1a1c27ccb98167aa7f6bf89"
+source_file="res://resources/img/player/idle/0001.png"
+source_md5="b9e0b804d12d75553a33c7cbce29fd6f"
 
-dest_files=[ "res://.import/bat0000.png-c550a9c2729ba7203e9caf860a66ceb2.stex" ]
-dest_md5="c34265c624280e13b0f35e3e1f1c1875"
+dest_files=[ "res://.import/0001.png-b3f1192fb7785a64600f495b7352186a.stex" ]
+dest_md5="79a37a79c05afa406cff7e6d2672bad4"
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
