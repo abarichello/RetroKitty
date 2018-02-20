@@ -172,7 +172,7 @@ func _on_UnlockDelete_pressed():
         button.modulate = Color(1, 0.34, 0.34, 1)
         button.disabled = false
     else:
-        button.modulate = Color(1, 0.34, 0.34, 0.7)
+        button.modulate = Color(1, 1, 1, 0.7)
         button.disabled = true
 
 func _on_Delete_Save_pressed():

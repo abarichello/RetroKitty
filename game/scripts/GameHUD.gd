@@ -47,8 +47,7 @@ func _process(delta):
 
 func _input(event):
     if event.is_action_pressed("ui_escape"):
-        $PauseMenu.show()
-        get_tree().set_pause(true)
+        pause()
 
 func hit_check(ball):  # Checks the ball hit against the goal
     # 8 = WHITE, 9 = BLACK
@@ -68,6 +67,10 @@ func out_check(ball):  # Check if it is a missed goal ball
     var valid = balls_hit < correct_array.size()
     if valid && (ball.color == correct_array[balls_hit].color || ball.color == 8):
         player.hp -= 1
+
+func pause():
+    $PauseMenu.show()
+    get_tree().set_pause(true)
 
 # --- Signals ---
 
@@ -91,7 +94,10 @@ func _on_Intermission_timeout():  # Change to next level
     else:
         _on_Quit_pressed()
 
-# --- Pause Menu ---
+# --- Pause ---
+
+func _on_Pause_pressed():
+    pause()
 
 func _on_Resume_pressed():
     $PauseMenu.hide()

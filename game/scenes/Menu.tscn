@@ -29,7 +29,7 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Resource", "Se
 
 [sub_resource type="DynamicFont" id=3]
 
-size = 60
+size = 20
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 10 )
@@ -238,8 +238,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 20.0
-margin_right = 355.0
-margin_bottom = 133.0
+margin_right = 386.0
+margin_bottom = 148.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -594,8 +594,6 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="AboutMenu" type="PopupMenu" parent="." index="2"]
 
-editor/display_folded = true
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -697,10 +695,11 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -65.5
-margin_top = -166.0
-margin_right = 341.5
-margin_bottom = -98.0
+margin_left = -313.5
+margin_top = -235.0
+margin_right = -103.5
+margin_bottom = -195.0
+rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -724,9 +723,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -282.5
+margin_left = -314.5
 margin_top = -106.0
-margin_right = 282.5
+margin_right = 314.5
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
