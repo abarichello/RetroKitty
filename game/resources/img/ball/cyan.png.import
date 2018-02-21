@@ -7,10 +7,10 @@ path="res://.import/cyan.png-009afdc83c1695b766b79c60090c8891.stex"
 [deps]
 
 source_file="res://resources/img/ball/cyan.png"
-source_md5="849c88e587781becaaf2d7737bbe217c"
+source_md5="cb3dcf56b956d6b4cf234d98f981986a"
 
 dest_files=[ "res://.import/cyan.png-009afdc83c1695b766b79c60090c8891.stex" ]
-dest_md5="c9c8e1574c6d15a64050dfa2bca1321c"
+dest_md5="d5066f46c26602b47f44f1d29652fd13"
 
 [params]
 
