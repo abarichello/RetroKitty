@@ -4,6 +4,7 @@ var current_level = 0
 var available_levels
 
 func _ready():
+    random_loading_image()
     available_levels = $Menu/LevelMenu/VBox/LevelGrid.get_child_count()
 
 func delete_game():
@@ -12,9 +13,16 @@ func delete_game():
     Game.queue_free()
     # Show loading screen
 
+func random_loading_image():
+    var total_images = 2
+    randomize()
+    var rand_index = randi() % total_images
+    $LoadingBackground/Image.texture.set_region(Rect2(0, rand_index * 64, 64, 64))
+
 # --- Timer ---
 
 func start_loading_timer():
+    random_loading_image()
     $LoadingTimer.start()
 
 func start_quit_timer():

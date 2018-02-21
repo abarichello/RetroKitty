@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/loading0.png-7defc340d64d90dc4a0eab6a5e206dad.stex"
+path="res://.import/atlas.png-f9a9f5d3e18e517b137ae718595fd968.stex"
 
 [deps]
 
-source_file="res://resources/img/player/loading/loading0.png"
-source_md5="66ce0bb5f4c6362d30a8d09502632e3b"
+source_file="res://resources/img/player/loading/atlas.png"
+source_md5="88dac373ba1b7e327ee3d5457a7abd5e"
 
-dest_files=[ "res://.import/loading0.png-7defc340d64d90dc4a0eab6a5e206dad.stex" ]
-dest_md5="bd6bc8dbd942af38b84e061d09ca237f"
+dest_files=[ "res://.import/atlas.png-f9a9f5d3e18e517b137ae718595fd968.stex" ]
+dest_md5="31262fd09143fba48f1023800d2fa865"
 
 [params]
 
