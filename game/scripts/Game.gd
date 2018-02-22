@@ -81,6 +81,11 @@ func random():  # Dispensers random mode
 
             randomize()
             var color = randi() % ball.Type.size()
+            if randi() % 5 == 0:  # Shoot next ball in goal
+                print("!")
+                var hud = get_node("/root/Main/Game/GameHUD")
+                color = hud.correct_array[hud.balls_hit].color
+            
             var speed = rand_range(ball.min_speed, ball.max_speed)
             dispenser_timer.start()
             dispenser.shoot(color, speed)

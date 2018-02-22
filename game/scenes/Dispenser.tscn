@@ -22,7 +22,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Dispenser" type="StaticBody2D"]
+[node name="Dispenser" type="StaticBody2D" index="0"]
 
 position = Vector2( 166.536, 160.215 )
 input_pickable = false
@@ -63,7 +63,7 @@ autostart = false
 [node name="Cooldown" type="Timer" parent="." index="4"]
 
 process_mode = 1
-wait_time = 5.0
+wait_time = 4.0
 one_shot = true
 autostart = false
 
