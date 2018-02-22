@@ -120,7 +120,7 @@ func show_up():
 func _on_Start_pressed():
     popup.visible = true
     popup.rect_position = Vector2(62, 132)
-    popup.rect_size = Vector2(761, 1368)
+    popup.rect_size = Vector2(929, 1368)
 
 func _on_X_pressed():
     popup.hide()
@@ -147,6 +147,22 @@ func _on_Level5_pressed():
 
 func _on_Level6_pressed():
     create_game_from_file(6)
+    button_pressed()
+
+func _on_Level7_pressed():
+    create_game_from_file(7)
+    button_pressed()
+
+func _on_Level8_pressed():
+    create_game_from_file(8)
+    button_pressed()
+
+func _on_Level9_pressed():
+    create_game_from_file(9)
+    button_pressed()
+
+func _on_Level10_pressed():
+    create_game_from_file(10)
     button_pressed()
 
 func _on_Random_pressed():

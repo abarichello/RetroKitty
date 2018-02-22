@@ -1,0 +1,22 @@
+# Seconds | Dispenser Number | Color Number | Speed(seconds to reach center)
+
+# Colors: RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, PINK, WHITE = 8, BLACK = 9
+# Number: | UP = 0 | DOWN = 1  | LEFT = 2 | RIGHT = 3
+
+# GOAL: Start line with $
+$ 45 45 45 45
+
+# LEVEL 6 - Blue Moon, i am no longer alone
+
+1   0 4 3
+2   3 5 4
+2.5 1 4 5
+3   2 5 5
+5   0 4 4
+7.5 2 9 2
+8   0 5 4
+9   1 4 5
+11  1 5 2
+13  3 4 1
+13  0 5 1
+15  2 8 3
