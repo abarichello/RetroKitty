@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/GameHUD.gd" type="Script" id=1]
 [ext_resource path="res://resources/fonts/TickingTimebombBB.ttf" type="DynamicFontData" id=2]
@@ -6,9 +6,9 @@
 [ext_resource path="res://resources/img/hud/under.png" type="Texture" id=4]
 [ext_resource path="res://resources/img/hud/progress.png" type="Texture" id=5]
 [ext_resource path="res://resources/img/buttons/arrow.png" type="Texture" id=6]
-[ext_resource path="res://resources/img/player/bat/bat0000.png" type="Texture" id=7]
-[ext_resource path="res://resources/fonts/HANGTHEDJ.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://resources/themes/pause_menu_buttons.tres" type="Theme" id=9]
+[ext_resource path="res://resources/fonts/HANGTHEDJ.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://resources/themes/pause_menu_buttons.tres" type="Theme" id=8]
+[ext_resource path="res://resources/img/player/bat/bat0000.png" type="Texture" id=9]
 [ext_resource path="res://resources/img/buttons/pause.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
@@ -24,10 +24,18 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 size = 120
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 8 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Resource", "Settings" ]
 
-[node name="GameHUD" type="Control"]
+[sub_resource type="DynamicFont" id=3]
+
+size = 100
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[node name="GameHUD" type="Control" index="0"]
 
 anchor_left = 0.5
 anchor_top = 0.5
@@ -81,6 +89,7 @@ _sections_unfolded = [ "Anchor", "BBCode", "Focus", "Grow Direction", "Hint", "M
 
 [node name="UpperLeftPanel" type="NinePatchRect" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
@@ -364,35 +373,10 @@ group = null
 texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="Fire" type="TextureButton" parent="." index="3"]
-
-self_modulate = Color( 0, 0, 0, 1 )
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -4.0
-margin_top = -300.0
-margin_right = 60.0
-margin_bottom = -236.0
-rect_rotation = 90.0
-rect_scale = Vector2( 5, 5 )
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 7 )
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
-
-[node name="PauseMenu" type="Panel" parent="." index="4"]
+[node name="PauseMenu" type="Panel" parent="." index="3"]
 
 pause_mode = 2
+editor/display_folded = true
 modulate = Color( 0.45, 0.8, 0.45, 0.960784 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -471,7 +455,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 9 )
+theme = ExtResource( 8 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -497,7 +481,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 size_flags_vertical = 1
-theme = ExtResource( 9 )
+theme = ExtResource( 8 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -507,21 +491,33 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="GracePeriod" type="Timer" parent="." index="5"]
+[node name="Fire" type="TextureButton" parent="." index="4"]
 
-process_mode = 1
-wait_time = 1.0
-one_shot = true
-autostart = false
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.0
+margin_top = -300.0
+margin_right = 60.0
+margin_bottom = -236.0
+rect_rotation = 90.0
+rect_scale = Vector2( 5, 5 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 9 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="Intermission" type="Timer" parent="." index="6"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = true
-autostart = false
-
-[node name="Pause" type="TextureButton" parent="." index="7"]
+[node name="Pause" type="TextureButton" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -545,6 +541,63 @@ group = null
 texture_normal = ExtResource( 10 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
+[node name="Title" type="RichTextLabel" parent="." index="6"]
+
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -530.0
+margin_top = 229.0
+margin_right = 498.0
+margin_bottom = 323.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "LEVEL"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "BBCode", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="ColorRect" type="ColorRect" parent="Title" index="1"]
+
+show_behind_parent = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -7.0
+margin_top = -9.0
+margin_right = 1050.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.110216, 0.253906, 0.0119019, 1 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
+
+[node name="Intermission" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
 [connection signal="game_over" from="." to="." method="_on_GameHUD_game_over"]
 
 [connection signal="round_ended" from="." to="." method="_on_GameHUD_round_ended" flags=6]
@@ -557,14 +610,14 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [connection signal="pressed" from="ButtonGrid/Down" to="." method="_on_Down_pressed"]
 
-[connection signal="pressed" from="Fire" to="." method="_on_Button_pressed"]
-
 [connection signal="pressed" from="PauseMenu/ButtonGrid/Resume" to="." method="_on_Resume_pressed"]
 
 [connection signal="pressed" from="PauseMenu/ButtonGrid/Quit" to="." method="_on_Quit_pressed"]
 
-[connection signal="timeout" from="Intermission" to="." method="_on_Intermission_timeout"]
+[connection signal="pressed" from="Fire" to="." method="_on_Button_pressed"]
 
 [connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]
+
+[connection signal="timeout" from="Intermission" to="." method="_on_Intermission_timeout"]
 
 

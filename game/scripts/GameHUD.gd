@@ -54,14 +54,12 @@ func hit_check(ball):  # Checks the ball hit against the goal
     if balls_hit < correct_array.size() && ball.color == correct_array[balls_hit].color:
         $UpperLeftPanel/VBox/HBox/HSplit.get_child(balls_hit).modulate = Color(0, 0, 0, 50)
         balls_hit += 1
-        $GracePeriod.start()
 
         var Game = get_node("/root/Main/Game")
         if Game.gamemode == 0:  # Delete onscreen balls if Random gamemode
             Game.delete_balls()
     elif balls_hit < correct_array.size() && ball.color != correct_array[balls_hit].color && ball.color != 8:
-        if $GracePeriod.time_left == 0:
-            player.hp -= 1
+        player.hp -= 1
 
 func out_check(ball):  # Check if it is a missed goal ball
     var valid = balls_hit < correct_array.size()

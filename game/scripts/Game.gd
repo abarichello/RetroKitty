@@ -9,6 +9,7 @@ export (PackedScene) var dispenser
 var level_array = []
 var goal_array = []
 var gamemode = 0 # 0 - Random, Else - Scripted
+var level_title = ""
 var screensize
 
 func _ready():
@@ -32,6 +33,7 @@ func _process(delta):
         _: level()
 
 func _on_StartCountdown_timeout():
+    $GameHUD/Title.hide()
     for i in range(0, $Dispensers.get_child_count()):
         $Dispensers.get_child(i).power_on()
 
@@ -106,11 +108,17 @@ func extract_level(level_number):
     var content = ""
     while not level.eof_reached():
         var line = level.get_line()
-        if not line.begins_with("#") and not line.begins_with("$"): # Remove comments
-            content += line + "\n"
-        if line.begins_with("$"):
+        if line.begins_with("#"): # Remove comments
+            pass
+        elif line.begins_with("$"):
             extract_goal(line)
             print(goal_array)
+        elif line.begins_with("&"):
+            extract_title(line)
+            $GameHUD/Title.text = level_title
+            print(level_title)
+        else:
+            content += line + "\n"
     level.close()
     return content
 
@@ -119,10 +127,15 @@ func extract_goal(line):
         if c != "$" and c != "\n" and c != " ":
             goal_array.append(int(c))
 
+func extract_title(line):
+    for c in line:
+        if c != "&":
+            level_title += c
+
 func load_dispensers():  # Loads dispensers with instructions arrays
     for array in level_array:
         var dispenser_no = int(array[1])
-        var disp = get_node("Dispensers").get_child(dispenser_no)
+        var disp = $Dispensers.get_child(dispenser_no)
         disp.instructions.append(array)
 
 func load_random_goal():  # Creates a goal array and sends to HUD

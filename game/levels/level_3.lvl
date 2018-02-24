@@ -4,9 +4,9 @@
 # Number: | UP = 0 | DOWN = 1 | LEFT = 2 | RIGHT = 3
 
 # GOAL: Start line with $
-$ 8 8 8
+$ 999
 
-# LEVEL 3 - Black ball tutorial
+&LEVEL 3 - Always hit white
 
 # First dispenser
 1  2 8 3.5
