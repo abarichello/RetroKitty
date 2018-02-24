@@ -43,7 +43,7 @@ use_filter = false
 font_data = ExtResource( 9 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Menu" type="Control" index="0" groups=[
+[node name="Menu" type="Control" groups=[
 "Persist",
 ]]
 
@@ -333,7 +333,7 @@ size_flags_vertical = 4
 theme = ExtResource( 8 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Popup", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
 
-[node name="VBox" type="VBoxContainer" parent="LevelMenu" index="1"]
+[node name="VBox" type="VBoxContainer" parent="LevelMenu" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -688,6 +688,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="AboutMenu" type="Panel" parent="." index="2"]
 
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -706,7 +707,7 @@ size_flags_vertical = 4
 theme = ExtResource( 8 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Popup", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
 
-[node name="X2" type="Button" parent="AboutMenu" index="1"]
+[node name="X2" type="Button" parent="AboutMenu" index="0"]
 
 self_modulate = Color( 1, 0, 0, 1 )
 anchor_left = 0.0
@@ -735,7 +736,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags", "Theme", "Visibility" ]
 
-[node name="ABOUT" type="RichTextLabel" parent="AboutMenu" index="2"]
+[node name="ABOUT" type="RichTextLabel" parent="AboutMenu" index="1"]
 
 anchor_left = 1.0
 anchor_top = 0.0
@@ -768,7 +769,7 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "Anchor", "BBCode", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="UnlockDelete" type="CheckButton" parent="AboutMenu" index="3"]
+[node name="UnlockDelete" type="CheckButton" parent="AboutMenu" index="2"]
 
 anchor_left = 0.5
 anchor_top = 1.0
@@ -795,7 +796,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
 
-[node name="DeleteSave" type="Button" parent="AboutMenu" index="4"]
+[node name="DeleteSave" type="Button" parent="AboutMenu" index="3"]
 
 modulate = Color( 1, 1, 1, 0.7 )
 anchor_left = 0.5

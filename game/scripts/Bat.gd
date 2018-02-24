@@ -3,6 +3,7 @@ extends Area2D
 enum Direction {UP = 90, DOWN = 270, LEFT = 180, RIGHT = 0}
 var angle = 0
 var alive = true
+var hit_sound = load("res://resources/sounds/pong/pong1.ogg")
 
 func _ready():
     $Sprite/Hitzone.monitoring = true
@@ -53,6 +54,7 @@ func hit_bodies_in_hitzone():
             body.hit = true
             var direction = body.global_position - Vector2(1, 1)
             body.linear_velocity = direction * 5
+            $Pong.play()
             if alive:
                 var Hud = get_node("/root/Main/Game/GameHUD")
                 Hud.hit_check(body)
