@@ -26,7 +26,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.65, 0.753906, 0.35, 1 )
+color = Color( 0.509804, 0.588235, 0.313726, 1 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]

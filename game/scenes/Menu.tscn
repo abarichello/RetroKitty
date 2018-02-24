@@ -8,8 +8,8 @@
 [ext_resource path="res://resources/img/buttons/social/social-github.png" type="Texture" id=6]
 [ext_resource path="res://resources/img/buttons/social/social-telegram.png" type="Texture" id=7]
 [ext_resource path="res://resources/themes/level_select.tres" type="Theme" id=8]
-[ext_resource path="res://resources/fonts/HANGTHEDJ.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://resources/fonts/TickingTimebombBB.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://resources/fonts/TickingTimebombBB.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://resources/fonts/HANGTHEDJ.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -24,7 +24,7 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 size = 100
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 9 )
+font_data = ExtResource( 10 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Resource", "Settings" ]
 
 [sub_resource type="DynamicFont" id=3]
@@ -32,7 +32,7 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Resource", "Se
 size = 20
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 10 )
+font_data = ExtResource( 9 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Resource", "Settings" ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -40,10 +40,10 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Resource", "Se
 size = 100
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 10 )
+font_data = ExtResource( 9 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Menu" type="Control" groups=[
+[node name="Menu" type="Control" index="0" groups=[
 "Persist",
 ]]
 
@@ -99,7 +99,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 0.65, 0.753906, 0.35, 1 )
+color = Color( 0.509804, 0.588235, 0.313726, 1 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Rect", "Size Flags", "Visibility" ]
 
 [node name="Player" parent="Out/Fluff" index="0" instance=ExtResource( 2 )]
@@ -144,9 +144,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags" ]
 
-[node name="Spacer" type="Panel" parent="Out/MenuColumn" index="0"]
+[node name="Spacer" type="ColorRect" parent="Out/MenuColumn" index="0"]
 
-self_modulate = Color( 0.21875, 1, 0, 1 )
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -160,6 +159,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+color = Color( 0.0102539, 0.046875, 0, 1 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_styles" ]
 
 [node name="ButtonsColumn" type="VBoxContainer" parent="Out/MenuColumn/Spacer" index="0"]
@@ -313,27 +313,24 @@ group = null
 texture_normal = ExtResource( 7 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="LevelMenu" type="PopupMenu" parent="." index="1"]
+[node name="LevelMenu" type="Panel" parent="." index="1"]
 
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 62.0
+margin_left = 16.0
 margin_top = 132.0
-margin_right = 1039.0
-margin_bottom = 1500.0
+margin_right = 1071.0
+margin_bottom = 578.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_vertical = 4
 theme = ExtResource( 8 )
-popup_exclusive = false
-items = [  ]
-hide_on_state_item_selection = false
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Popup", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
 
 [node name="VBox" type="VBoxContainer" parent="LevelMenu" index="1"]
@@ -342,14 +339,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 172.0
-margin_bottom = 106.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 1036.0
+margin_bottom = 1350.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-alignment = 1
+custom_constants/separation = 30
+alignment = 0
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_constants" ]
 
 [node name="HBox" type="HBoxContainer" parent="LevelMenu/VBox" index="0"]
@@ -358,7 +358,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 952.0
+margin_right = 1006.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
@@ -369,7 +369,7 @@ alignment = 0
 
 [node name="X" type="Button" parent="LevelMenu/VBox/HBox" index="0"]
 
-self_modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 0.871094, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -399,14 +399,16 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 114.0
-margin_right = 952.0
-margin_bottom = 224.0
+margin_top = 140.0
+margin_right = 1006.0
+margin_bottom = 250.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_horizontal = 2
+size_flags_vertical = 5
+custom_constants/vseparation = 10
+custom_constants/hseparation = 10
 columns = 10
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_constants" ]
 
@@ -439,8 +441,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 72.0
-margin_right = 160.0
+margin_left = 78.0
+margin_right = 166.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
@@ -463,8 +465,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 164.0
-margin_right = 252.0
+margin_left = 176.0
+margin_right = 264.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
@@ -487,8 +489,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 256.0
-margin_right = 344.0
+margin_left = 274.0
+margin_right = 362.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
@@ -510,8 +512,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 348.0
-margin_right = 436.0
+margin_left = 372.0
+margin_right = 460.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
@@ -533,8 +535,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 440.0
-margin_right = 528.0
+margin_left = 470.0
+margin_right = 558.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
@@ -556,8 +558,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 532.0
-margin_right = 620.0
+margin_left = 568.0
+margin_right = 656.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
@@ -580,8 +582,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 624.0
-margin_right = 712.0
+margin_left = 666.0
+margin_right = 754.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
@@ -603,8 +605,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 716.0
-margin_right = 804.0
+margin_left = 764.0
+margin_right = 852.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
@@ -626,8 +628,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 808.0
-margin_right = 952.0
+margin_left = 862.0
+margin_right = 1006.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
@@ -649,9 +651,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 228.0
-margin_right = 952.0
-margin_bottom = 320.0
+margin_top = 280.0
+margin_right = 1006.0
+margin_bottom = 379.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -661,13 +663,13 @@ alignment = 0
 
 [node name="Random" type="Button" parent="LevelMenu/VBox/Alt" index="0"]
 
-self_modulate = Color( 0.0234375, 1, 0.49646, 1 )
+self_modulate = Color( 0.0234375, 1, 1, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 408.0
-margin_bottom = 92.0
+margin_right = 266.0
+margin_bottom = 99.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -684,9 +686,8 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="AboutMenu" type="PopupMenu" parent="." index="2"]
+[node name="AboutMenu" type="Panel" parent="." index="2"]
 
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -702,37 +703,20 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-popup_exclusive = false
-items = [  ]
-hide_on_item_selection = false
-hide_on_state_item_selection = false
+theme = ExtResource( 8 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Popup", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
 
-[node name="HBox" type="HBoxContainer" parent="AboutMenu" index="1"]
-
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 592.0
-margin_bottom = 110.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-
-[node name="X2" type="Button" parent="AboutMenu/HBox" index="0"]
+[node name="X2" type="Button" parent="AboutMenu" index="1"]
 
 self_modulate = Color( 1, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 88.0
-margin_bottom = 110.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 98.0
+margin_bottom = 120.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -757,8 +741,10 @@ anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 0.0
-margin_left = -591.0
-margin_bottom = 102.0
+margin_left = -431.0
+margin_top = 34.0
+margin_right = -27.0
+margin_bottom = 140.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_min_size = Vector2( 139, 72 )
@@ -775,8 +761,8 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "    ABOUT:"
-scroll_active = false
+text = "ABOUT:"
+scroll_active = true
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
@@ -869,7 +855,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [connection signal="pressed" from="LevelMenu/VBox/Alt/Random" to="." method="_on_Random_pressed"]
 
-[connection signal="pressed" from="AboutMenu/HBox/X2" to="." method="_on_X2_pressed"]
+[connection signal="pressed" from="AboutMenu/X2" to="." method="_on_X2_pressed"]
 
 [connection signal="pressed" from="AboutMenu/UnlockDelete" to="." method="_on_UnlockDelete_pressed"]
 

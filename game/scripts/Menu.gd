@@ -119,8 +119,6 @@ func show_up():
 
 func _on_Start_pressed():
     popup.visible = true
-    popup.rect_position = Vector2(62, 132)
-    popup.rect_size = Vector2(977, 1368)
 
 func _on_X_pressed():
     popup.hide()
