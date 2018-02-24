@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Bat Hit Ball"
+config/name="RetroKitty"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
@@ -74,4 +74,5 @@ common/fixed_fps=70
 
 [rendering]
 
+quality/intended_usage/framebuffer_allocation=0
 environment/default_environment="res://default_env.tres"
