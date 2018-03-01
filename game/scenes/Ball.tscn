@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Ball" type="RigidBody2D" index="0"]
+[node name="Ball" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -35,7 +35,7 @@ max_speed = 3.5
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 0.7, 0.7 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z" ]
 __meta__ = {

@@ -4,11 +4,11 @@
 # Number: | UP = 0 | DOWN = 1 | LEFT = 2 | RIGHT = 3
 
 # GOAL: Start line with $
-$ 8
+$ 9
 
-&LEVEL 1 - White balls tutorial
+&LEVEL 1 - Hit it!
 
 # First dispenser
-1  0 8 4
-3  0 8 4
-5  0 8 4
+1  0 9 4
+3  0 9 4
+5  0 9 4
