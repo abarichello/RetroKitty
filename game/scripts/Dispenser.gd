@@ -15,7 +15,7 @@ func _input(event):  # DEBUG
 
 func _process(delta):
     children = $Children.get_child_count()
-    if instructions.size() == 0 && gamemode != 0:
+    if children == 0 && instructions.size() == 0 && gamemode != 0:
         emit_signal("empty")
 
 func power_on():
@@ -59,10 +59,7 @@ func _on_Timer_timeout():  # Dispenser internal clock
 func _on_ColorTimer_timeout():  # Return to original color
     $Sprite.self_modulate = Color(1, 1, 1)
 
-func _on_Dispenser_empty():  # Slide locked back
-    $EmptyTimer.start()
+func _on_Dispenser_empty():
     $Sprite.stop()
-    $Sprite.frame = 10
-
-func _on_EmptyTimer_timeout():  # Delay before declaring dispenser empty
+    $Sprite.frame = 10  # Slide locked back
     empty = true
