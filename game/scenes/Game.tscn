@@ -36,6 +36,8 @@ scale = Vector2( 6, 6 )
 
 [node name="Dispensers" type="Node" parent="." index="2"]
 
+editor/display_folded = true
+
 [node name="Dispenser1" parent="Dispensers" index="0" instance=ExtResource( 2 )]
 
 scale = Vector2( 2.5, 2.5 )
@@ -54,6 +56,9 @@ scale = Vector2( 2.5, 2.5 )
 
 [node name="GameHUD" parent="." index="3" instance=ExtResource( 4 )]
 
+margin_left = -540.0
+margin_right = 540.0
+
 [node name="StartCountdown" type="Timer" parent="." index="4"]
 
 process_mode = 1
@@ -61,6 +66,24 @@ wait_time = 3.5
 one_shot = true
 autostart = true
 
+[node name="ShakeTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = false
+autostart = false
+
+[node name="Uptime" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = false
+autostart = false
+
 [connection signal="timeout" from="StartCountdown" to="." method="_on_StartCountdown_timeout"]
+
+[connection signal="timeout" from="ShakeTimer" to="." method="_on_ShakeTimer_timeout"]
+
+[connection signal="timeout" from="Uptime" to="." method="_on_Uptime_timeout"]
 
 

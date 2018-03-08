@@ -9,6 +9,9 @@ export (PackedScene) var dispenser
 var level_array = []
 var goal_array = []
 var gamemode = 0 # 0 - Random, Else - Scripted
+var uptime = 0.0
+var times_shaken = 0
+
 var level_title = ""
 var screensize
 
@@ -148,3 +151,21 @@ func load_random_goal():  # Creates a goal array and sends to HUD
 
 func load_goal():  # Sends the extracted goal array to HUD
     $GameHUD._ready(goal_array)
+
+# --- Timers ---
+
+func start_shaking():
+    $ShakeTimer.start()
+
+func _on_ShakeTimer_timeout():
+    var random_offset = Vector2(rand_range(-7, 7), rand_range(-7, 7))
+    randomize()
+    get_node("/root/Main/Game/Player").position += random_offset
+    times_shaken += 1
+    if times_shaken >= 10:
+        times_shaken = 0
+        $ShakeTimer.stop()
+        $Player.position = $Player/SpawnPosition.position
+
+func _on_Uptime_timeout():
+    uptime += 0.1

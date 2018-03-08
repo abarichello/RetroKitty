@@ -60,11 +60,13 @@ func hit_check(ball):  # Checks the ball hit against the goal
             Game.delete_balls()
     elif balls_hit < correct_array.size() && ball.color != correct_array[balls_hit].color && ball.color != 8:
         player.hp -= 1
+        get_parent().start_shaking()
 
 func out_check(ball):  # Check if it is a missed goal ball
     var valid = balls_hit < correct_array.size()
     if valid && (ball.color == correct_array[balls_hit].color || ball.color == 8):
         player.hp -= 1
+        get_parent().start_shaking()
 
 func pause():
     $PauseMenu.show()
