@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://resources/img/player/idle/0000.png" type="Texture" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://resources/img/player/idle/0003.png" type="Texture" id=5]
 [ext_resource path="res://resources/img/player/idle/0004.png" type="Texture" id=6]
 [ext_resource path="res://resources/img/player/hurt.png" type="Texture" id=7]
-[ext_resource path="res://scenes/Bat.tscn" type="PackedScene" id=8]
+[ext_resource path="res://resources/img/player/win.png" type="Texture" id=8]
+[ext_resource path="res://scenes/Bat.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -25,6 +26,11 @@ animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Win",
 "speed": 5.0
 } ]
 _sections_unfolded = [ "Resource" ]
@@ -52,11 +58,11 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 1
+frame = 7
 playing = true
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 
-[node name="Bat" parent="." index="2" instance=ExtResource( 8 )]
+[node name="Bat" parent="." index="2" instance=ExtResource( 9 )]
 
 position = Vector2( 1.62927, 0 )
 scale = Vector2( 0.949085, 1 )
