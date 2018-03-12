@@ -52,12 +52,14 @@ func fire():
 
 func game_over():
     print("game over")
+    disconnect("round_ended", self, "_on_Player_round_ended")
     $Bat.alive = false
     # lose animation
     get_node("/root/Main").start_quit_timer()
 
 func round_ended():
     print("round ended!")
+    disconnect("game_over", self, "_on_Player_game_over")
     $Bat.alive = false
     # win animation
 
