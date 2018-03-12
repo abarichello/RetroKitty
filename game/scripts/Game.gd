@@ -158,14 +158,17 @@ func start_shaking():
     $ShakeTimer.start()
 
 func _on_ShakeTimer_timeout():
-    var random_offset = Vector2(rand_range(-7, 7), rand_range(-7, 7))
+    $Player/Sprite.play("Hurt")
     randomize()
-    get_node("/root/Main/Game/Player").position += random_offset
+    var random_offset = Vector2(rand_range(-7, 7), rand_range(-7, 7))
+    $Player.position += random_offset
     times_shaken += 1
+
     if times_shaken >= 10:
         times_shaken = 0
         $ShakeTimer.stop()
         $Player.position = $Player/SpawnPosition.position
+        $Player/Sprite.play("Idle")
 
 func _on_Uptime_timeout():
     uptime += 0.1
