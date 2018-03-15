@@ -910,6 +910,10 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level10" to="." method="_on_Level10_pressed"]
 
+[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level11" to="." method="_on_Level11_pressed"]
+
+[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level12" to="." method="_on_Level12_pressed"]
+
 [connection signal="pressed" from="LevelMenu/VBox/Alt/Random" to="." method="_on_Random_pressed"]
 
 [connection signal="pressed" from="AboutMenu/X2" to="." method="_on_X2_pressed"]

@@ -53,6 +53,7 @@ func fire():
 func game_over():
     print("game over")
     disconnect("round_ended", self, "_on_Player_round_ended")
+    $Bat.right()
     $Bat.alive = false
     $Sprite.play("Hurt")  # Lose animation
     get_node("/root/Main").start_quit_timer()
@@ -60,6 +61,7 @@ func game_over():
 func round_ended():
     print("round ended!")
     disconnect("game_over", self, "_on_Player_game_over")
+    $Bat.right()
     $Bat.alive = false
     $Sprite.play("Win")  # Win animation
 
