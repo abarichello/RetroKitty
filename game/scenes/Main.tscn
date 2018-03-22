@@ -22,7 +22,7 @@ margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
 _sections_unfolded = [ "Resource" ]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]

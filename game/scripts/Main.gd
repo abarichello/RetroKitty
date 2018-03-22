@@ -34,6 +34,7 @@ func _on_LoadingTimer_timeout():
         Menu.create_game_from_file(current_level + 1)
     else:
         get_node("/root/Main/Menu").show_up()
+        # thanks for playing
 
 func _on_QuitTimer_timeout():
     delete_game()
