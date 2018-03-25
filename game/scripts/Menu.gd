@@ -171,6 +171,14 @@ func _on_Level12_pressed():
     create_game_from_file(12)
     button_pressed()
 
+func _on_Level13_pressed():
+    create_game_from_file(13)
+    button_pressed()
+
+func _on_Level14_pressed():
+    create_game_from_file(14)
+    button_pressed()
+
 func _on_Random_pressed():
     create_random_game()
     Game.load_random_goal()

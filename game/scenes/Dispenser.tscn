@@ -22,7 +22,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Dispenser" type="StaticBody2D" index="0"]
+[node name="Dispenser" type="StaticBody2D"]
 
 position = Vector2( 166.536, 160.215 )
 input_pickable = false
