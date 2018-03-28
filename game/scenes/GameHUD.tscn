@@ -8,7 +8,7 @@
 [ext_resource path="res://resources/img/buttons/arrow.png" type="Texture" id=6]
 [ext_resource path="res://resources/fonts/HANGTHEDJ.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://resources/themes/pause_menu_buttons.tres" type="Theme" id=8]
-[ext_resource path="res://resources/img/player/bat/bat0000.png" type="Texture" id=9]
+[ext_resource path="res://resources/img/buttons/bat.png" type="Texture" id=9]
 [ext_resource path="res://resources/img/buttons/pause.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
@@ -200,7 +200,6 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="ButtonGrid" type="GridContainer" parent="." index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
@@ -492,16 +491,14 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="Fire" type="TextureButton" parent="." index="4"]
 
-self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -4.0
-margin_top = -300.0
-margin_right = 60.0
-margin_bottom = -236.0
-rect_rotation = 90.0
+margin_left = -303.0
+margin_top = -390.0
+margin_right = -258.0
+margin_bottom = -345.0
 rect_scale = Vector2( 5, 5 )
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2

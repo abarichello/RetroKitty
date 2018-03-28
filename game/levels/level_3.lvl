@@ -4,7 +4,7 @@
 # Number: | UP = 0 | DOWN = 1 | LEFT = 2 | RIGHT = 3
 
 # GOAL: Start line with $
-$ 999
+$ 888
 
 &LEVEL 3 - Always hit white
 
