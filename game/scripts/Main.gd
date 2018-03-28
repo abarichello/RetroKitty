@@ -11,7 +11,6 @@ func delete_game():
     var Game = get_node("/root/Main/Game")
     current_level = Game.gamemode
     Game.queue_free()
-    # Show loading screen
 
 func random_loading_image():
     var total_images = 2
