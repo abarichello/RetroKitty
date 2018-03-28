@@ -32,8 +32,8 @@ func _on_LoadingTimer_timeout():
     if current_level < available_levels:
         Menu.create_game_from_file(current_level + 1)
     else:
-        get_node("/root/Main/Menu").show_up()
-        # thanks for playing
+        Menu.show_up()
+        Menu.get_node('ThanksMenu').visible = true
 
 func _on_QuitTimer_timeout():
     delete_game()

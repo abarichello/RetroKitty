@@ -212,6 +212,9 @@ func _on_UnlockDelete_pressed():
 func _on_Delete_Save_pressed():
     delete_save()
 
+func _on_ThanksX_pressed():
+    $ThanksMenu.hide()
+
 # --- Social media buttons ---
 
 func _on_Twitter_pressed():
