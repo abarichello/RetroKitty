@@ -121,8 +121,6 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="Menu" parent="." index="1" instance=ExtResource( 4 )]
 
-rect_clip_content = false
-
 [node name="LoadingTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1

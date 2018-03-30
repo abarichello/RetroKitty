@@ -5,8 +5,7 @@ A cute and relaxing mobile game where you hit color-coded balls.
 <br>
 
 ## Rules
-Your goal is to hit the colour coded balls represented in your Game HUD with the one exception:
-1. White balls must always be hit regardless of goal
+Your goal is to hit the colour coded balls represented in your Game HUD.
 
 ## Script your own level
 The game levels are located in the [`levels`](game/levels) folder, you can script your own levels by editing the existing ones or editing the `lvl_custom.lvl`. Scripting the level is done by following these [simple rules](#contents).
