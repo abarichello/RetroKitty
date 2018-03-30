@@ -58,7 +58,7 @@ func hit_check(ball):  # Checks the ball hit against the goal
         var Game = get_node("/root/Main/Game")
         if Game.gamemode == 0:  # Delete onscreen balls if Random gamemode
             Game.delete_balls()
-    elif balls_hit < correct_array.size() && ball.color != correct_array[balls_hit].color && ball.color != 8:
+    elif balls_hit < correct_array.size() && ball.color != correct_array[balls_hit].color:
         player.hp -= 1
         get_parent().start_shaking()
 

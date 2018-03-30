@@ -195,14 +195,6 @@ func _on_Level18_pressed():
     create_game_from_file(18)
     button_pressed()
 
-func _on_Level19_pressed():
-    create_game_from_file(19)
-    button_pressed()
-
-func _on_Level20_pressed():
-    create_game_from_file(20)
-    button_pressed()
-
 func _on_Random_pressed():
     create_random_game()
     Game.load_random_goal()
@@ -234,14 +226,3 @@ func _on_Delete_Save_pressed():
 
 func _on_ThanksX_pressed():
     $ThanksMenu.hide()
-
-# --- Social media buttons ---
-
-func _on_Twitter_pressed():
-    OS.shell_open("https://twitter.com/a_barichello")
-
-func _on_GitHub_pressed():
-    OS.shell_open("https://github.com/abarichello/bat-hit-ball")
-
-func _on_Telegram_pressed():
-    OS.shell_open("https://t.me/abarichello")
