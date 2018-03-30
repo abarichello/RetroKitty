@@ -730,6 +730,72 @@ text = "17"
 flat = false
 align = 1
 
+[node name="Level18" type="Button" parent="LevelMenu/VBox/LevelGrid" index="17"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 12.0
+margin_bottom = 119.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "18"
+flat = false
+align = 1
+
+[node name="Level19" type="Button" parent="LevelMenu/VBox/LevelGrid" index="18"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 12.0
+margin_bottom = 119.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "19"
+flat = false
+align = 1
+
+[node name="Level20" type="Button" parent="LevelMenu/VBox/LevelGrid" index="19"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 12.0
+margin_bottom = 119.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "20"
+flat = false
+align = 1
+
 [node name="Alt" type="HBoxContainer" parent="LevelMenu/VBox" index="2"]
 
 anchor_left = 0.0
@@ -1048,6 +1114,12 @@ margin_bottom = 686.0
 [connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level16" to="." method="_on_Level16_pressed"]
 
 [connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level17" to="." method="_on_Level17_pressed"]
+
+[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level18" to="." method="_on_Level18_pressed"]
+
+[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level19" to="." method="_on_Level19_pressed"]
+
+[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level20" to="." method="_on_Level20_pressed"]
 
 [connection signal="pressed" from="LevelMenu/VBox/Alt/Random" to="." method="_on_Random_pressed"]
 

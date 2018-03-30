@@ -76,8 +76,9 @@ func create(start_position, angle):
     self.global_position = start_position
     self.angle = angle
     self.set_collision_layer_bit(angle, true)
+
     var player = get_node("/root/Main/Game/Player")
-    var direction = (player.global_position - global_position)
+    var direction = (player.global_position - self.global_position)
     apply_impulse(Vector2(), direction / self.speed)
 
 # --- Signals ---
