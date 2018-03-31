@@ -3,9 +3,11 @@ extends Control
 var Game = preload("res://scenes/Game.tscn").instance()
 onready var popup = get_node("LevelMenu")
 onready var about_menu = get_node("AboutMenu")
+
 var unlocked_levels = [1]
 var saved_game = File.new()
-var save_path = "user://savefile.sv"
+var save_path = "user://RETROKITTY/savefile.sv"
+var mobile = true
 
 func _ready():
     load_save()
