@@ -1,7 +1,8 @@
 # RetroKitty
 A cute and relaxing mobile game where you hit color-coded balls.
 
-<img src="https://i.imgur.com/2KxgLOp.png" width="300">
+<img src="https://i.imgur.com/boodKWV.png" width="300">  
+<img src="https://i.imgur.com/g6W5Kbe.png" width="300">
 <br>
 
 ## Rules
