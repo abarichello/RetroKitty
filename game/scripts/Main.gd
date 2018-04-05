@@ -9,7 +9,7 @@ func _ready():
     var save_dir = Directory.new()
     save_dir.change_dir("user://")
     save_dir.make_dir(save_path)
-    
+
     random_loading_image()
     available_levels = $Menu/LevelMenu/VBox/LevelGrid.get_child_count()
     save_wallpapers(0)

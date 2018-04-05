@@ -49,11 +49,11 @@ func match_color():
             var cyan_texture = load(texture_path + "cyan.png")
             $Sprite.set_texture(cyan_texture)
         5:
-            color = Color(   0,   0, .75) # BLUE
+            color = Color(   0,   0, .85) # BLUE
             var blue_texture = load(texture_path + "blue.png")
             $Sprite.set_texture(blue_texture)
         6:
-            color = Color( .55,   0,   1) # PURPLE
+            color = Color(  .3,   0,  .8) # PURPLE
             var purple_texture = load(texture_path + "purple.png")
             $Sprite.set_texture(purple_texture)
         7:
