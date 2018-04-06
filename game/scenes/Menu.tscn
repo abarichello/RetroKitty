@@ -43,7 +43,7 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Menu" type="Control" index="0" groups=[
+[node name="Menu" type="Control" groups=[
 "Persist",
 ]]
 
