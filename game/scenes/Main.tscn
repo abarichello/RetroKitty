@@ -38,6 +38,7 @@ margin_top = 2.0
 margin_right = 1080.0
 margin_bottom = 1922.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -56,6 +57,7 @@ margin_top = 660.0
 margin_right = 387.0
 margin_bottom = 821.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -107,6 +109,7 @@ margin_right = 32.0
 margin_bottom = 466.0
 rect_scale = Vector2( 7, 7 )
 rect_pivot_offset = Vector2( 32, 32 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -117,6 +120,8 @@ stretch_mode = 5
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 
 [node name="Menu" parent="." index="1" instance=ExtResource( 4 )]
+
+rect_clip_content = false
 
 [node name="LoadingTimer" type="Timer" parent="." index="2"]
 
