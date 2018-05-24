@@ -8,7 +8,7 @@ var save_path = "user://RETROKITTY/"
 func _ready():
     var save_dir = Directory.new()
     save_dir.change_dir("user://")
-    save_dir.make_dir(save_path)
+    save_dir.make_dir("RETROKITTY")
 
     random_loading_image()
     available_levels = $Menu/LevelMenu/VBox/LevelGrid.get_child_count()
@@ -26,7 +26,6 @@ func random_loading_image():
     $LoadingBackground/Image.texture.set_region(Rect2(0, rand_index * 64, 64, 64))
 
 func save_wallpapers(choice):
-    var save_dir = Directory.new()
     var img = Image.new()
     if choice == 0:
         img.load("res://resources/img/wallpaper0.png")
