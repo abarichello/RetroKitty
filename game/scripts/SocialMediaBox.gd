@@ -9,4 +9,4 @@ func _on_GitHub_pressed():
     OS.shell_open("https://github.com/abarichello/bat-hit-ball")
 
 func _on_Telegram_pressed():
-    OS.shell_open("https://t.me/abarichello")
+    OS.shell_open("https://t.me/barichello")
