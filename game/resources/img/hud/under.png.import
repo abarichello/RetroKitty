@@ -2,11 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/under.png-8920b6afc607a6ea87ae3a14da54080a.stex"
+path="res://.import/under.png-604e05472f2bb2393a4180db0ad8cd07.stex"
 
 [deps]
 
-source_md5="b96bc161e2b80535ba1b0f3f0e6ac04c"
+source_file="res://resources/img/hud/under.png"
+dest_files=[ "res://.import/under.png-604e05472f2bb2393a4180db0ad8cd07.stex" ]
 
 [params]
 

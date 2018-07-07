@@ -7,10 +7,7 @@ path="res://.import/social-telegram.png-0c3fc8c64fa8ecc7d676007bafea88fd.stex"
 [deps]
 
 source_file="res://resources/img/buttons/social/social-telegram.png"
-source_md5="06f5d796d5770d37091e297ea0d3cbbf"
-
 dest_files=[ "res://.import/social-telegram.png-0c3fc8c64fa8ecc7d676007bafea88fd.stex" ]
-dest_md5="e3afd665bb637d3d3919c3211475e131"
 
 [params]
 

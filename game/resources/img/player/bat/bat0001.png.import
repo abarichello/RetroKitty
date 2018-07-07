@@ -7,10 +7,7 @@ path="res://.import/bat0001.png-703e96c63f5ac2cc90468de8ecf87cfc.stex"
 [deps]
 
 source_file="res://resources/img/player/bat/bat0001.png"
-source_md5="1bcc4cf5ec9e2fa812915e2abb05427e"
-
 dest_files=[ "res://.import/bat0001.png-703e96c63f5ac2cc90468de8ecf87cfc.stex" ]
-dest_md5="b55cdf3374e2577ed918dcdb068d1a89"
 
 [params]
 

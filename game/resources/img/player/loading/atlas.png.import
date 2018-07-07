@@ -7,10 +7,7 @@ path="res://.import/atlas.png-f9a9f5d3e18e517b137ae718595fd968.stex"
 [deps]
 
 source_file="res://resources/img/player/loading/atlas.png"
-source_md5="88dac373ba1b7e327ee3d5457a7abd5e"
-
 dest_files=[ "res://.import/atlas.png-f9a9f5d3e18e517b137ae718595fd968.stex" ]
-dest_md5="31262fd09143fba48f1023800d2fa865"
 
 [params]
 

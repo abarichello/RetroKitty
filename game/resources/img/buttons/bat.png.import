@@ -7,10 +7,7 @@ path="res://.import/bat.png-2a37612f0bcec8f9be35819de6e99f93.stex"
 [deps]
 
 source_file="res://resources/img/buttons/bat.png"
-source_md5="b017827cbbfaae1019a65a3500f15434"
-
 dest_files=[ "res://.import/bat.png-2a37612f0bcec8f9be35819de6e99f93.stex" ]
-dest_md5="a6bac172df63fc4dca821393bea14757"
 
 [params]
 

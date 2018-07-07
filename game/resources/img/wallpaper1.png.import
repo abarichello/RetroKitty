@@ -7,10 +7,7 @@ path="res://.import/wallpaper1.png-149091d7acab8fe6b2bbfe92f52699ef.stex"
 [deps]
 
 source_file="res://resources/img/wallpaper1.png"
-source_md5="ca337db531238c4a06072b7c415e8687"
-
 dest_files=[ "res://.import/wallpaper1.png-149091d7acab8fe6b2bbfe92f52699ef.stex" ]
-dest_md5="b5f06bd341635b53f5fd1704b3f30034"
 
 [params]
 

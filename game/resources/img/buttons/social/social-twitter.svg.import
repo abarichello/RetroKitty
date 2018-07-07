@@ -7,10 +7,7 @@ path="res://.import/social-twitter.svg-dc26ce4bc88dbfb32f894a11bb85a44b.stex"
 [deps]
 
 source_file="res://resources/img/buttons/social/social-twitter.svg"
-source_md5="64c341fa98a5b20598ee33d2a7f3d8c4"
-
 dest_files=[ "res://.import/social-twitter.svg-dc26ce4bc88dbfb32f894a11bb85a44b.stex" ]
-dest_md5="27d377c89563a6a686b0cb61ffea8bb3"
 
 [params]
 

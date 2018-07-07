@@ -7,10 +7,7 @@ path="res://.import/pong1.ogg-66658fcc2de3e9aa62a669ceee4d89f9.oggstr"
 [deps]
 
 source_file="res://resources/sounds/pong/pong1.ogg"
-source_md5="bf9eb3b696061a7888528d7a300bf80d"
-
 dest_files=[ "res://.import/pong1.ogg-66658fcc2de3e9aa62a669ceee4d89f9.oggstr" ]
-dest_md5="e2687d3a448e5a23a7065f1780d275de"
 
 [params]
 

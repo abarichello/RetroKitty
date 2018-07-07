@@ -7,10 +7,7 @@ path="res://.import/progress.png-3745633de38a53a029bfa196d78c1304.stex"
 [deps]
 
 source_file="res://resources/img/hud/progress.png"
-source_md5="fa4d8f46874d762ceb6b06e1456400c1"
-
 dest_files=[ "res://.import/progress.png-3745633de38a53a029bfa196d78c1304.stex" ]
-dest_md5="4209bc22af88964b004983f4c413468e"
 
 [params]
 

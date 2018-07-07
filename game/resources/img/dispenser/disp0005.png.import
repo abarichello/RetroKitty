@@ -7,10 +7,7 @@ path="res://.import/disp0005.png-4c7eab24a6f2d07bf4436d24d7a0659c.stex"
 [deps]
 
 source_file="res://resources/img/dispenser/disp0005.png"
-source_md5="500bb15f39a2a5d96d13eb485b282eb8"
-
 dest_files=[ "res://.import/disp0005.png-4c7eab24a6f2d07bf4436d24d7a0659c.stex" ]
-dest_md5="9a5231fe37ff89fa124cfc9e15d35533"
 
 [params]
 
