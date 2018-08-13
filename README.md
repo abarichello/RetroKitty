@@ -3,7 +3,7 @@ A cute and relaxing mobile game where you hit color-coded balls.
 
 <a href='https://play.google.com/store/apps/details?id=com.barichello.retrokitty&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="64"/></a>
 
-<img src="https://i.imgur.com/boodKWV.png" height="460">&nbsp;&nbsp;<img src="https://i.imgur.com/g6W5Kbe.png" height="460">
+<img src="https://i.imgur.com/boodKWV.png" height="460">&nbsp;&nbsp;<img src="https://i.imgur.com/m2lpPTU.gif" height="460">
 <br>
 
 ## Rules
