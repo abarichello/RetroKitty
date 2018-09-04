@@ -1116,42 +1116,6 @@ margin_bottom = 686.0
 
 [connection signal="pressed" from="LevelMenu/VBox/HBox/X" to="." method="_on_X_pressed"]
 
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level1" to="." method="_on_Level1_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level2" to="." method="_on_Level2_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level3" to="." method="_on_Level3_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level4" to="." method="_on_Level4_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level5" to="." method="_on_Level5_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level6" to="." method="_on_Level6_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level7" to="." method="_on_Level7_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level8" to="." method="_on_Level8_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level9" to="." method="_on_Level9_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level10" to="." method="_on_Level10_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level11" to="." method="_on_Level11_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level12" to="." method="_on_Level12_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level13" to="." method="_on_Level13_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level14" to="." method="_on_Level14_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level15" to="." method="_on_Level15_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level16" to="." method="_on_Level16_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level17" to="." method="_on_Level17_pressed"]
-
-[connection signal="pressed" from="LevelMenu/VBox/LevelGrid/Level18" to="." method="_on_Level18_pressed"]
-
 [connection signal="pressed" from="LevelMenu/VBox/Alt/Random" to="." method="_on_Random_pressed"]
 
 [connection signal="pressed" from="AboutMenu/X2" to="." method="_on_X2_pressed"]

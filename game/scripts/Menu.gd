@@ -11,6 +11,7 @@ var mobile = true
 
 func _ready():
     load_save()
+    connect_level_button_signals()
 
 func create_random_game():
     Game = preload("res://scenes/Game.tscn").instance()
@@ -119,82 +120,19 @@ func show_up():
 # --- Menu Sinals ---
 # Start submenu
 
+func connect_level_button_signals():
+    for i in range($LevelMenu/VBox/LevelGrid.get_child_count()):
+        var LvlButton = $LevelMenu/VBox/LevelGrid.get_child(i)
+        LvlButton.connect("pressed", self, "_on_Level_Button_pressed", [i + 1])
+
 func _on_Start_pressed():
     popup.visible = true
 
 func _on_X_pressed():
     popup.hide()
 
-func _on_Level1_pressed():
-    create_game_from_file(1)
-    button_pressed()
-
-func _on_Level2_pressed():
-    create_game_from_file(2)
-    button_pressed()
-
-func _on_Level3_pressed():
-    create_game_from_file(3)
-    button_pressed()
-
-func _on_Level4_pressed():
-    create_game_from_file(4)
-    button_pressed()
-
-func _on_Level5_pressed():
-    create_game_from_file(5)
-    button_pressed()
-
-func _on_Level6_pressed():
-    create_game_from_file(6)
-    button_pressed()
-
-func _on_Level7_pressed():
-    create_game_from_file(7)
-    button_pressed()
-
-func _on_Level8_pressed():
-    create_game_from_file(8)
-    button_pressed()
-
-func _on_Level9_pressed():
-    create_game_from_file(9)
-    button_pressed()
-
-func _on_Level10_pressed():
-    create_game_from_file(10)
-    button_pressed()
-
-func _on_Level11_pressed():
-    create_game_from_file(11)
-    button_pressed()
-
-func _on_Level12_pressed():
-    create_game_from_file(12)
-    button_pressed()
-
-func _on_Level13_pressed():
-    create_game_from_file(13)
-    button_pressed()
-
-func _on_Level14_pressed():
-    create_game_from_file(14)
-    button_pressed()
-
-func _on_Level15_pressed():
-    create_game_from_file(15)
-    button_pressed()
-
-func _on_Level16_pressed():
-    create_game_from_file(16)
-    button_pressed()
-
-func _on_Level17_pressed():
-    create_game_from_file(17)
-    button_pressed()
-
-func _on_Level18_pressed():
-    create_game_from_file(18)
+func _on_Level_Button_pressed(index):
+    create_game_from_file(index)
     button_pressed()
 
 func _on_Random_pressed():
